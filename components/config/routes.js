@@ -12,16 +12,16 @@ var hashHistory = ReactRouter.hashHistory;
 
 
 var Main = require('./../main');
-var About = require('./../about');
-var Home = require('./../home');
+var Profile = require('./../profile');
+var Trails = require('./../trails');
 
 
 ReactDom.render(
 	(<Router history={hashHistory}>
 		<Route path='/' component={Main}>
-			<IndexRoute component={Home}/>
+			<IndexRoute component={Trails}/>
 			
-			<Route path='/about' component={About}/>
+			<Route path='/profile' component={Profile}/>
 			
 		</Route>
 	</Router>)
