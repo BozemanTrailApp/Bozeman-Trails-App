@@ -1,5 +1,5 @@
 {
-  "name": "Exploring Bozeman",
+  "name": "exploringbozeman",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+   "dependencies": {
     "babel-core": "^6.7.4",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.7.4",
@@ -22,6 +22,7 @@
     "body-parser": "^1.15.1",
     "cors": "^2.7.1",
     "express": "^4.13.4",
+    "express-session": "^1.13.0",
     "history": "^1.17.0",
     "mongoose": "^4.4.20",
     "passport": "^0.3.2",
