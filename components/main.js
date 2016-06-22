@@ -1,5 +1,6 @@
 var React = require('react');
 var Link = require('react-router').Link;
+var LoginApp = require('./loginApp.js');
 
 var Main = React.createClass({
 	render: function(){
@@ -10,8 +11,13 @@ var Main = React.createClass({
 					</Link>
 
 					<div className="container-fluid jumbotron">
-
-						<h1 className="theTitle"> Bozeman.by.trail </h1>
+					<div className="titleBox">
+					<h1 className="theTitle"> Bozeman.by.trail </h1>
+					</div>
+					<div className="loginBox">
+							<LoginApp />
+					</div>
+						
 					
 					<Link to='/'> 
 						<button className="btn btn-info btn-lg btn-block mainbuttonone">T R A I L S</button>

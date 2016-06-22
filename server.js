@@ -3,6 +3,8 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+
+
 var app = express();
 
 app.use(cors()); 
@@ -19,11 +21,13 @@ app.put('/trails/:id', trailsControl.update);
 app.delete('/trails/:id',trailsControl.delete);
 app.get('/trails/:id', trailsControl.readById);
 
+
 app.post('/user', userControl.create);
 app.get('/user', userControl.read);
 app.put('/user/:id', userControl.update);
 app.delete('/user/:id', userControl.delete);
 app.get('/user/:id', userControl.readById);
+
 
 
 // if (process.env.NODE_ENV === 'production') {

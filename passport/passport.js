@@ -1,5 +1,7 @@
 var LocalStrategy = require('passport-local').Strategy; //Call in passport-local using the Strategy method, which is where all of the reserved methods for local auth are held
+
 var User = require('./../models/userModel.js');//Set up user model
+
 
 module.exports = function(passport) { //call in passport as a parameter
 
