@@ -6,7 +6,7 @@ var passport = require('passport');//local auth
 var session = require('express-session');//session
 
 var configSession = require('./passport/setsercets.js');
-var LoginControl = require('./controllers/loginControl.js');
+// var LoginControl = require('./controllers/loginControl.js');
 
 
 var app = express();
@@ -23,9 +23,9 @@ app.use(express.static(__dirname + '/views'));
 
 
 
-app.post('/auth', passport.authenticate('local-signup'), LoginControl.login);//post login includes passport authenticate
-app.get('/user/me', LoginControl.getMe);//**gets current user after login if you want to display user info on view
-app.get('/user/logout', LoginControl.logout);//**logs out user and ends session
+// app.post('/auth', passport.authenticate('local-signup'), LoginControl.login);//post login includes passport authenticate
+// app.get('/user/me', LoginControl.getMe);//**gets current user after login if you want to display user info on view
+// app.get('/user/logout', LoginControl.logout);//**logs out user and ends session
 
 
 if (process.env.NODE_ENV === 'production') {
