@@ -6,6 +6,10 @@ var LoginForm = React.createClass({
 	render: function(){
 		return (
 			<div>
+				<div>
+				</div>
+				<div>
+				</div>
 				<div className="auth">
 					<form className="form-inline" onSubmit={this.props.handleLoginSubmit}>
 						<label>Email</label>
