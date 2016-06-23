@@ -34,7 +34,7 @@ module.exports = function(passport) { //call in passport as a parameter
                 }
               } else { //otherwise, make a new user
                   var newUser = new User(req.body);
-                  newUser.email    = email;
+                  newUser.userName = userName;
                   newUser.password = newUser.generateHash(password); //hash password
                   newUser.save(function(err) { //save to mongo
                       if (err) throw err;

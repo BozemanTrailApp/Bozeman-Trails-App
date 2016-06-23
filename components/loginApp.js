@@ -1,5 +1,15 @@
-// var Login = require('./login/login');
-// var Create = require('./login/create');
+//loginApp
+//	loginAccount
+//		loginAccountData
+//			loginAccountForm
+//	CreateAccount
+//		CreateAccountData
+//			CreateAccountForm
+
+
+
+var LoginAccount = require('./login/loginAccountForm');
+var CreateAccount = require('./login/createAccount');
 
 var React = require('react');
 
@@ -21,8 +31,6 @@ var LoginApp =  React.createClass({
 		});
 	},
 
-
-
 	render: function(){
 		return (
 			<div>
@@ -31,7 +39,7 @@ var LoginApp =  React.createClass({
 					{this.state.showResults ? <LoginAccount/> : null }
 				</div>
 				<div>
-					<input type="submit" value="Create Login" />	
+					<CreateAccount />
 				</div>
 				<div>
 					<input type="submit" value="Reset" onClick={this.hideLoginAccount} />	
@@ -42,37 +50,6 @@ var LoginApp =  React.createClass({
 	}
 });
 
-var CreateAccount = React.createClass({
-
-	render: function(){
-		return (
-				<div id="Create">
-					<input value="User Name" />
-					<input value="Password" />
-					<input value="First Name" />
-					<input value="Last Name" />
-
-				</div>
-			)
-	}
-
-});
-
-
-var LoginAccount = React.createClass({
-
-
-	render: function(){
-		return (
-				<div id="Login">
-					<input value="User Name "  />
-					<input value="Password" />
-					<button>Submit</button>
-				</div>
-			)
-	}
-
-});
 
 module.exports = LoginApp;
 
