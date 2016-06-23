@@ -1,46 +1,82 @@
+// var Login = require('./login/login');
+// var Create = require('./login/create');
+
 var React = require('react');
 
-var CreateLoginPostData = require('./login/createLoginPostData.js');
-var LoginToggle = require('./login/loginToggle.js');
-var LoginData = require('./login/loginData.js');
-var LogOffData = require('./login/logOffData.js');
+var LoginApp =  React.createClass({
 
-var LoginApp = React.createClass({
 	getInitialState: function(){
-		return{
-			activeComponent: 'LoginData'
-			}
+		return { 
+			showResults: false
+		};
 	},
-
-	showComponent: function(){
-
-		if(this.state.activeComponent === 'LoginData'){
-			return <LoginData />
-		} else if (this.state.activeComponent === 'CreateLoginPostData'){
-			return <CreateLoginPostData toggleActiveComponent= { this.toggleActiveComponent} />
-		} else if (this.state.activeComponent === 'LogOffData') {
-			return <LogOffData toggleActiveComponent= { this.toggleActiveComponent} />
-		} else 	{
-			throw new Error('No active component', this.state.activeComponent )
-		}
+	hideCreateAccount: function (){
+		this.setState({ 
+			showResults: true 
+		});
 	},
-
-	toggleActiveComponent: function(name){
+	hideLoginAccount: function (){
 		this.setState({
-			activeComponent: name
-		})
+			showResults: false
+		});
 	},
+
+
 
 	render: function(){
-			
-		return(
+		return (
+			<div>
 				<div>
-					<LoginToggle toggleActiveComponent={this.toggleActiveComponent}/>
-					{ this.showComponent() }					
+					<input type="submit" value="Login" onClick={this.hideCreateAccount} />
+					{this.state.showResults ? <LoginAccount/> : null }
 				</div>
-			)
+				<div>
+					<input type="submit" value="Create Login" />	
+				</div>
+				<div>
+					<input type="submit" value="Reset" onClick={this.hideLoginAccount} />	
+					
+				</div>
+			</div>
+			);
 	}
 });
 
+var CreateAccount = React.createClass({
+
+	render: function(){
+		return (
+				<div id="Create">
+					<input value="User Name" />
+					<input value="Password" />
+					<input value="First Name" />
+					<input value="Last Name" />
+
+				</div>
+			)
+	}
+
+});
+
+
+var LoginAccount = React.createClass({
+
+
+	render: function(){
+		return (
+				<div id="Login">
+					<input value="User Name "  />
+					<input value="Password" />
+					<button>Submit</button>
+				</div>
+			)
+	}
+
+});
 
 module.exports = LoginApp;
+
+
+
+
+
