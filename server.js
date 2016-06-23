@@ -1,15 +1,18 @@
 var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
+var passport = require('passport');//local auth
 var mongoose = require('mongoose');
 
-
-
 var app = express();
+
+require('./passport/passport.js')(passport);//self invokes passport
 
 app.use(cors()); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(passport.initialize());//initialize passport
+app.use(passport.session());//configure session through passport. Starts session on login
 app.use(express.static(__dirname + '/views'));
 
 var trailsControl = require('./controllers/trailsControl.js');
@@ -21,6 +24,9 @@ app.put('/trails/:id', trailsControl.update);
 app.delete('/trails/:id',trailsControl.delete);
 app.get('/trails/:id', trailsControl.readById);
 
+app.post('/auth', passport.authenticate('local-signup'), userControl.login);//post login includes passport authenticate
+app.get('/user/me', userControl.getMe);//**gets current user after login if you want to display user info on view
+app.get('/user/logout', userControl.logout);//**logs out user and ends session
 
 app.post('/user', userControl.create);
 app.get('/user', userControl.read);

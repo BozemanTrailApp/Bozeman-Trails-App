@@ -22,6 +22,7 @@ var Main = React.createClass({
 					<Link to='/'> 
 						<button className="btn btn-info btn-lg btn-block mainbuttonone">T R A I L S</button>
 					</Link>
+
 				
 					  {this.props.children}
 				</div>	

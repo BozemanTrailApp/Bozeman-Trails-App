@@ -14,13 +14,14 @@ var hashHistory = ReactRouter.hashHistory;
 var Main = require('./../main');
 var Profile = require('./../profile');
 var Trails = require('./../trails');
+var CreateAccount = require('./../login/createAccountData');
 
 
 ReactDom.render(
 	(<Router history={hashHistory}>
 		<Route path='/' component={Main}>
 			<IndexRoute component={Trails}/>
-			
+			<Route path='/createAccount' component={CreateAccount}/>
 			<Route path='/profile' component={Profile}/>
 			
 		</Route>
