@@ -6,6 +6,8 @@ var Trails = React.createClass({
 			<div>
 			    <div className = "trailsbody">
 				<h1>Trails stuff words words la di da di da</h1>
+                
+
 				</div>
 			</div>
 			)
