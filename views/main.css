@@ -1,5 +1,4 @@
 
-@media only screen { 
 
 .titleBox{
     width: 50%;
@@ -19,6 +18,7 @@
     border: 1px solid orange;
 }
 
+@media only screen { 
 .theTitle {
     font-family: 'Damion', cursive;
     float: right;
