@@ -18,7 +18,7 @@ var LoginApp =  React.createClass({
 	hideLoginAccount: function (){
 		this.setState({
 			showResults: false
-		})
+		});
 	},
 
 
@@ -31,8 +31,11 @@ var LoginApp =  React.createClass({
 					{this.state.showResults ? <LoginAccount/> : null }
 				</div>
 				<div>
-					<input type="submit" value="Create Login" onClick={this.hideLoginAccount} />	
-					{this.state.showResults ? <CreateAccount/> : null }
+					<input type="submit" value="Create Login" />	
+				</div>
+				<div>
+					<input type="submit" value="Reset" onClick={this.hideLoginAccount} />	
+					
 				</div>
 			</div>
 			);
@@ -44,7 +47,11 @@ var CreateAccount = React.createClass({
 	render: function(){
 		return (
 				<div id="Create">
-					<button> Login </button>
+					<input value="User Name" />
+					<input value="Password" />
+					<input value="First Name" />
+					<input value="Last Name" />
+
 				</div>
 			)
 	}
@@ -58,7 +65,9 @@ var LoginAccount = React.createClass({
 	render: function(){
 		return (
 				<div id="Login">
-					<button> Create </button>
+					<input value="User Name "  />
+					<input value="Password" />
+					<button>Submit</button>
 				</div>
 			)
 	}
