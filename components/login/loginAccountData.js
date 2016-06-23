@@ -1,33 +1,32 @@
 var React = require('react');
-var LoginForm = require('./loginForm.js');
+var LoginAccountForm = require('./loginAccountForm.js');
     
 
-var LoginData = React.createClass({
+var LoginAccountData = React.createClass({
 
     InitialState: function(){
     return{
-      email: null,
-      passWord: null,
-      firstName: null,
-      lastName: null
+      userName: null,
+      password: null,
+     
     }
   },
-  handleEmailLogin: function(event){
-    this.setState ({ email: event.target.value })
+  handleUserNameLogin: function(event){
+    this.setState ({ userName: event.target.value })
   },
   handlePassWordLogin: function(event){
-    this.setState ({ passWord: event.target.value })
+    this.setState ({ password: event.target.value })
   },
   handleLoginSubmit: function(event){
     event.preventDefault();
     console.log(this);
     var user = {};
-    user.email = this.state.email;
-    user.passWord = this.state.passWord;
+    user.userName = this.state.userName;
+    user.password = this.state.password;
 
     this.handleLoginPost(user);
     this.setState({
-      email: '' , passWord: '' 
+      userName: '' , password: '' 
     });
   },
   handleLoginPost: function(login){
@@ -52,9 +51,9 @@ var LoginData = React.createClass({
     return (
 
       <div>
-	       			<LoginForm
-                        handleEmailLogin={this.handleEmailLogin}
-                        handlePassWordLogin={this.handlePassWordLogin}
+	       			<LoginAccountForm
+                        handleUserNameLogin={this.handleUserNameLogin}
+                        handlePasswordLogin={this.handlePasswordLogin}
                         handleLoginSubmit={this.handleLoginSubmit}
                        />
      	</div>
@@ -63,6 +62,6 @@ var LoginData = React.createClass({
   }
 });
 
-module.exports = LoginData;
+module.exports = LoginAccountData;
 
 
