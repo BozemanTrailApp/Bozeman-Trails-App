@@ -1,9 +1,10 @@
+
+@media only screen { 
 .theTitle {
     font-family: 'Damion', cursive;
     float: right;
     margin-right: 80px;
-    font-size: 200px;
-
+    }
 }
 
 .mainbuttonone {
@@ -12,7 +13,6 @@
     text-align: center;
     float: left;
     margin-bottom: 5%;
-
 }
 
 .mainbuttontwo {
@@ -35,4 +35,5 @@
    margin: auto;
 
 }
+
 
