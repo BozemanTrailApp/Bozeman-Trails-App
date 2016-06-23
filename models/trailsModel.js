@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var commentsSchema = require('./commentsSchema.js')
+var commentSchema = require('./commentSchema.js')
 
 var TrailSchema = new mongoose.Schema({
 	trailName: {type: String, required: false},
@@ -7,7 +7,7 @@ var TrailSchema = new mongoose.Schema({
 	length: {type: String, required: false},
 	location: {type: String, required: false},
 	description: {type: String, required: false},
-	comments: [commentsSchema], 
+	comments: [commentSchema], 
 	mapUrl: {type: String, required: false},
 	trailHeadUrl: {type: String, required: false},
 	userImage: [{
@@ -16,6 +16,7 @@ var TrailSchema = new mongoose.Schema({
 			 type: mongoose.Schema.Types.ObjectId,
 			 ref: 'User'
 		}
-	}]
+	}],
+	directions: {type: String}
 });
 module.exports = mongoose.model('Trails', TrailSchema);

@@ -2,30 +2,33 @@ var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var passport = require('passport');//local auth
-var session = require('express-session');//session
 
-var configSession = require('./passport/setsercets.js');
-var LoginControl = require('./controllers/loginControl.js');
 
 
 var app = express();
 
-require('./passport/passport.js')(passport);//self invokes passport
-
-app.use(session(configSession));//set session secret
-app.use(passport.initialize());//initialize passport
-app.use(passport.session());//configure session through passport. Starts session on login
-app.use(cors()); // before you push up to Heroku for mlab
+app.use(cors()); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/views'));
 
+var trailsControl = require('./controllers/trailsControl.js');
+var userControl = require('./controllers/userControl.js');
+
+app.post('/trails', trailsControl.create);
+app.get('/trails', trailsControl.read);
+app.put('/trails/:id', trailsControl.update);
+app.delete('/trails/:id',trailsControl.delete);
+app.get('/trails/:id', trailsControl.readById);
 
 
-app.post('/auth', passport.authenticate('local-signup'), LoginControl.login);//post login includes passport authenticate
-app.get('/user/me', LoginControl.getMe);//**gets current user after login if you want to display user info on view
-app.get('/user/logout', LoginControl.logout);//**logs out user and ends session
+app.post('/user', userControl.create);
+app.get('/user', userControl.read);
+app.put('/user/:id', userControl.update);
+app.delete('/user/:id', userControl.delete);
+app.get('/user/:id', userControl.readById);
+
+
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -48,6 +51,7 @@ if (process.env.NODE_ENV === 'production') {
   // Do "hot-reloading" of express stuff on the server
   // Throw away cached modules and re-require next time
   // Ensure there's no important state in there!
+
   var watcher = chokidar.watch('./server');
   watcher.on('ready', function() {
     watcher.on('all', function() {
@@ -63,9 +67,9 @@ if (process.env.NODE_ENV === 'production') {
 
 
 
-mongoose.connect("mongodb://localhost:27017/react_practice");
+mongoose.connect('mongodb://localhost:27017/bbtdb');
 mongoose.connection.once('open', function(){
-	console.log("Connected to your database.");
+	console.log("Connected to the bbtdb database.");
 });
 
 
@@ -77,5 +81,8 @@ app.get('/', function(req, res){
 
 
 app.listen(8000, function(){
-	console.log("Exploring Bozeman on 8000");
+	console.log('The Magic is Happening on Port 8000');
 });
+
+
+
