@@ -34,16 +34,26 @@ var LoginApp =  React.createClass({
 	render: function(){
 		return (
 			<div>
-				<div>
-					<input type="submit" value="Login" onClick={this.hideCreateAccount} />
-					{this.state.showResults ? <LoginAccount/> : null }
-				</div>
-				<div>
-					<CreateAccount />
-				</div>
-				<div>
-					<input type="submit" value="Reset" onClick={this.hideLoginAccount} />	
+				<div className = 'nav nav-bar '>
+
 					
+						<input type="submit" value="Login" onClick = {this.hideCreateAccount} />
+						
+						<CreateAccount />
+						
+						<input type="submit" value="Reset" onClick = {this.hideLoginAccount} />
+						
+						{this.state.showResults ? <LoginAccount/> : null }
+				
+
+					
+						
+					
+
+					
+							
+					
+
 				</div>
 			</div>
 			);

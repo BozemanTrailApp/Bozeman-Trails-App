@@ -15,15 +15,16 @@ var Main = require('./../main');
 var Profile = require('./../profile');
 var Trails = require('./../trails');
 var CreateAccount = require('./../login/createAccountData');
-
+var Home = require('./../home');
 
 ReactDom.render(
 	(<Router history={hashHistory}>
-		<Route path='/' component={Main}>
-			<IndexRoute component={Trails}/>
-			<Route path='/createAccount' component={CreateAccount}/>
-			<Route path='/profile' component={Profile}/>
-			
+		<Route path='/' component = {Main}>
+			<IndexRoute component = {Home}/>
+			<Route path ='/createAccount' component={CreateAccount}/>
+			<Route path ='/profile' component = {Profile}/>
+			<Route path = '/home' component = {Home}/>
+			<Route path = '/trails' component = {Trails}/>
 		</Route>
 	</Router>)
 	, 
