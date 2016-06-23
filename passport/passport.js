@@ -1,5 +1,7 @@
 var LocalStrategy = require('passport-local').Strategy; //Call in passport-local using the Strategy method, which is where all of the reserved methods for local auth are held
-// var User = require('./../models/loginModel.js');//Set up user model
+
+var User = require('./../models/userModel.js');//Set up user model
+
 
 module.exports = function(passport) { //call in passport as a parameter
 
@@ -14,26 +16,26 @@ module.exports = function(passport) { //call in passport as a parameter
         });
     });
     passport.use('local-signup', new LocalStrategy({//use local-signup
-        usernameField : 'email',//this can be username, email, anything as long as you update all other instances of email on this file.
-        passwordField : 'passWord',
+        usernameField : 'userName',//this can be username, email, anything as long as you update all other instances of email on this file.
+        passwordField : 'password',
         passReqToCallback : true//this makes its so we only need one callback function below
     },
-    function(req, email, passWord, done) {
+    function(req, userName, password, done) {
         process.nextTick(function() { //waits until all previous code has completed then runs callback function. This is a node function.
-          User.findOne({'email': email}, function(err, user) { //find by email mongoose function
+          User.findOne({'userName': userName}, function(err, user) { //find by email mongoose function
               if (err) return done(err); //if there is an error return the error
               if (user) { //if there is a valid user, verify password is correct
-                if (user.validPassWord(passWord)) {
+                if (user.validPassword(password)) {
                   console.log('worksgood');
                     return done(null, user);
                 } else {
-                  console.log('Invalid email or passWord');
+                  console.log('Invalid email or password');
                     return done(null, false);
                 }
               } else { //otherwise, make a new user
                   var newUser = new User(req.body);
                   newUser.email    = email;
-                  newUser.passWord = newUser.generateHash(passWord); //hash password
+                  newUser.password = newUser.generateHash(password); //hash password
                   newUser.save(function(err) { //save to mongo
                       if (err) throw err;
                       return done(null, newUser);
@@ -43,3 +45,4 @@ module.exports = function(passport) { //call in passport as a parameter
         });
     }));
 };
+
