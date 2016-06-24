@@ -6,9 +6,7 @@ var Main = React.createClass({
 	render: function(){
 		return (
 			<div>
-					<Link to='/profile'>
-						<button className="btn btn-info btn-xs mainbuttontwo">Profile</button>
-					</Link>
+					
 
 				<div>
 					<h1 className="theTitle"> Bozeman.by.trail </h1>
@@ -23,9 +21,9 @@ var Main = React.createClass({
 					
 					
 						
-					
-					
-
+				<footer id = 'footer'>
+					<p>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
+				</footer>
 				
 					  {this.props.children}
 					
