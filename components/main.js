@@ -21,9 +21,9 @@ var Main = React.createClass({
 					
 					
 						
-					
-					
-
+				<footer id = 'footer'>
+					<p>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
+				</footer>
 				
 					  {this.props.children}
 					
