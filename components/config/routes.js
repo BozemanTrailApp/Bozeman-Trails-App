@@ -16,6 +16,8 @@ var Profile = require('./../profile');
 var Trails = require('./../trails');
 var CreateAccount = require('./../login/createAccountData');
 var Home = require('./../home');
+var Sourdough = require('./../trailPage/sourdough');
+var Leverich = require('./../trailPage/leverich')
 
 ReactDom.render(
 	(<Router history={hashHistory}>
@@ -25,6 +27,8 @@ ReactDom.render(
 			<Route path ='/profile' component = {Profile}/>
 			<Route path = '/home' component = {Home}/>
 			<Route path = '/trails' component = {Trails}/>
+			<Route path = './trailPage/sourdough' component = {Sourdough}/>
+			<Route path = './trailPage/leverich' component = {Leverich}/>
 		</Route>
 	</Router>)
 	, 
