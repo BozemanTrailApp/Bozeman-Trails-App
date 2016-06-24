@@ -11,13 +11,6 @@ var Home = React.createClass({
 		return(
 			<div>
 				
-				
-				
-				
-				<div className ='nav nav-bar pull-left'>
-					<LogInApp />
-				</div>
-				
 				<Link to='/trails'> 
 						<button className="btn btn-info btn-lg btn-block mainbuttonone">T R A I L S</button>
 				</Link>
