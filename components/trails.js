@@ -10,7 +10,8 @@ var Trails = React.createClass({
 			<div>
 			    <h2>Sourdough Trail</h2>
 				<h3>A relatively flat, dirt running trail. Suitable for bikes, families, 
-				runners, and dog friendly. Can expect to see deer on occasion</h3>
+				runners, and dog friendly. Can expect to see deer on occasion and cross some water.
+				Nice easy hike with lots of shade and wildlife. Approx. 3 miles</h3>
             </div>
             <Link to='./trailPage/sourdough'>
 						<button className="btn btn-default">More Info</button>
@@ -25,6 +26,20 @@ var Trails = React.createClass({
             <Link to='./trailPage/leverich'>
 						<button className="btn btn-default">More Info</button>
 					</Link> 
+
+			<div>
+            	<h2>Main Street to Peet's Hill</h2>
+            	<h3>Head out off E. Main street onto the Gallagator trail until you reach Peet's Hill.
+				Enjoy a loop hike to the top and enjoy an overlooking view of Bozeman. There are some viewing benches 
+				at the top which are perfect for sunset watching, and this trail is frequented by bikers, hikers, and dogs. 
+				Head back down the loop towards Gallagator and head back towards Main for a bite at one of Bozeman's fine
+				restuarant's on Main. We recommend 14 North, Plonk, or The Garage Mesquite Grill.</h3> 
+            </div>
+            <Link to='./trailPage/mainToPeets'>
+						<button className="btn btn-default">More Info</button>
+					</Link>
+ 		
+
 
 
 				</div>
