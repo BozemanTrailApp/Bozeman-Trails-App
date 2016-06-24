@@ -1,7 +1,6 @@
 var LocalStrategy = require('passport-local').Strategy; //Call in passport-local using the Strategy method, which is where all of the reserved methods for local auth are held
-
 var User = require('./../models/userModel.js');//Set up user model
-
+var passport = require('passport');
 
 module.exports = function(passport) { //call in passport as a parameter
 
@@ -23,22 +22,25 @@ module.exports = function(passport) { //call in passport as a parameter
     function(req, userName, password, done) {
         process.nextTick(function() { //waits until all previous code has completed then runs callback function. This is a node function.
           User.findOne({'userName': userName}, function(err, user) { //find by email mongoose function
-              if (err) return done(err); //if there is an error return the error
-              if (user) { //if there is a valid user, verify password is correct
+              if (err) return done(err); 
+              if (user) { 
                 if (user.validPassword(password)) {
-                  console.log('worksgood');
+                  console.log('Lance is God!');
                     return done(null, user);
                 } else {
-                  console.log('Invalid email or password');
+                  console.log('Invalid userName or password');
                     return done(null, false);
                 }
               } else { //otherwise, make a new user
                   var newUser = new User(req.body);
                   newUser.userName = userName;
                   newUser.password = newUser.generateHash(password); //hash password
+                  newUser.username = req.body.username;
+                  newUser.role = 'guest';
+
                   newUser.save(function(err) { //save to mongo
                       if (err) throw err;
-                      return done(null, newUser);
+                      return done(null, newUser ,{ message: 'You successfully signed up.' });
                   });
               }
           });

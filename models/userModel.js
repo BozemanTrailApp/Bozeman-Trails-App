@@ -7,6 +7,7 @@ var bcrypt = require('bcrypt-nodejs'); //encrypts the password
 
 
 var UserSchema = new mongoose.Schema({
+
 	userName: {type: String, required: true, unique: true},
 	firstName: {type: String, required: true},
 	lastName: {type: String, required: true},
@@ -16,6 +17,7 @@ var UserSchema = new mongoose.Schema({
 	loggedin: {type: Boolean},
 	userProfile: profileSchema,
 	trailLog: [trailLogSchema]
+	
 }); 
 
 UserSchema.methods.generateHash = function(password) {

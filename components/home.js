@@ -1,7 +1,5 @@
 var React = require('react');
 var Link = require('react-router').Link;
-
-var LogInApp = require('./loginApp.js');
 var Trails = require('./trails.js');
 
 
@@ -15,7 +13,7 @@ var Home = React.createClass({
 				
 				
 				<div className ='nav nav-bar pull-left'>
-					<LogInApp />
+				
 				</div>
 				
 				<Link to='/trails'> 
