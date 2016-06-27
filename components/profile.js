@@ -1,5 +1,5 @@
 var React = require('react');
-var UserAuth = require('./userAuth.js');
+// var UserAuth = require('./userAuth.js');
 
 var Profile = React.createClass({
 	render: function(){
