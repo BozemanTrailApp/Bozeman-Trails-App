@@ -1,13 +1,21 @@
 var React = require('react');
-var UserAuth = require('./userAuth.js');
+var Link = require('react-router').Link;
+var UserLog = require('./userLog.js');
 
 var Profile = React.createClass({
 	render: function(){
 		return (
 			<div>
 			   	<div className = "profile">
-					<h1>This will be the user's profile</h1>
-					<UserAuth />
+					<h3>User Profile</h3>
+
+					<h3>User Name: { this.props.userName}</h3>
+
+
+					<Link to = './profile/userLog'>
+						<button className = 'btn btn-default btn-xs'>Log Your Miles</button>
+					</Link>
+				
 				</div>
 			</div>
 			)
