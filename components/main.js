@@ -8,15 +8,17 @@ var Main = React.createClass({
 				<div>
 					<h1 className="theTitle"> Bozeman.by.trail </h1>
 				</div>
+					<div className= "fixedbuttons">
 					<Link to = '/home'>
-						<button className = 'btn btn-default btn-xs'>Home</button>
+						<button className = 'homemain btn btn-success btn-md'>H O M E</button>
+
 
 					</Link>
 
 					<Link to = '/profile'>
-						<button className = 'btn btn-default btn-xs'>Profile</button>
+						<button className = 'profilemain btn btn-default btn-md'>P R O F I L E</button>
 					</Link>
-					
+					</div>
 					
 					{this.props.children}
 					

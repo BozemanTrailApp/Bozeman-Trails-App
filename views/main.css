@@ -10,7 +10,11 @@
 .theTitle {
     font-family: 'Damion', cursive;
     float: right;
+    font-size: 100px;
     margin-right: 80px;
+    margin-top: 30px;
+    color: #ffffff;
+    display: block;
     }
 
 /*@media only screen and (max-width: 300px)  { 
@@ -31,12 +35,23 @@
     }
 }*/
 
-.mainbuttonone {
-    font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+.mainbuttonhome {
+    font-family: 'Oswald', sans-serif;
     font-size: 30px;
-    text-align: center;
-    float: left;
+    margin-left: 575px;
     margin-bottom: 1%;
+    margin-top: 30px;
+    width: 650px;
+    display: inline-block;
+}
+
+.backtotrails { 
+    font-family: 'Oswald', sans-serif;
+     display: block;
+     font-size: 30px;
+     line-height: 30px;
+     margin-left: 1300px;
+
 }
 
 .mainbuttontwo {
@@ -48,24 +63,88 @@
 
 }
 
+h1 { 
+    font-family: 'Oswald', sans-serif;
+    font-size:50px;
+    margin-left: 175px;
+    margin-top: 40px;
+    color: #d9ebd6 ;
+ 
+ }
+
 .profile {
    font-family: 'Oswald', sans-serif;
    padding: 5%;
    margin: auto;
+   color: #ffffff;
+}
+
+.profilecontainer {
+    background-image: url("https://images.unsplash.com/reserve/jGzMpqqZQO6PN5Z0HiTe_YWCO-42.jpg?dpr=1&auto=format&crop=entropy&fit=crop&w=1440&h=960&q=80");
+    width: 100vw;
+    height: 100vh;
 }
 
 .trailsbody {
    font-family: 'Oswald', sans-serif;
    padding: 2%;
-   margin: auto;
+   margin-top:3%;
+}
 
+.alltrailsbody {
+    background-color: #407138;
+    height: 100%;
+    width: 100%;
 }
 #footer{
     font-family: 'Oswald', sans-serif;
+    font-size:2px;
     position:fixed;
     bottom:0;
     right: 30vw;
+    color: #ffffff;
 
 }
 
+ .backtotrails { 
+    display: inline-block; 
+    margin-top: 100px;
+}
 
+/*body {
+    background-image: url("https://images.unsplash.com/photo-1464565134312-083f9c103854?dpr=1&auto=format&crop=entropy&fit=crop&w=1440&h=810&q=80");
+}*/
+
+ .maindivhome {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://images.unsplash.com/photo-1464565134312-083f9c103854?dpr=1&auto=format&crop=entropy&fit=crop&w=1440&h=810&q=80");
+}
+
+.iframeMap { 
+    margin-bottom: 500px;
+    margin-right: 50px;
+
+ }
+
+ .fixedbuttons {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-family: 'Oswald', sans-serif;
+    size: 30px;
+    
+   }
+
+   .homemain, .profilemain {
+    margin-right: 5px;
+    font-size: 25px;
+    width: 10vw;
+   }
+
+   .trailtitle {
+    margin-top: 5%;
+    margin-bottom: -200px;
+
+   }
+   

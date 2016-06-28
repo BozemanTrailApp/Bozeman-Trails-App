@@ -6,6 +6,13 @@
                     from millions at <a href="http://www.mapmyhike.com">MapMyHike</a>
                 </div>
 
+//Sourdough
+
+<iframe id="mapmyfitness_route" src="//snippets.mapmycdn.com/routes/view/embedded/1126105552?width=600&height=400&elevation=true&line_color=E60f0bdb&rgbhex=DB0B0E&distance_markers=0&unit_type=imperial&map_mode=HYBRID&last_updated=2016-06-22T12:16:51-06:00" height="530px" width="600px" frameborder="0"></iframe><div style="text-align: right; padding-right: 20px;">
+                    <a target="_blank" href="http://www.mapmyhike.com/routes/create/">Create Routes</a>
+                    or <a href="http://www.mapmyhike.com/routes/">Search for a route</a>
+                    from millions at <a href="http://www.mapmyhike.com">MapMyHike</a>
+                </div>
 
 //Leverich Canyon Trail 
 
@@ -23,4 +30,28 @@
                     from millions at <a href="http://www.mapmyhike.com">MapMyHike</a>
                 </div>
 
-              
+//Gallagator Trail 
+
+<iframe id="mapmyfitness_route" src="//snippets.mapmycdn.com/routes/view/embedded/1136523637?width=600&height=400&elevation=true&line_color=E60f0bdb&rgbhex=DB0B0E&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2016-06-28T14:39:38-06:00" height="530px" width="600px" frameborder="0"></iframe><div style="text-align: right; padding-right: 20px;">
+                    <a target="_blank" href="http://www.mapmyhike.com/routes/create/">Create Routes</a>
+                    or <a href="http://www.mapmyhike.com/routes/">Search for a route</a>
+                    from millions at <a href="http://www.mapmyhike.com">MapMyHike</a>
+                </div>
+
+//Sypes and Bridger Foothills 
+
+<iframe id="mapmyfitness_route" src="//snippets.mapmycdn.com/routes/view/embedded/1136574364?width=600&height=400&elevation=true&line_color=E60f0bdb&rgbhex=DB0B0E&distance_markers=0&unit_type=imperial&map_mode=HYBRID&last_updated=2016-06-28T15:22:22-06:00" height="530px" width="600px" frameborder="0"></iframe><div style="text-align: right; padding-right: 20px;">
+                    <a target="_blank" href="http://www.mapmyhike.com/routes/create/">Create Routes</a>
+                    or <a href="http://www.mapmyhike.com/routes/">Search for a route</a>
+                    from millions at <a href="http://www.mapmyhike.com">MapMyHike</a>
+                </div>
+
+//The "M"
+
+<iframe id="mapmyfitness_route" src="//snippets.mapmycdn.com/routes/view/embedded/1136592019?width=600&height=400&elevation=true&line_color=E60f0bdb&rgbhex=DB0B0E&distance_markers=0&unit_type=imperial&map_mode=HYBRID&last_updated=2016-06-28T15:36:01-06:00" height="530px" width="600px" frameborder="0"></iframe><div style="text-align: right; padding-right: 20px;">
+                    <a target="_blank" href="http://www.mapmyhike.com/routes/create/">Create Routes</a>
+                    or <a href="http://www.mapmyhike.com/routes/">Search for a route</a>
+                    from millions at <a href="http://www.mapmyhike.com">MapMyHike</a>
+                </div>
+
+
