@@ -108,6 +108,7 @@ h1 {
 
  .backtotrails { 
     display: inline-block; 
+    margin-top: 100px;
 }
 
 /*body {
