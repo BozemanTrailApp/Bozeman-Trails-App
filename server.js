@@ -19,8 +19,6 @@ app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/views'));
 
 
-
-
 var trailsControl = require('./controllers/trailsControl.js');
 var userControl = require('./controllers/userControl.js');
 
@@ -30,12 +28,16 @@ app.put('/trails/:id', trailsControl.update);
 app.delete('/trails/:id',trailsControl.delete);
 app.get('/trails/:id', trailsControl.readById);
 
+
 app.post('/login', userControl.login);
 app.post('/signup', userControl.signup);
 app.get('/logout', userControl.logout);
-app.get('/user/:id', userControl.getUser);
 app.get('/users', userControl.getAllUsers);
 app.get('/user', userControl.getOneUser);
+
+
+app.put('/user/:id', userControl.update);
+app.delete('/user/:id', userControl.delete);
 
 
 

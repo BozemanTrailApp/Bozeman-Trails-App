@@ -10,11 +10,23 @@ var Main = React.createClass({
 				</div>
 					<Link to = '/home'>
 						<button className = 'btn btn-default btn-xs'>Home</button>
-					</Link>		
+
+					</Link>
+
+					<Link to = '/profile'>
+						<button className = 'btn btn-default btn-xs'>Profile</button>
+					</Link>
+					
+					
+					{this.props.children}
+					
+					
+						
 				<footer id = 'footer'>
 					<p>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
 				</footer>
-					  {this.props.children}
+				
+
 			</div>
 			)
 	}

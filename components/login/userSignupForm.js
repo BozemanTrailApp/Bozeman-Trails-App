@@ -4,8 +4,6 @@
 //	UserSignupData
 //		UserSignupForm
 
- 
-
 var React = require('react');
 
 var UserSignupForm = React.createClass({

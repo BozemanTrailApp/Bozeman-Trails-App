@@ -14,8 +14,9 @@ module.exports = {
 				return res.json({ message: 'You logged in like a champ!', user: user });
 			});	
 		})(req, res, next);
-	},
 
+	},
+	
 	signup: function(req, res, next){
 		passport.authenticate('local-signup', function(err, user, info){
 			console.log('You signed up.', info);
@@ -28,28 +29,39 @@ module.exports = {
 		})(req, res, next);
 	},
 
+	update: function(req, res, next){
+		UserModel.findByIdAndUpdate(req.params.id, req.body, function(err, result){
+			if(err){
+				res.send(err);
+			}else{
+				res.send(result);
+			}
+		});
+	},
+
 	logout: function(req, res, next){
 		// req.session.destroy();
 		req.logout();
 		// res.redirect('/');
 		res.json({message: 'You logged out like a champ!'});
+
 	},
 
-	getUser: function(req, res){
-			UserModel.findById(req.params.id, function(err, user){
-				if(err){
-					console.log(err);
-					res.send(err);
-				} else {
-					res.json(user);
-				}
-			})	
+	delete: function(req, res, next){
+	UserModel.findByIdAndRemove(req.params.id, req.body, function(err, result){
+			if(err){
+				res.send(err);
+			}else{
+				res.send(result);
+		}
+		});
 	},
+
 	getAllUsers: function(req, res){
 		UserModel.find().exec(function(err, result){
 			if(err){
 				res.send(err);
-			} else {
+			}else{
 				res.send(result);
 			}
 		})
@@ -72,6 +84,7 @@ module.exports = {
 				user:"anonymous"
 			})
 		}
+
 	}
 };
 

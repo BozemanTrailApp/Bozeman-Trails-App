@@ -5,8 +5,6 @@
 //		UserSignupForm
 
 
-
-
 var React = require('react');
 var UserSignupForm = require('./userSignupForm.js');
 
@@ -74,3 +72,4 @@ var UserSignupData = React.createClass({
 });
 
 module.exports = UserSignupData;
+

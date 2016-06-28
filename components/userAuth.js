@@ -13,12 +13,13 @@ var LogoutUser = require('./login/logoutUser.js');
 var AwareOfUser= require('./login/awareOfUser.js');
 // var ShowLogOnData = require ('./login/showLogOnData');
 
-var UserAuth = React.createClass({
+var UserAuth = React.createClass({ 
 	getInitialState: function(){
 		return {
 			user: null
 		}
 	},
+
 
 	loginUserFromServer: function(user){
 
@@ -55,7 +56,6 @@ var UserAuth = React.createClass({
 			}
 		})
 
-	},
 
 	logoutUser: function(user){
 		var self = this;
@@ -78,8 +78,6 @@ var UserAuth = React.createClass({
 				console.error('/logout', status, err.toString());
 			}
 		})
-		
-	},
 
 	getOneUserFromServer: function(){
 		var self = this;
@@ -112,7 +110,6 @@ var UserAuth = React.createClass({
 	});
 
 module.exports = UserAuth;
-
 
 
 
