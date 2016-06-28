@@ -23,6 +23,7 @@ var Gallagator = require('./../trailPage/gallagator');
 var Sypes = require('./../trailPage/sypes');
 var THEm = require('./../trailPage/theM');
 
+
 ReactDom.render(
 	(<Router history={hashHistory}>
 		<Route path='/' component = {Main}>

@@ -1,19 +1,18 @@
 var React = require('react');
 var Link = require('react-router').Link;
 
-
 var Main = React.createClass({
 	render: function(){
 		return (
 			<div>
-					
-
 				<div>
 					<h1 className="theTitle"> Bozeman.by.trail </h1>
 				</div>
 					<div className= "fixedbuttons">
 					<Link to = '/home'>
 						<button className = 'homemain btn btn-success btn-md'>H O M E</button>
+
+
 					</Link>
 
 					<Link to = '/profile'>
@@ -29,8 +28,7 @@ var Main = React.createClass({
 					<p>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
 				</footer>
 				
-					  
-					
+
 			</div>
 			)
 	}

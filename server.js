@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require('express')
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -6,17 +6,17 @@ var passport = require('passport');
 var session = require('express-session');
 
 var app = express();
-// var configSession = require('./passport/setsercets.js');
+var configSession = require('./passport/setsercets.js');
 
-// require('./passport/passport.js')(passport);//self invokes passport
+require('./passport/passport.js')(passport);//self invokes passport
 
+app.use(session(configSession));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/views'));
-// app.use(passport.initialize());
-// app.use(passport.session()); 
-// app.use(session(configSession));
 
 
 var trailsControl = require('./controllers/trailsControl.js');
@@ -28,17 +28,16 @@ app.put('/trails/:id', trailsControl.update);
 app.delete('/trails/:id',trailsControl.delete);
 app.get('/trails/:id', trailsControl.readById);
 
-// app.post('/login', userControl.login);
-// app.post('/signup', userControl.signup);
-// app.get('/logout', userControl.logout);
-// app.get('/user/:id', userControl.getUser);
-// app.get('/users', userControl.getAllUsers);
 
-app.post('/user', userControl.create);
-app.get('/user', userControl.read);
+app.post('/login', userControl.login);
+app.post('/signup', userControl.signup);
+app.get('/logout', userControl.logout);
+app.get('/users', userControl.getAllUsers);
+app.get('/user', userControl.getOneUser);
+
+
 app.put('/user/:id', userControl.update);
 app.delete('/user/:id', userControl.delete);
-app.get('/user/:id', userControl.readById);
 
 
 

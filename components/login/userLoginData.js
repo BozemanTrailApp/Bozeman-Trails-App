@@ -6,50 +6,51 @@
 //  UserLogout
 
 
-// var React = require('react');
-// var UserLoginForm = require('./userLoginForm.js');
+var React = require('react');
+var UserLoginForm = require('./userLoginForm.js');
 
-// var UserLoginData = React.createClass({
-//   getInitialState: function(){
-//     return {
-//       email: "",
-//       password: "" 
-//     }
-//   },
+var UserLoginData = React.createClass({
+  getInitialState: function(){
+    return {
+      userName: "",
+      password: "" 
+    }
+  },
 
-//   onEmailChange: function(event){
-//     this.setState({ email: event.target.value })
-//   },
+  onUserNameChange: function(event){
+    this.setState({ userName: event.target.value })
+  },
 
-//   onPasswordChange: function(event){
-//     this.setState({ password: event.target.value })
-//   },
-
-
-//   handleUserLoginSubmit: function(e){
-//     e.preventDefault();
-
-//     var user = {};
-//     user.email = this.state.email;
-//     user.password = this.state.password;
-
-//     this.props.loginUserFromServer(user);
-//     this.setState({ email: '', password: '' });
-//   },
+  onPasswordChange: function(event){
+    this.setState({ password: event.target.value })
+  },
 
 
-//   render: function(){
-//     return (
-//       <div>
-//         <UserLoginForm handleUserLoginSubmit={ this.handleUserLoginSubmit }
-//                  onPasswordChange={ this.onPasswordChange }
-//                  onEmailChange={ this.onEmailChange }
-//                  email={ this.state.email }
-//                  password={ this.state.password }
-//                  />
-//       </div>
-//       )
-//   }
-// });
+  handleUserLoginSubmit: function(e){
+    e.preventDefault();
 
-// module.exports = UserLoginData;
+    var user = {};
+    user.userName = this.state.userName;
+    user.password = this.state.password;
+
+    this.props.loginUserFromServer(user);
+    this.setState({ userName: '', password: '' });
+  },
+
+
+  render: function(){
+    return (
+      <div>
+        <UserLoginForm handleUserLoginSubmit={ this.handleUserLoginSubmit }
+                 onPasswordChange={ this.onPasswordChange }
+                 onUserNameChange={ this.onUserNameChange }
+                 userName={ this.state.userName }
+                 password={ this.state.password }
+                 />
+      </div>
+      )
+  }
+});
+
+module.exports = UserLoginData;
+
