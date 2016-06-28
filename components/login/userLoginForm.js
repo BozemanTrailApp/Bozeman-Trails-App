@@ -14,17 +14,18 @@ var UserLoginForm = React.createClass({
 		return (
 			<div>
 			<h2> Log in </h2>	
-				<form class="form-horizontal" onSubmit={ this.props.handleUserLoginSubmit }>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Email</label>
-						<div class="col-sm-10">
-							<input type="email" onChange={ this.props.onEmailChange } value={ this.props.email } class="form-control" placeholder="Email"/>
+				<form className="form-horizontal" onSubmit={ this.props.handleUserLoginSubmit }>
+					<div className="form-group">
+						<label className="col-sm-2 control-label">User Name</label>
+						<div className="col-sm-10">
+							<input type="User Name" onChange={ this.props.onUserNameChange } 
+							value={ this.props.userName} className="form-control" placeholder="User Name"/>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="inputPassword" class="col-sm-2 control-label">Password</label>
-						<div class="col-sm-10">
-							<input type="password" class="form-control" placeholder="Password" onChange={ this.props.onPasswordChange } value={ this.props.password }/>
+					<div className="form-group">
+						<label htmlFor="inputPassword" className="col-sm-2 control-label">Password</label>
+						<div className="col-sm-10">
+							<input type="password" className="form-control" placeholder="Password" onChange={ this.props.onPasswordChange } value={ this.props.password }/>
 						</div>
 					</div>
 					<button className="btn btn-primary">Log in</button>

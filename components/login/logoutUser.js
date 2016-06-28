@@ -5,7 +5,6 @@
 //    UserSignupForm
 //  UserLogout
 
-
 var React = require('react');
 
 var LogoutUser = React.createClass({

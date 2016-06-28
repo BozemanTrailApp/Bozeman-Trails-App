@@ -1,11 +1,12 @@
 var UserModel = require('./../models/userModel');
 var passport = require('passport');
+var mongoose = require('mongoose');
 
 module.exports = {
+	
 	login: function(req, res, next){
-			//console.log(req.body);
 		passport.authenticate('local-login', function(err, user, info){
-			//console.log('You logged in.', info);
+			// console.log(this);
 			if(err) { return next(err); }
 			if(!user) { return res.status(404).json(info.message) }
 			req.login(user, function(err){
@@ -27,9 +28,11 @@ module.exports = {
 		})(req, res, next);
 	},
 
-	logout: function(req, res){
+	logout: function(req, res, next){
+		// req.session.destroy();
 		req.logout();
-		res.json({ message: 'You logged out like a champ!' });
+		// res.redirect('/');
+		res.json({message: 'You logged out like a champ!'});
 	},
 
 	getUser: function(req, res){
@@ -42,7 +45,6 @@ module.exports = {
 				}
 			})	
 	},
-
 	getAllUsers: function(req, res){
 		UserModel.find().exec(function(err, result){
 			if(err){
@@ -51,6 +53,25 @@ module.exports = {
 				res.send(result);
 			}
 		})
+	},
+	getOneUser: function(req, res){
+		if(req.user) {
+			console.log(req.user)
+			mongoose.model('UserModel').findById({
+				_id: req.user._id
+			},
+			function (err, user ){
+				if(err){
+					return console.log(err);
+				} else {
+					res.json(user)
+				}
+		});
+			}else {
+			res.json({
+				user:"anonymous"
+			})
+		}
 	}
 };
 

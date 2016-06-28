@@ -6,19 +6,20 @@
 //  UserLogout
 
 
+
 var React = require('react');
 var UserLoginForm = require('./userLoginForm.js');
 
 var UserLoginData = React.createClass({
   getInitialState: function(){
     return {
-      email: "",
+      userName: "",
       password: "" 
     }
   },
 
-  onEmailChange: function(event){
-    this.setState({ email: event.target.value })
+  onUserNameChange: function(event){
+    this.setState({ userName: event.target.value })
   },
 
   onPasswordChange: function(event){
@@ -30,11 +31,11 @@ var UserLoginData = React.createClass({
     e.preventDefault();
 
     var user = {};
-    user.email = this.state.email;
+    user.userName = this.state.userName;
     user.password = this.state.password;
 
     this.props.loginUserFromServer(user);
-    this.setState({ email: '', password: '' });
+    this.setState({ userName: '', password: '' });
   },
 
 
@@ -43,8 +44,8 @@ var UserLoginData = React.createClass({
       <div>
         <UserLoginForm handleUserLoginSubmit={ this.handleUserLoginSubmit }
                  onPasswordChange={ this.onPasswordChange }
-                 onEmailChange={ this.onEmailChange }
-                 email={ this.state.email }
+                 onUserNameChange={ this.onUserNameChange }
+                 userName={ this.state.userName }
                  password={ this.state.password }
                  />
       </div>
