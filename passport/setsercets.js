@@ -1,3 +1,5 @@
 module.exports = {
-	secret: "banana"
+	secret: "banana",
+	saveUninitialized: false,
+	resave: false
 };

@@ -7,6 +7,7 @@ var Profile = React.createClass({
 		return (
 			<div>
 			   	<div className = "profile">
+
 					<h3>User Profile</h3>
 
 					<h3>User Name: { this.props.userName}</h3>
@@ -23,3 +24,4 @@ var Profile = React.createClass({
 });
 
 module.exports = Profile;
+

@@ -1,6 +1,6 @@
-var LocalStrategy = require('passport-local').Strategy; //Call in passport-local using the Strategy method, which is where all of the reserved methods for local auth are held
-var User = require('./../models/userModel.js');//Set up user model
-var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var User = require('../models/userModel.js');
+// var passport = require('passport');
 
 module.exports = function(passport) { //call in passport as a parameter
 
@@ -14,6 +14,24 @@ module.exports = function(passport) { //call in passport as a parameter
             done(err, user);
         });
     });
+
+    passport.use('local-login', new LocalStrategy({
+    usernameField: 'userName',
+    passwordField: 'password',
+    passReqToCallback: true
+    },
+    function(req, userName, password, done){
+      User.findOne({ userName: userName }, function(err, user){
+        if(err)
+          return done(err);
+        if(!user)
+          return done(null, false, { message: 'We could not find your User ID' });
+        if(!user.validPassword(password))
+          return done(null, false, { message: 'Wrong password. Try again.'});
+        return done(null, user, { message: 'You logged in successfully' });
+      });
+    }));  
+
     passport.use('local-signup', new LocalStrategy({//use local-signup
         usernameField : 'userName',//this can be username, email, anything as long as you update all other instances of email on this file.
         passwordField : 'password',
@@ -25,7 +43,7 @@ module.exports = function(passport) { //call in passport as a parameter
               if (err) return done(err); 
               if (user) { 
                 if (user.validPassword(password)) {
-                  console.log('Lance is God!');
+                  console.log('Login Success!');
                     return done(null, user);
                 } else {
                   console.log('Invalid userName or password');
@@ -35,8 +53,8 @@ module.exports = function(passport) { //call in passport as a parameter
                   var newUser = new User(req.body);
                   newUser.userName = userName;
                   newUser.password = newUser.generateHash(password); //hash password
-                  newUser.username = req.body.username;
-                  newUser.role = 'guest';
+                  // newUser.username = req.body.username;
+                  // newUser.role = 'guest';
 
                   newUser.save(function(err) { //save to mongo
                       if (err) throw err;
