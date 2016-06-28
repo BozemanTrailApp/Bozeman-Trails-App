@@ -38,7 +38,6 @@ var UserAuth = React.createClass({
 			}
 		})
 	},
-
 	signupUserFromServer: function(user){
 
 		var self = this;
@@ -55,8 +54,7 @@ var UserAuth = React.createClass({
 				console.error('/signup', status, err.toString())
 			}
 		})
-
-
+	},
 	logoutUser: function(user){
 		var self = this;
 		//var user = self.state.user;
@@ -78,7 +76,7 @@ var UserAuth = React.createClass({
 				console.error('/logout', status, err.toString());
 			}
 		})
-
+	},
 	getOneUserFromServer: function(){
 		var self = this;
 			$.ajax({

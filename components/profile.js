@@ -1,6 +1,7 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var UserLog = require('./userLog.js');
+var UserAuth = require('./userAuth.js');
 
 var Profile = React.createClass({
 	render: function(){
@@ -12,11 +13,11 @@ var Profile = React.createClass({
 
 					<h3>User Name: { this.props.userName}</h3>
 
-
 					<Link to = './profile/userLog'>
 						<button className = 'btn btn-default btn-xs'>Log Your Miles</button>
 					</Link>
-				
+					<UserAuth />
+
 				</div>
 			</div>
 			)
