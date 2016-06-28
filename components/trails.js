@@ -5,6 +5,7 @@ var Trails = React.createClass({
 	render: function(){
 		return (
 			<div>
+				<div className = "alltrailsbody">
 			    <div className = "trailsbody">
 
 			<div>
@@ -39,11 +40,42 @@ var Trails = React.createClass({
 						<button className="btn btn-default">More Info</button>
 					</Link>
  		
+			<div>
+            	<h2>Gallagator Linear Trail</h2>
+            	<h3>A leveled trail that crosses road occasionally-- suitable for walkers, hikers, runners, bikes, dogs, and families. 
+            	Plenty of entry and exit points throughout town. A nice trail to get you from point A to point B within
+            	Bozeman while enjoying some water features, nature scenery and dirt tread rather than journey on a typical pavement or 
+            	road route.</h3> 
+            </div>
+            <Link to='./trailPage/gallagator'>
+						<button className="btn btn-default">More Info</button>
+					</Link>
+
+			<div>
+            	<h2>Sypes Canyon // Bridger Foothills Trail</h2>
+            	<h3>Some elevation gain but great for runners as well as hikers. Starting from the trailhead at Sypes Canyon Rd., 2 miles out is a nice viewpoint. 
+            	You can loop around or opt to keep going when the trail turns into the Bridger Footshills trail at approx 3.11 miles out. Continuing further, you will
+            	reah the trailhead for the "M" at about 5.77 and can continue or loop around back to the Sypes trailhead for a loop total of 11.5 miles</h3> 
+            </div>
+            <Link to='./trailPage/sypes'>
+						<button className="btn btn-default">More Info</button>
+					</Link>
+
+			<div>
+            	<h2>The "M"</h2>
+            	<h3>There is an "easy" and "difficult" route to take to get the infamous "M". An easier
+            	1 1/2 mile winding path up, or a steeper 3/4 of a mile route will both get you to the top. An iconic hike
+            	for any visitors or those new town. </h3> 
+            </div>
+            <Link to='./trailPage/theM'>
+						<button className="btn btn-default">More Info</button>
+					</Link>
 
 
 
 				</div>
 			</div>
+		</div>
 			)
 	}
 });

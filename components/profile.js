@@ -6,6 +6,7 @@ var Profile = React.createClass({
 	render: function(){
 		return (
 			<div>
+			<div className = "profilecontainer">
 			   	<div className = "profile">
 					<h3>User Profile</h3>
 
@@ -16,6 +17,7 @@ var Profile = React.createClass({
 						<button className = 'btn btn-default btn-xs'>Log Your Miles</button>
 					</Link>
 				
+					</div>
 				</div>
 			</div>
 			)

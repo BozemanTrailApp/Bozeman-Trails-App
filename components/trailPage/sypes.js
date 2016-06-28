@@ -2,16 +2,16 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Link = require('react-router').Link;
 
-var Sourdough = React.createClass({
+var Sypes = React.createClass({
 
-	url: "http://snippets.mapmycdn.com/routes/view/embedded/1126105552?width=600&height=400&elevation=true&line_color=E60f0bdb&rgbhex=DB0B0E&distance_markers=0&unit_type=imperial&map_mode=HYBRID&last_updated=2016-06-22T12:16:51-06:00",
+	url: "http://snippets.mapmycdn.com/routes/view/embedded/1136574364?width=600&height=400&elevation=true&line_color=E60f0bdb&rgbhex=DB0B0E&distance_markers=0&unit_type=imperial&map_mode=HYBRID&last_updated=2016-06-28T15:22:22-06:00",
 
 	render: function(){
 		return (
 
 				<div>
 
-				<h1 className = "trailtitle">Sourdough Trail</h1>
+				<h1 className = "trailtitle">Sypes Canyon and Bridger Foothills</h1>
 
 				<div className = "backtotrails">
 						<Link to='/trails'> 
@@ -30,4 +30,4 @@ var Sourdough = React.createClass({
 });
 
 
-module.exports = Sourdough;
+module.exports = Sypes;

@@ -7,14 +7,20 @@ var Profile = require('./profile.js');
 var Home = React.createClass({
 	render: function(){
 		return(
-			<div>
+
+			<div className = "maindivhome">
+			<div className = "container homepage">
+				
 				
 
+				<div className>
 				<Link to='/trails'> 
-						<button className="btn btn-info btn-lg btn-block mainbuttonone">T R A I L S</button>
+						<button className="trailsbuttonmain btn btn-success btn-sm mainbuttonhome">T R A I L S</button>
 				</Link>
+				</div>
+				
 
-
+			</div>
 			</div>
 			)
 	}

@@ -1,4 +1,5 @@
 var React = require('react');
+var Link = require('react-router').Link;
 
 var Leverich = React.createClass({
 
@@ -7,10 +8,21 @@ var Leverich = React.createClass({
 
 	render: function(){
 		return (
-			<div>
-				<h1>Leverich Canyon Mountain Trail</h1>
 
-				<iframe height="600px" width="600px" src = {this.url}/>
+			<div>
+				<h1 className = "trailtitle">Leverich Canyon Mountain Trail</h1>
+
+				<div className = "backtotrails">
+					<Link to='/trails'> 
+							<button className="btn btn-info btn-sm btn-block mainbuttonone">Back to Trails</button>
+					</Link>
+				</div>
+
+				<div className ="iframeMap">
+					<iframe height="600px" width="600px" src = {this.url}/>
+				</div>
+
+				
 
 			</div>
 			)
