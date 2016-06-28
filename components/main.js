@@ -15,9 +15,12 @@ var Main = React.createClass({
 						<button className = 'btn btn-default btn-xs'>Home</button>
 					</Link>
 
+					<Link to = '/profile'>
+						<button className = 'btn btn-default btn-xs'>Profile</button>
+					</Link>
 					
 					
-
+					{this.props.children}
 					
 					
 						
@@ -25,7 +28,7 @@ var Main = React.createClass({
 					<p>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
 				</footer>
 				
-					  {this.props.children}
+					  
 					
 			</div>
 			)

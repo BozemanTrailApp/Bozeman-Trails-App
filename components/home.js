@@ -1,7 +1,7 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var Trails = require('./trails.js');
-
+var Profile = require('./profile.js');
 
 
 var Home = React.createClass({
