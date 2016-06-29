@@ -5,7 +5,9 @@
 		<!-- <meta charset="utf-8">
    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
    		<meta name="viewport" content="width=device-width, initial-scale=1"> -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
 		<link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
 		<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="main.css">
@@ -17,13 +19,27 @@
 	
 	<div id="app"></div>
 
-	 	<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+	 
 
-	 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+ 		<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.2.0/js/md5.js"></script> -->
+	 	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.2.0/js/md5.js"></script> -->
 	 	<script src="https://fb.me/react-0.13.3.js"></script>
   	 	<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
 	 	<script type="text/javascript" src="../static/bundle.js"></script>
+	 	<script>
+	 		$('.modal-trigger').leanModal({
+			      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+			      opacity: .5, // Opacity of modal background
+			      in_duration: 300, // Transition in duration
+			      out_duration: 200, // Transition out duration
+			      // ready: function() { alert('Ready'); }, // Callback for Modal open
+			      // complete: function() { alert('Closed'); } // Callback for Modal close
+			    }
+			  );
+	 	</script>
 	</body>
 </html>

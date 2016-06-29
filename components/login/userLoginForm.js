@@ -6,6 +6,8 @@
 
 var React = require('react');
 
+
+
 var UserLoginForm = React.createClass({
 
 	render: function(){
@@ -13,8 +15,8 @@ var UserLoginForm = React.createClass({
 
 		return (
 			<div>
-			<h2> Log in </h2>	
-				<form className="form-horizontal" onSubmit={ this.props.handleUserLoginSubmit }>
+				<div className="card small">
+			      	<form className="form-horizontal" onSubmit={ this.props.handleUserLoginSubmit }>
 					<div className="form-group">
 						<label className="col-sm-2 control-label">User Name</label>
 						<div className="col-sm-10">
@@ -23,13 +25,14 @@ var UserLoginForm = React.createClass({
 						</div>
 					</div>
 					<div className="form-group">
-						<label htmlFor="inputPassword" className="col-sm-2 control-label">Password</label>
+							<label className="col-sm-2 control-label">Password</label>
 						<div className="col-sm-10">
 							<input type="password" className="form-control" placeholder="Password" onChange={ this.props.onPasswordChange } value={ this.props.password }/>
 						</div>
 					</div>
-					<button className="btn btn-primary">Log in</button>
-				</form>
+						<button className="btn btn-primary">Login</button>
+					</form>
+				</div>
 			</div>
 			)
 	}

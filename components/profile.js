@@ -17,7 +17,7 @@ var Profile = React.createClass({
 					<Link to = './profile/userLog'>
 						<button className = 'btn btn-default btn-xs'>Log Your Miles</button>
 					</Link>
-
+						
 				     </div>
 				</div>
 			</div>
