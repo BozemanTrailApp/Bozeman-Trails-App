@@ -17,7 +17,7 @@ var Main = React.createClass({
 						<button className = 'profilemain btn btn-default btn-md'>P R O F I L E</button>
 					</Link>
 					<Link to ='/login'>
-						<button className = 'loginmain btn btn-default btn-md'> login </button>'
+						<button className = 'loginmain btn btn-default btn-md'> login </button>
 						</Link>
 					</div>
 
