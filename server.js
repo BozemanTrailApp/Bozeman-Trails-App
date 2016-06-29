@@ -32,10 +32,10 @@ app.get('/trails/:id', trailsControl.readById);
 app.post('/login', userControl.login);
 app.post('/signup', userControl.signup);
 app.get('/logout', userControl.logout);
+
+
 app.get('/users', userControl.getAllUsers);
 app.get('/user', userControl.getOneUser);
-
-
 app.put('/user/:id', userControl.update);
 app.delete('/user/:id', userControl.delete);
 
