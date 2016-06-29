@@ -136,7 +136,7 @@ h1 {
     
    }
 
-   .homemain, .profilemain {
+   .homemain, .profilemain .loginmain{
     margin-right: 5px;
     font-size: 25px;
     width: 10vw;

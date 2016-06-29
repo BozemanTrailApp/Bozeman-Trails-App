@@ -6,8 +6,6 @@
 //		CreateAccountData
 //			CreateAccountForm
 
-
-
 var LoginAccount = require('./login/loginAccountForm');
 var CreateAccount = require('./login/createAccount');
 
@@ -44,15 +42,7 @@ var LoginApp =  React.createClass({
 						<input type="submit" value="Reset" onClick = {this.hideLoginAccount} />
 						
 						{this.state.showResults ? <LoginAccount/> : null }
-				
-
-					
-						
-					
-
-					
-							
-					
+								
 
 				</div>
 			</div>
