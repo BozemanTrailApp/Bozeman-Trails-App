@@ -1,45 +1,39 @@
 //TrailsApp
 	//AllTrailsData
-		//AllTrails
-			//TrailCard
+		//AllTrails 
+			//TrailsList
+	//ViewTrailData
+		//TrailCard
 
-
+ 
 var React = require('react');
 var Link = require('react-router').Link; 
-var url;
-var TrailCard = React.createClass({
-	
-	 //url: this.props.mapUrl,
 
-		render: function(){
-			
-			
+var TrailCard = React.createClass({
+	render: function(){
 			return(
-			<div>
-			<div className = 'backtotrails'>
-				<Link to='/trails'> 
-							<button className="btn btn-info btn-sm btn-block mainbuttonone">Back to Trails</button>
-				</Link>
-			</div>		
+				<div>
+					
 				<div className="trailCard">
-					 <h3>{this.props.trailName}</h3>
-					<h3>Difficulty: {this.props.difficulty} </h3>
-					<h3>Length: {this.props.length} </h3>
-					<h3>Location: {this.props.location} </h3>
-					<h3> {this.props.description} </h3>
-					<h3> {this.props.directions}</h3>
-					<h3> {this.props.trailHeadUrl} </h3>
-					<h3> {this.props.comments} </h3>
-					<h3> {this.props.userImage}</h3>
+					<h3>{this.props.oneTrail.trailName}</h3>
+					<h3>Difficulty: {this.props.oneTrail.difficulty} </h3>
+					<h3>Length: {this.props.oneTrail.length} </h3>
+					<h3>Location: {this.props.oneTrail.location} </h3>
+					<h3> {this.props.oneTrail.description} </h3>
+					<h3> {this.props.oneTrail.directions}</h3>
+					<h3> {this.props.oneTrail.trailHeadUrl} </h3>
+					<h3> {this.props.oneTrail.comments} </h3>
+					<h3> {this.props.oneTrail.userImage}</h3>
 				</div>
 				<div>
-					<iframe height = '600px' width ='600px' src = {this.props.mapUrl}/>
+					<iframe height = '600px' width ='600px' src = {this.props.oneTrail.mapUrl}/>
 				</div>
 				<div className = 'backtotrails'>
-				<Link to='/trails'> 
-							<button className="btn btn-info btn-sm ">Back to Trails</button>
-				</Link>
-			</div>		
+					 
+							<a onClick = {this.props.toggleActiveComp.bind(null, 'allTrails')}>Back to Trails</a>
+					
+				</div>
+				{this.props.children}		
 			</div>
 				)
 

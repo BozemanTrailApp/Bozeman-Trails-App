@@ -1,26 +1,21 @@
 //TrailsApp
 	//AllTrailsData
-		//AllTrails
-			//TrailCard
-
+		//AllTrails 
+			//TrailsList
+	//ViewTrailData
+		//TrailCard
 var React = require('react');
 var TrailCard = require('./trailCard.js');
+var TrailsList = require('./trailsList.js');
 
 function AllTrails(props){
 	var trails = props.trails.map(function(item){
-		return <TrailCard trailName = {item.trailName}
-							difficulty = {item.difficulty}
-							length = {item.length}
-							location = {item.location}
+		return <TrailsList trailName = {item.trailName}
 							description = {item.description}
-							comments = {item.comments}
-							mapUrl = {item.mapUrl}
-							trailHeadUrl = {item.trailHeadUrl}
-							userImage = {item.userImage.imageUrl}
-							directions = {item.directions}
-							getId = {props.getId}
 							key = {item._id}
-							id = {item._id}/>
+							id = {item._id}
+							getId = {props.getId}/>
+
 	});
 	return(
 		<div>
@@ -28,4 +23,4 @@ function AllTrails(props){
 		</div>
 		)
 };
-module.exports = AllTrails;
+module.exports = AllTrails; 

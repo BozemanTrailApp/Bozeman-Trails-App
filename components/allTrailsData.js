@@ -1,8 +1,9 @@
 //TrailsApp
 	//AllTrailsData
-		//AllTrails
-			//TrailCard
-
+		//AllTrails 
+			//TrailsList
+	//ViewTrailData
+		//TrailCard
 var React = require('react');
 var AllTrails = require('./allTrails.js');	
 
@@ -30,4 +31,4 @@ var AllTrailsData = React.createClass({
 		return this.state.trails ? <AllTrails getId = {this.props.getId} trails = {this.state.trails}/> : null;
 	}
 });
-module.exports = AllTrailsData;
+module.exports = AllTrailsData; 
