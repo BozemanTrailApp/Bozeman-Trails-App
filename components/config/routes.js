@@ -13,7 +13,7 @@ var hashHistory = ReactRouter.hashHistory;
 
 var Main = require('./../main');
 var Profile = require('./../profile');
-var Trails = require('./../trails');
+var TrailsApp = require('./../trailsApp');
 var Home = require('./../home');
 var UserLog = require('./../userLog');
 var Sourdough = require('./../trailPage/sourdough');
@@ -30,7 +30,7 @@ ReactDom.render(
 			<IndexRoute component = {Home}/>
 			<Route path ='/profile' component = {Profile}/>
 			<Route path = '/home' component = {Home}/>
-			<Route path = '/trails' component = {Trails}/>
+			<Route path = '/trails' component = {TrailsApp}/>
 			<Route path = './trailPage/sourdough' component = {Sourdough}/>
 			<Route path = './trailPage/leverich' component = {Leverich}/>
 			<Route path = './trailPage/mainToPeets' component = {MainToPeets}/>
