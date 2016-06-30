@@ -63,14 +63,14 @@
 
 }
 
-h1 { 
+/*h1 { 
     font-family: 'Oswald', sans-serif;
     font-size:50px;
     margin-left: 175px;
     margin-top: 40px;
     color: #d9ebd6 ;
  
- }
+ }*/
 
 .profile {
    font-family: 'Oswald', sans-serif;
@@ -151,4 +151,9 @@ h1 {
    iframe {
     margin-top: -75px;
    }
+
+ .profilewords {
+    text-align: center;
+    margin-top: 8%;
+ }
    

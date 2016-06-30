@@ -8,7 +8,7 @@ var AwareofUser = require('./login/awareOfUser');
 var Profile = React.createClass({
 	getInitialState: function(){
 		return {
-			user: null
+			user: ""
 		}
 	},
 
@@ -33,9 +33,16 @@ var Profile = React.createClass({
 				<div>
 			<div className = "profilecontainer">
 			   	<div className = "profile">
-			   		 <h1>user's prof</h1>
+
+
+			   		<div className = "profilewords">
+			   		<h3><u>My Profile</u></h3>
 					
-					<h2> Hello {this.state.user.userName} </h2>
+						
+					<h2> Welcome, {this.state.user.userName}!</h2>
+
+					<h3> Name: {this.state.user.firstName} {this.state.user.lastName} </h3>
+						</div>
 
 				     </div>
 				</div>
