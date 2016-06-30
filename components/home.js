@@ -21,7 +21,7 @@ var Home = React.createClass({
 				</Link>
 
 				</div>
-				
+				{this.props.children}
 
 			</div>
 			</div>
