@@ -13,9 +13,9 @@ var LogoutUser = React.createClass({
 	render: function(){
 		return (
 			<div>
-				<div className="card small"> 
-					<button className="btn btn-primary" onClick={ this.props.logoutUser }>Log out</button>
-				</div>
+				<button className="btn waves-effect waves-light" onClick={ this.props.logoutUser } 
+				type="submit" name="action"> Sign-Out
+  				</button>
 			</div>
 			)
 	}
