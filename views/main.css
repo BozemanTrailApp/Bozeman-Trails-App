@@ -136,7 +136,7 @@ h1 {
     
    }
 
-   .homemain, .profilemain {
+   .homemain, .profilemain .loginmain{
     margin-right: 5px;
     font-size: 25px;
     width: 10vw;
@@ -146,5 +146,9 @@ h1 {
     margin-top: 5%;
     margin-bottom: -200px;
 
+   }
+
+   iframe {
+    margin-top: -75px;
    }
    

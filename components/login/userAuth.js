@@ -9,13 +9,15 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 const Link = require('react-router').Link;
 
-var UserLoginData = require('./login/userLoginData.js');
-var UserSignupData = require('./login/userSignupData.js');
-var LogoutUser = require('./login/logoutUser.js');
-var AwareOfUser= require('./login/awareOfUser.js');
-// var ShowLogOnData = require ('./login/showLogOnData');
+
+var UserLoginData = require('./userLoginData.js');
+var UserSignupData = require('./userSignupData.js');
+var LogoutUser = require('./logoutUser.js');
+var AwareOfUser= require('./awareOfUser.js');
+
 
 var UserAuth = React.createClass({ 
+
 	getInitialState: function(){
 		return {
 			user: null
@@ -34,9 +36,12 @@ var UserAuth = React.createClass({
 			success: function(data){
 				console.log("Login successful.", data);
 				self.setState({ user : data });
+				window.location = "http://localhost:8000/#/profile";
+
 			},
 			error: function(xhr, status, err){
 				console.error('/login', status, err.toString())
+				alert('No Such Email or Incorrect Password')
 			}
 		})
 	},
@@ -51,8 +56,10 @@ var UserAuth = React.createClass({
 			success: function(data){
 				console.log("Signup successful.", data);
 				self.setState({ user : data });
+				window.location = "http://localhost:8000/#/profile";
 			},
 			error: function(xhr, status, err){
+				alert('No Such Email or Incorrect Password')
 				console.error('/signup', status, err.toString())
 			}
 		})
@@ -70,6 +77,7 @@ var UserAuth = React.createClass({
 			}).done(function(data){
 				console.log(data);
 				self.setState({ user: data });
+				window.location = "http://localhost:8000"
 				})
 				//self.setState( data );
 				//console.log("Logout successful.", data);
