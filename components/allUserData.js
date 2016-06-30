@@ -3,7 +3,7 @@
 		//userCard 
 
 var React = require('react'); 
-var UserPage = require('./userPage');
+var UserCard = require('./userCard');
 
 var AllUserData = React.createClass({
 	getInitialState: function() {
@@ -29,7 +29,13 @@ var AllUserData = React.createClass({
 	},
 
 	render : function() {
-		return this.state.user ? <UserPage getId = {this.props.getId} user = {this.state.user} /> : null; 
+		var user = this.state.user ? <UserCard getId = {this.props.getId} user = {this.state.user} /> : null;
+
+		return (
+				<div>
+				{user}
+				</div>
+			) 
 	}
 }); 
 

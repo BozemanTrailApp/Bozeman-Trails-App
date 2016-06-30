@@ -1,8 +1,8 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var UserLog = require('./userLog.js');
-var UserAuth = require('./userAuth.js');
-var UserCard = require('./userCard.js');
+var UserAuth = require('./login/userAuth.js');
+
 
 var Profile = React.createClass({
 	render: function(){
@@ -11,7 +11,7 @@ var Profile = React.createClass({
 			<div className = "profilecontainer">
 			   	<div className = "profile">
 
-				<UserCard />
+				
 
 				     </div>
 				</div>

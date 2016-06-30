@@ -69,7 +69,7 @@ module.exports = {
 	getOneUser: function(req, res){
 		if(req.user) {
 			console.log(req.user)
-			mongoose.model('UserModel').findById({
+			UserModel.findById({
 				_id: req.user._id
 			},
 			function (err, user ){
