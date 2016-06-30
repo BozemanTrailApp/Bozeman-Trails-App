@@ -16,6 +16,7 @@ var LogoutUser = require('./logoutUser.js');
 var AwareOfUser= require('./awareOfUser.js');
 
 
+
 var UserAuth = React.createClass({ 
 
 	getInitialState: function(){
@@ -87,6 +88,7 @@ var UserAuth = React.createClass({
 			}
 		})
 	},
+
 	getOneUserFromServer: function(){
 		var self = this;
 			$.ajax({
@@ -97,12 +99,14 @@ var UserAuth = React.createClass({
 				self.setState({ user: data });
 			})
 	},
+
 	componentDidMount: function(){
 		this.getOneUserFromServer();
 	},
 
 	render: function(){
-			var user = this.state.user ? <AwareOfUser user={this.state.user} /> : null;
+			var user = this.state.user ? <AwareOfUser user={this.state.user} /> : this.state.user;
+			
 		return (
 			<div>
 				<div className="container">

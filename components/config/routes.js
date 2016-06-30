@@ -27,6 +27,7 @@ var THEm = require('./../trailPage/theM');
 
 ReactDom.render(
 	(<Router history={hashHistory}>
+		
 		<Route path='/' component = {Main}>
 			<IndexRoute component = {Home}/>
 			<Route path ='/profile' component = {Profile}/>

@@ -7,7 +7,7 @@ var AwareOfUser = React.createClass({
 		if(this.props.user.user !== "anonymous"){
 			return(
 				<div >
-					<h2> Hello {this.props.user.user.userName} </h2>
+					<h2> Hello {this.props.user.userName} </h2>
 				</div>
 			
 			)
