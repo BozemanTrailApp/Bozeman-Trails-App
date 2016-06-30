@@ -12,7 +12,7 @@ var UserSchema = new mongoose.Schema({
 	firstName: {type: String, required: false},
 	lastName: {type: String, required: false},
 	email: {type: String, required: false, unique: true},
-	passWord: {type: String, required: true},
+	password: {type: String, required: true},
 	role: {type: String, required: false, default: 'User'},
 	loggedin: {type: Boolean},
 	userProfile: profileSchema,

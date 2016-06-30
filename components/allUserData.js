@@ -5,7 +5,7 @@
 var React = require('react'); 
 var UserPage = require('./userPage');
 
-var allUserData = React.createClass({
+var AllUserData = React.createClass({
 	getInitialState: function() {
 		return {
 			user: []
@@ -29,8 +29,8 @@ var allUserData = React.createClass({
 	},
 
 	render : function() {
-		return this.state.user ? <userPage getId = {this.props.getId} user = {this.state.userPage} /> : null; 
+		return this.state.user ? <UserPage getId = {this.props.getId} user = {this.state.user} /> : null; 
 	}
 }); 
 
-module.exports = allUserData; 
+module.exports = AllUserData; 
