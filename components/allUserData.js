@@ -16,7 +16,7 @@ var allUserData = React.createClass({
 		var self = this;
 
 		$.ajax({
-			method: 'GET'
+			method: 'GET',
 			url: '/user'
 		}).done(function(data){
 			console.log(data);
@@ -25,8 +25,11 @@ var allUserData = React.createClass({
 	}, 
 
 	componentDidMount: function() {
+		this.getUserFromServer();
+	},
 
-		return.this.state.user ? <userPage getId = {this.props.getId} user = {this.state.userPage} />
+	render : function() {
+		return this.state.user ? <userPage getId = {this.props.getId} user = {this.state.userPage} /> : null; 
 	}
 }); 
 
