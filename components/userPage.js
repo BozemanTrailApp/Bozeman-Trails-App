@@ -3,7 +3,7 @@
 		//userCard
 
 var React = require('react'); 
-var UserPage = require('./userPage.js')
+var UserCard = require('./userCard');
 
 function AllUsers(props) {
 	var user = props.user.map(function(item){
