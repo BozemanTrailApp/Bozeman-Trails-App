@@ -14,7 +14,7 @@ var UserSignupForm = React.createClass({
 
 	<div>
 
-	 <h3>Sign-Up</h3>
+	 	<div className="showhide">
 	 	<div className="card">	
 		<div className="row">
 		    <form className="col s12" onSubmit={ this.props.handleUserSignupSubmit }>
@@ -49,6 +49,7 @@ var UserSignupForm = React.createClass({
 		      	<button className="btn waves-effect waves-light" type="submit" name="action">Submit
 	  			</button>
 		    </form>
+	 	</div>
 	 	</div>
 	 	</div>
 	 			

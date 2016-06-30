@@ -11,14 +11,18 @@ var UserSignupForm = require('./userSignupForm.js');
 var UserSignupData = React.createClass({
 	getInitialState: function(){
 		return {
-
+			
 			userName: '',
 			firstName: '',
 			lastName: '',
 			email: '',
 			password: ''
-		}
+		},
+		{ childVisible: false }
 	},
+    onClick: function() {
+    	this.setState({childVisible: !this.state.childVisible});
+    },
 	onUsernameChange: function(e){
 		this.setState({ userName: e.target.value })
 	},
@@ -55,7 +59,13 @@ var UserSignupData = React.createClass({
 	render: function(){
 		return (
 			<div>
-				<UserSignupForm handleUserSignupSubmit={ this.handleUserSignupSubmit }
+				<div onClick={this.onClick}>
+          		<button className="btn waves-effect waves-light" type="submit" name="action">Create Account
+         		</button>
+        		</div>
+        		<div>
+        		{ this.state.childVisible ? <UserSignupForm 
+				handleUserSignupSubmit={ this.handleUserSignupSubmit }
 				onUsernameChange={ this.onUsernameChange }
 				onFirstNameChange={ this.onFirstNameChange }
 				onLastNameChange={ this.onLastNameChange }
@@ -65,8 +75,10 @@ var UserSignupData = React.createClass({
 				firstName={ this.state.firstName }
 				lastName={ this.state.lastName }
 				email={ this.state.email }
-				password={ this.state.password } />
-			</div>
+				password={ this.state.password }
+				/>: null }
+				</div>
+      </div>
 			)
 	}
 });

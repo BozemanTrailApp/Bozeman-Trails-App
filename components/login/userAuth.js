@@ -9,12 +9,10 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 const Link = require('react-router').Link;
 
-
 var UserLoginData = require('./userLoginData.js');
 var UserSignupData = require('./userSignupData.js');
 var LogoutUser = require('./logoutUser.js');
 var AwareOfUser= require('./awareOfUser.js');
-
 
 
 var UserAuth = React.createClass({ 
@@ -88,7 +86,6 @@ var UserAuth = React.createClass({
 			}
 		})
 	},
-
 	getOneUserFromServer: function(){
 		var self = this;
 			$.ajax({
@@ -99,20 +96,21 @@ var UserAuth = React.createClass({
 				self.setState({ user: data });
 			})
 	},
-
 	componentDidMount: function(){
 		this.getOneUserFromServer();
 	},
 
 	render: function(){
-			var user = this.state.user ? <AwareOfUser user={this.state.user} /> : this.state.user;
-			
+			var user = this.state.user ? <AwareOfUser user={this.state.user} /> : null;
 		return (
 			<div>
 				<div className="container">
-						{ user }
-					<UserLoginData loginUserFromServer={ this.loginUserFromServer } />
-					<UserSignupData signupUserFromServer={ this.signupUserFromServer }/>
+					{ user }
+					<div className="loginbuttons">
+						<UserLoginData loginUserFromServer={ this.loginUserFromServer } />
+						<UserSignupData signupUserFromServer={ this.signupUserFromServer }/>
+					</div> 
+					
 					<LogoutUser logoutUser={ this.logoutUser } />
 				</div>
 			</div>
