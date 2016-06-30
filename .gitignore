@@ -3,3 +3,5 @@ node_modules
 setsercets.js
 static
 npm-debug.log
+bundle.js
+bundle.js.map
