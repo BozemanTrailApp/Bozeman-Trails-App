@@ -12,24 +12,30 @@ var UserLoginForm = React.createClass({
 		return (
 			<div>
 
-			<h2> Login </h2>	
-				<form className="form-horizontal" onSubmit={ this.props.handleUserLoginSubmit }>
-					<div className="form-group">
-						<label className="col-sm-2 control-label">User Name</label>
-						<div className="col-sm-10">
-							<input type="User Name" onChange={ this.props.onUserNameChange } 
-							value={ this.props.userName} className="form-control" placeholder="User Name"/>
-						</div>
-					</div>
-					<div className="form-group">
-						<label htmlFor="inputPassword" className="col-sm-2 control-label">Password</label>
-						<div className="col-sm-10">
-							<input type="password" className="form-control" placeholder="Password" onChange={ this.props.onPasswordChange } value={ this.props.password }/>
-						</div>
-					</div>
-					<button className="btn btn-primary">Login</button>
-				</form>
-			</div>
+			<h2> Sign-In </h2>
+			<div className="card">	
+			<div className="row">
+			    <form className="col s12" onSubmit={ this.props.handleUserLoginSubmit }>
+			      <div className="row">
+			        <div className="input-field col s6">
+			          <input type="text" onChange={ this.props.onUserNameChange } className="validate"/>
+			          <label>User Name</label>
+			        </div>
+			        <div className="input-field col s6">
+			          <input type="text" onChange={ this.props.onPasswordChange } className="validate"/>
+			          <label>Password</label>
+			        </div>
+			      </div>
+			    <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+	  			</button>
+			    </form>
+ 			</div>
+ 			</div>
+
+
+ 			</div>
+
+			
 			)
 	}
 });
