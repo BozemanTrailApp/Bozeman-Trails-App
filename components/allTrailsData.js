@@ -30,4 +30,4 @@ var AllTrailsData = React.createClass({
 		return this.state.trails ? <AllTrails getId = {this.props.getId} trails = {this.state.trails}/> : null;
 	}
 });
-module.exports = AllTrailsData;
+module.exports = AllTrailsData; 

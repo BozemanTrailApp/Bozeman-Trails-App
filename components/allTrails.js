@@ -28,4 +28,4 @@ function AllTrails(props){
 		</div>
 		)
 };
-module.exports = AllTrails;
+module.exports = AllTrails; 

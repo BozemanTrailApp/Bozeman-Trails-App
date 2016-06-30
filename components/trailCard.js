@@ -3,14 +3,13 @@
 		//AllTrails
 			//TrailCard
 
-
+ 
 var React = require('react');
 var Link = require('react-router').Link; 
 var url;
 var TrailCard = React.createClass({
 	
-	 //url: this.props.mapUrl,
-
+	 
 		render: function(){
 			
 			
