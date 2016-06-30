@@ -14,9 +14,12 @@ var UserLoginData = React.createClass({
     return {
       userName: "",
       password: "" 
-    }
+    },
+    { childVisible: false }
   },
-
+  onClick: function() {
+    this.setState({childVisible: !this.state.childVisible});
+  },
   onUserNameChange: function(event){
     this.setState({ userName: event.target.value })
   },
@@ -41,12 +44,17 @@ var UserLoginData = React.createClass({
   render: function(){
     return (
       <div>
-        <UserLoginForm handleUserLoginSubmit={ this.handleUserLoginSubmit }
-                 onPasswordChange={ this.onPasswordChange }
-                 onUserNameChange={ this.onUserNameChange }
-                 userName={ this.state.userName }
-                 password={ this.state.password }
-                 />
+        <div onClick={this.onClick}>
+          <button className="btn waves-effect waves-light" type="submit" name="action">Sign-In
+          </button>
+        </div>
+        { this.state.childVisible ? <UserLoginForm 
+                handleUserLoginSubmit={ this.handleUserLoginSubmit }
+                onPasswordChange={ this.onPasswordChange }
+                onUserNameChange={ this.onUserNameChange }
+                userName={ this.state.userName }
+                password={ this.state.password }
+                />: null }
       </div>
       )
   }
