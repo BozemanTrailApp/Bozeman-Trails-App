@@ -16,7 +16,10 @@ var UserSignupData = React.createClass({
 			firstName: '',
 			lastName: '',
 			email: '',
-			password: ''
+			password: '',
+			age: '', 
+			gender: ''
+
 		},
 		{ childVisible: false }
 	},
@@ -41,6 +44,15 @@ var UserSignupData = React.createClass({
 		this.setState({ password: e.target.value })
 	},
 
+	onPasswordChange: function(e){
+		this.setState({ age: e.target.value })
+	},
+	onPasswordChange: function(e){
+		this.setState({ gender: e.target.value })
+	},
+
+
+
 	handleUserSignupSubmit: function(e){
 		e.preventDefault();
 
@@ -51,9 +63,11 @@ var UserSignupData = React.createClass({
 		user.lastName = this.state.lastName;
 		user.email = this.state.email;
 		user.password = this.state.password;
+		user.age = this.state.age;
+		user.gender = this.state.gender
 
 		this.props.signupUserFromServer(user);
-		this.setState({ userName: '', firstName: '', lastName: '', email: '', username: '', password: '' });
+		this.setState({ userName: '', firstName: '', lastName: '', email: '', username: '', password: '', age: '', gender: '' });
 	},
 
 	render: function(){
@@ -71,11 +85,16 @@ var UserSignupData = React.createClass({
 				onLastNameChange={ this.onLastNameChange }
 				onEmailChange={ this.onEmailChange }
 				onPasswordChange={ this.onPasswordChange }
+				onAgeChange= {this.onAgeChange}
+				onGenderChange={this.onGenderChange}
+
 				userName={ this.state.userName }
 				firstName={ this.state.firstName }
 				lastName={ this.state.lastName }
 				email={ this.state.email }
 				password={ this.state.password }
+				age={this.state.age }
+				gender={this.state.gender }
 				/>: null }
 				</div>
       </div>
