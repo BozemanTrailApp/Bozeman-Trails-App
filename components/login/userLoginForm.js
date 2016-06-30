@@ -12,7 +12,9 @@ var UserLoginForm = React.createClass({
 		return (
 			<div>
 
-			<h2> Sign-In </h2>
+
+			
+			
 			<div className="card">	
 			<div className="row">
 			    <form className="col s12" onSubmit={ this.props.handleUserLoginSubmit }>
@@ -31,11 +33,10 @@ var UserLoginForm = React.createClass({
 			    </form>
  			</div>
  			</div>
+ 		
 
 
  			</div>
-
-			
 			)
 	}
 });
