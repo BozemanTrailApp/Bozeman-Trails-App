@@ -44,12 +44,13 @@ var UserSignupData = React.createClass({
 		this.setState({ password: e.target.value })
 	},
 
-	onPasswordChange: function(e){
+	onAgeChange: function(e){
 		this.setState({ age: e.target.value })
 	},
-	onPasswordChange: function(e){
+	onGenderChange: function(e){
 		this.setState({ gender: e.target.value })
 	},
+
 
 
 

@@ -39,21 +39,20 @@ var UserSignupForm = React.createClass({
 		          		<input  type="text" onChange={ this.props.onLastNameChange } value={ this.props.lastName } className="validate"/>
 		          		<label>Last Name</label>
 		        	</div>
-		      	</div>
-		      			<div className="row">
-		        	    <div className="input-field col s12">
-		          		<input type="age" onChange={ this.props.onAgeChange } value={ this.props.age }  className="validate"/>
+		      		</div>
+		      		<div className="row">
+		        	<div className="input-field col s6">
+		         		<input type="text" onChange={ this.props.onAgeChange } value={ this.props.age } className="validate"/>
 		          		<label>Age</label>
 		        	</div>
-		      	</div>
-						<div className="row">
-		        	    <div className="input-field col s12">
-		          		<input type="gender" onChange={ this.props.onGenderChange } value={ this.props.gender }  className="validate"/>
+		        	<div className="input-field col s6">
+		          		<input  type="text" onChange={ this.props.onGenderChange } value={ this.props.gender} className="validate"/>
 		          		<label>Gender</label>
 		        	</div>
-		      	</div>
-					    <div className="row">
-		        	    <div className="input-field col s12">
+		      		</div>
+
+				<div className="row">
+		        	 <div className="input-field col s12">
 		          		<input type="email" onChange={ this.props.onEmailChange } value={ this.props.email }  className="validate"/>
 		          		<label>Email</label>
 		        	</div>
