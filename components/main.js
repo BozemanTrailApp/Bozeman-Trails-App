@@ -51,7 +51,7 @@ var Main = React.createClass({
 			return(
 			<div>
 				<div>
-				<div>
+			<div>
 						<h1 className="theTitle"> Bozeman.by.trail </h1>
 					</div>
 						<div className= "fixedbuttons">
@@ -71,10 +71,37 @@ var Main = React.createClass({
 							<p>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
 						</footer>
 					
+
 				</div>
 			</div>
 					)
 		} else {
+
+
+					<div className= "fixedbuttons">
+					<Link to = '/home'>
+						<button className = 'btn'>home</button>
+					</Link>
+					<Link to = '/profile'>
+						<button className = ' btn'>profile</button>
+					</Link>
+					<Link to ='/login'>
+						<button className = ' btn'>login</button>
+						</Link>
+					</div>
+
+						
+
+					{this.props.children}
+					
+					
+						
+				<footer className = 'page-footer grey' >
+					<div className = 'footer-copyright'>
+						<div className = 'container '>
+							<p className = 'white-text'>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
+						</div>
+					</div>
 
 			return(
 			<div>
@@ -82,17 +109,16 @@ var Main = React.createClass({
 						<h1 className="theTitle"> Bozeman.by.trail </h1>
 					</div>
 						<div className= "fixedbuttons">
-						<Link to = '/home'>
-							<button className = 'homemain btn btn-success btn-md'>H O M E</button>
-						</Link>
-						<Link to ='/login'>
-							<button className = 'loginmain btn btn-default btn-md'> login </button>
-						</Link>
+							<Link to = '/home'>
+								<button className = 'homemain btn btn-success btn-md'>H O M E</button>
+							</Link>
+
+							<Link to ='/login'>
+								<button className = 'loginmain btn btn-default btn-md'> login </button>
+							</Link>
 						</div>
 						{this.props.children}	
-				<footer id = 'footer'>
-					<p>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
-				</footer>
+				
 			</div>
 					)
 		}

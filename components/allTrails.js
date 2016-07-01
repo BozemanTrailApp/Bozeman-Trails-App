@@ -12,6 +12,7 @@ function AllTrails(props){
 	var trails = props.trails.map(function(item){
 		return <TrailsList trailName = {item.trailName}
 							description = {item.description}
+							trailHeadUrl = {item.trailHeadUrl}
 							key = {item._id}
 							id = {item._id}
 							getId = {props.getId}/>

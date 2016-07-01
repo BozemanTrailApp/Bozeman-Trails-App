@@ -13,28 +13,40 @@ var TrailCard = React.createClass({
 	render: function(){
 			return(
 				<div>
-					
-				<div className="trailCard">
-					<h3>{this.props.oneTrail.trailName}</h3>
-					<h3>Difficulty: {this.props.oneTrail.difficulty} </h3>
-					<h3>Length: {this.props.oneTrail.length} </h3>
-					<h3>Location: {this.props.oneTrail.location} </h3>
-					<h3> {this.props.oneTrail.description} </h3>
-					<h3> {this.props.oneTrail.directions}</h3>
-					<h3> {this.props.oneTrail.trailHeadUrl} </h3>
-					<h3> {this.props.oneTrail.comments} </h3>
-					<h3> {this.props.oneTrail.userImage}</h3>
+					<div>
+						
+
+						<div className =  'row'>
+							<div className = 'col s12 m5'>
+								<div className = 'card grey darken-4 z-depth-2'>
+									<div className = 'card-content white-text'>
+										<span className = 'card-title'>{this.props.oneTrail.trailName}</span>
+										<ul>
+											<li className = 'white-text'>Difficulty: {this.props.oneTrail.difficulty} </li>
+											<li className = 'white-text'>Length: {this.props.oneTrail.length} </li>
+											<li className = 'white-text'>Location: {this.props.oneTrail.location} </li>
+											<li className = 'white-text'> {this.props.oneTrail.directions}</li>
+											<li className = 'white-text'> {this.props.oneTrail.comments} </li>
+											<li className = 'white-text'> {this.props.oneTrail.userImage}</li>
+										</ul>
+											<p className = 'white-text'> {this.props.oneTrail.description} </p>
+											<div className = 'card-action'>
+												<a onClick = {this.props.toggleActiveComp.bind(null, 'allTrails')}>Back to Trails</a>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				    
+
+									<div>
+										<iframe height = '600px' width ='600px' src = {this.props.oneTrail.mapUrl}/>
+									</div>
+
+									
+					</div>
+									{this.props.children}		
 				</div>
-				<div>
-					<iframe height = '600px' width ='600px' src = {this.props.oneTrail.mapUrl}/>
-				</div>
-				<div className = 'backtotrails'>
-					 
-							<a onClick = {this.props.toggleActiveComp.bind(null, 'allTrails')}>Back to Trails</a>
-					
-				</div>
-				{this.props.children}		
-			</div>
 				)
 
 
