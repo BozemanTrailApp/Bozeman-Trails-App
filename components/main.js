@@ -6,18 +6,18 @@ var Main = React.createClass({
 		return (
 			<div>
 				<div>
-					<h1 className="theTitle"> Bozeman.by.trail </h1>
+					<h1 className="theTitle "> Bozeman.by.trail </h1>
 				</div>
 
 					<div className= "fixedbuttons">
 					<Link to = '/home'>
-						<button className = 'homemain btn btn-success btn-md'>H O M E</button>
+						<button className = 'btn'>home</button>
 					</Link>
 					<Link to = '/profile'>
-						<button className = 'profilemain btn btn-default btn-md'>P R O F I L E</button>
+						<button className = ' btn'>profile</button>
 					</Link>
 					<Link to ='/login'>
-						<button className = 'loginmain btn btn-default btn-md'> login </button>
+						<button className = ' btn'>login</button>
 						</Link>
 					</div>
 
@@ -27,8 +27,12 @@ var Main = React.createClass({
 					
 					
 						
-				<footer id = 'footer'>
-					<p>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
+				<footer className = 'page-footer grey' >
+					<div className = 'footer-copyright'>
+						<div className = 'container '>
+							<p className = 'white-text'>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
+						</div>
+					</div>
 				</footer>
 				
 
