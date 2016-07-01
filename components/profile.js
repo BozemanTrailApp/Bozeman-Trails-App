@@ -11,7 +11,6 @@ var Profile = React.createClass({
 			user: ""
 		}
 	},
-
 	getOneUserFromServer: function(){
 		var self = this;
 			$.ajax({
@@ -22,47 +21,34 @@ var Profile = React.createClass({
 				self.setState({ user: data });
 			})
 	},
-
 	componentDidMount: function(){
 		this.getOneUserFromServer();
 	},
-
 	render: function(){
 			if(this.state.user.user !== "anonymous"){
 			return(
 				<div>
-			<div className = "profilecontainer">
-			   	<div className = "profile">
-
-
-			   		<div className = "profilewords">
-			   		<h3><u>My Profile</u></h3>
-					
-						
-					<h2> Welcome, {this.state.user.userName}!</h2>
-
-					<h3> Name: {this.state.user.firstName} {this.state.user.lastName} </h3>
+				<div className = "profilecontainer">
+			   		<div className = "profile">
+			   			<div className = "profilewords">
+			   			<h3><u>My Profile</u></h3>
+							<h2> Welcome, {this.state.user.userName}!</h2>
+						<h3> Name: {this.state.user.firstName} {this.state.user.lastName} </h3>
 						</div>
-
-				     </div>
+				    </div>
 				</div>
-			</div>
-			
-			)
+				</div>	
+				)
 		} else {
 
 		return(
 			<div>
-			<div className = "profilecontainer">
-			   	<div className = "profile">
-			   		 <h1>user's prof please sign in</h1>
-					
-					
-
+				<div className = "profilecontainer">
+			   		<div className = "profile">
+			   		 	<h1>user's prof please sign in</h1>
 				     </div>
 				</div>
 			</div>
-			
 			)
 		}
 
