@@ -9,10 +9,6 @@ var Router = ReactRouter.Router;
 var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
 
-
-
-
-
 var Main = require('./../main');
 var Profile = require('./../profile'); 
 var TrailsApp = require('./../trailsApp');

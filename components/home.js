@@ -17,7 +17,7 @@ var Home = React.createClass({
 
 				<div className>
 				<Link to='/trails'> 
-						<button className="trailsbuttonmain btn btn-success btn-sm mainbuttonhome">T R A I L S</button>
+						<button className=" btn   mainbuttonhome">T R A I L S</button>
 				</Link>
 
 				</div>

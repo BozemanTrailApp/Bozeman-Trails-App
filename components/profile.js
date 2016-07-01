@@ -14,7 +14,6 @@ var Profile = React.createClass({
 			user: ""
 		}
 	},
-
 	getOneUserFromServer: function(){
 		var self = this;
 			$.ajax({
@@ -25,11 +24,9 @@ var Profile = React.createClass({
 				self.setState({ user: data });
 			})
 	},
-
 	componentDidMount: function(){
 		this.getOneUserFromServer();
 	},
-
 	render: function(){
 			if(this.state.user.user !== "anonymous"){
 			return(
@@ -58,6 +55,7 @@ var Profile = React.createClass({
 			
 
 			)
+
 		} else {
 
 		return(
@@ -65,14 +63,11 @@ var Profile = React.createClass({
 				<div className = "profilecontainer">
 			   		<div className = "profile">
 
-
-
 			   		 <h1>Please sign-in to view profile</h1>
-				
+
 				     </div>
 				</div>
 			</div>
-			
 			)
 		}
 

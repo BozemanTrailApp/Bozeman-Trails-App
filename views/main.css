@@ -13,10 +13,14 @@
     font-size: 100px;
     margin-right: 80px;
     margin-top: 30px;
-    color: #ffffff;
+    color: #FFFFFF;
     display: block;
     }
-
+.loggy {
+    float: right;  
+    margin-right: 80px;
+    margin-top: 30px; 
+}
 /*@media only screen and (max-width: 300px)  { 
 .theTitle {
     display: block;
@@ -96,36 +100,15 @@
     height: 100%;
     width: 100%;
 }
-#footer{
-    font-family: 'Oswald', sans-serif;
-    font-size:2px;
-    position:fixed;
-    bottom:0;
-    right: 30vw;
-    color: #ffffff;
-
-}
-
- .backtotrails { 
-    display: inline-block; 
-    margin-top: 100px;
-}
-
-/*body {
-    background-image: url("https://images.unsplash.com/photo-1464565134312-083f9c103854?dpr=1&auto=format&crop=entropy&fit=crop&w=1440&h=810&q=80");
-}*/
-
- .maindivhome {
+.maindivhome {
     height: 100vh;
     width: 100vw;
     background-image: url("https://images.unsplash.com/photo-1464565134312-083f9c103854?dpr=1&auto=format&crop=entropy&fit=crop&w=1440&h=810&q=80");
 }
+.
 
-.iframeMap { 
-    margin-bottom: 500px;
-    margin-right: 50px;
 
- }
+ 
 
  .fixedbuttons {
     position: absolute;
@@ -144,10 +127,7 @@
 
    }
 
-   iframe {
-    margin-top: -75px;
-   }
-
+  
 
  .profilewords {
     text-align: center;
