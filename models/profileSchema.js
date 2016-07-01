@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 
 var profileSchema = new mongoose.Schema({
-	bio: {type: String},
-	age: {type: Number},
-	gender: {type: String},
+	hikeName: {type: String},
+	date: {type: Number},
+	miles: {type: String},
 	user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 module.exports = profileSchema;
