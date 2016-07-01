@@ -136,11 +136,7 @@
     
    }
 
-   .homemain, .profilemain .loginmain{
-    margin-right: 5px;
-    font-size: 25px;
-    width: 10vw;
-   }
+
 
    .trailtitle {
     margin-top: 5%;
@@ -158,4 +154,11 @@
     margin-top: 8%;
  }
 
-   
+.logform { 
+margin-top:8%;
+ }
+
+ #submitlog {
+    align-content: left;
+ }
+

@@ -15,6 +15,8 @@ var UserSchema = new mongoose.Schema({
 	password: {type: String, required: true},
 	role: {type: String, required: false, default: 'User'},
 	loggedin: {type: Boolean},
+	age: {type: String, required: false},
+	gender: {type: String, required: false},
 	userProfile: profileSchema,
 	trailLog: [trailLogSchema]
 	
