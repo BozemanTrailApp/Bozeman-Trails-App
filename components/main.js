@@ -102,7 +102,7 @@ var Main = React.createClass({
 							<p className = 'white-text'>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
 						</div>
 					</div>
-
+				</footer>
 			return(
 			<div>
 					<div>
