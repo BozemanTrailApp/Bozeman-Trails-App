@@ -1,10 +1,9 @@
 var React = require('react');
-// var Link = require('react-router').Link;
-// var UserLog = require('./userLog.js');
-var UserAuth = require('./login/userAuth.js');
-var AwareofUser = require('./login/awareOfUser');
-var UserLog = require('./userLog');
-//var UserLogData = require('./userLogData.js');
+var Link = require('react-router').Link;
+
+
+var UserLog = require('./userLog.js');
+var UserLogData = require('./userLogData.js');
 
 
 
@@ -44,13 +43,13 @@ var Profile = React.createClass({
 					<h3> Age: {this.state.user.age } </h3>
 
 					<h3> Gender: {this.state.user.gender} </h3>
-						</div>
-					 </div>
-				</div>
 
-				<UserLog />
-				
+
+					
+					</div>
+				 </div>
 			</div>
+		</div>
 			
 			
 
@@ -62,7 +61,7 @@ var Profile = React.createClass({
 			<div>
 				<div className = "profilecontainer">
 			   		<div className = "profile">
-
+					<UserLogData />
 			   		 <h1>Please sign-in to view profile</h1>
 
 				     </div>
