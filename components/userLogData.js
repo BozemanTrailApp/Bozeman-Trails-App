@@ -2,6 +2,7 @@ var React = require('react');
 var UserLog = require('./userLog.js');
 
 var UserLogData = React.createClass({
+
 	getInitialState: function(){
 		return {
 			hikeName: '',
@@ -11,13 +12,13 @@ var UserLogData = React.createClass({
    
     },
 	onHikeNameChange: function(e){
-		this.setState({ userName: e.target.value })
+		this.setState({ hikeName: e.target.value })
 	},
 	onDateChange: function(e){
-		this.setState({ firstName: e.target.value })
+		this.setState({ date: e.target.value })
 	},
 	onMilesChange: function(e){
-		this.setState({ lastName: e.target.value })
+		this.setState({ miles: e.target.value })
 	},
 	handleUserLogSubmit: function(e){
 		e.preventDefault();
