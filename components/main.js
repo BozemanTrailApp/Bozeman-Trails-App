@@ -90,9 +90,6 @@ var Main = React.createClass({
 						<Link to = '/home'>
 							<button className = 'btn'>home</button>
 						</Link>
-						<Link to = '/profile'>
-							<button className = ' btn'>profile</button>
-						</Link>
 						<Link to ='/login'>
 							<button className = ' btn'>login</button>
 						</Link>
