@@ -11,8 +11,8 @@
     font-family: 'Damion', cursive;
     float: right;
     font-size: 100px;
-    margin-right: 80px;
-    margin-top: 30px;
+    margin-right: 125px;
+    margin-top: 80px;
     color: #FFFFFF;
     display: block;
     }
@@ -45,7 +45,7 @@
     margin-left: 575px;
     margin-bottom: 1%;
     margin-top: 30px;
-    width: 650px;
+    width: 500px;
     display: inline-block;
 }
 
@@ -112,8 +112,7 @@
 
  .fixedbuttons {
     position: absolute;
-    top: 0;
-    left: 20px;
+    left: 150px;
     font-family: 'Oswald', sans-serif;
     size: 30px;
     
@@ -127,18 +126,26 @@
 
    }
 
-  
-
- .profilewords {
+  .profilewords {
     text-align: center;
     margin-top: 8%;
  }
 
 .logform { 
-margin-top:8%;
+    margin-top:8%;
  }
 
  #submitlog {
     align-content: left;
+ }
+
+.signoutbutton { 
+    right:40px;
+    position: absolute;
+
+ }
+
+ .navbar {
+    background-color: black;
  }
 

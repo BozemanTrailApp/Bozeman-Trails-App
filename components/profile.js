@@ -59,11 +59,11 @@ var Profile = React.createClass({
 					<h3> Age: {this.state.user.age } </h3>
 
 					<h3> Gender: {this.state.user.gender} </h3>
-
+					</div>
 
 					<UserLogData />
 
-					</div>
+					
 				</div>
 			</div>
 		</div>
