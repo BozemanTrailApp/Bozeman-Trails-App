@@ -30,6 +30,7 @@ module.exports = {
 	},
 
 	update: function(req, res, next){
+		
 		UserModel.findByIdAndUpdate(req.params.id, req.body, function(err, result){
 			if(err){
 				res.send(err);
