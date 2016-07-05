@@ -71,11 +71,11 @@ console.log(self.state.user);
 					<h3> Age: {this.state.user.age } </h3>
 
 					<h3> Gender: {this.state.user.gender} </h3>
-
+					</div>
 
 					<UserLogData addHikeToUser={this.addHikeToUser} />
 
-					</div>
+					
 				</div>
 			</div>
 		</div>
