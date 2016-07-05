@@ -2,8 +2,8 @@ var React = require('react');
 var Link = require('react-router').Link;
 
 
-var UserLog = require('./userLog.js');
-var UserLogData = require('./userLogData.js');
+var UserLog = require('./login/userLog.js');
+var UserLogData = require('./login/userLogData.js');
 
 
 
@@ -21,14 +21,42 @@ var Profile = React.createClass({
 			}).done(function(data){
 				console.log(data);
 				self.setState({ user: data });
+				console.log(self.state.user._id)
 			})
+	},
+	addHikeToUser: function(log){
+
+		var self = this;
+
+		var hike = self.state.user.trailLog.push(log);
+
+		// hike.miles += trailLog.miles;
+		
+
+		self.setState({user : hike});
+
+console.log(self.state.user);
+			$.ajax({
+			method: 'PUT',
+			url: '/user/' + self.state.user._id,
+			data: self.state.user,
+			success: function(data){
+				console.log("Adding Miles", data);
+				self.setState({ user : data });
+				//alert("Success on Logging your Miles Hiked!");
+			},
+			error: function(xhr, status, err){
+				console.error('Failed to Add Miles', status, err.toString())
+				//alert('Failed on Logging your Miles!');
+			}
+		})
 	},
 	componentDidMount: function(){
 		this.getOneUserFromServer();
 	},
 	render: function(){
-			if(this.state.user.user !== "anonymous"){
-			return(
+			
+		return (	
 		<div>
 			<div className = "profilecontainer">
 			   	<div className = "profile">
@@ -43,32 +71,16 @@ var Profile = React.createClass({
 					<h3> Age: {this.state.user.age } </h3>
 
 					<h3> Gender: {this.state.user.gender} </h3>
+					</div>
 
+					<UserLogData addHikeToUser={this.addHikeToUser} />
 
 					
-					</div>
-				 </div>
+				</div>
 			</div>
 		</div>
 			
-			
-
 			)
-
-		} else {
-
-		return(
-			<div>
-				<div className = "profilecontainer">
-			   		<div className = "profile">
-					<UserLogData />
-			   		 <h1>Please sign-in to view profile</h1>
-
-				     </div>
-				</div>
-			</div>
-			)
-		}
 
 	}
 
