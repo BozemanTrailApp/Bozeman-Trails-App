@@ -21,21 +21,33 @@ var Profile = React.createClass({
 			}).done(function(data){
 				console.log(data);
 				self.setState({ user: data });
+				console.log(self.state.user._id)
 			})
 	},
-	addHikeToUser: function(){
-		$.ajax({
+	addHikeToUser: function(log){
+
+		var self = this;
+
+		var hike = self.state.user.trailLog.push(log);
+
+		// hike.miles += trailLog.miles;
+		
+
+		self.setState({user : hike});
+
+console.log(self.state.user);
+			$.ajax({
 			method: 'PUT',
-			url: '/user/:id',
-			data: user,
+			url: '/user/' + self.state.user._id,
+			data: self.state.user,
 			success: function(data){
 				console.log("Adding Miles", data);
 				self.setState({ user : data });
-				alert("Success on Logging your Miles Hiked!");
+				//alert("Success on Logging your Miles Hiked!");
 			},
 			error: function(xhr, status, err){
 				console.error('Failed to Add Miles', status, err.toString())
-				alert('Failed on Logging your Miles!');
+				//alert('Failed on Logging your Miles!');
 			}
 		})
 	},
@@ -61,7 +73,7 @@ var Profile = React.createClass({
 					<h3> Gender: {this.state.user.gender} </h3>
 
 
-					<UserLogData />
+					<UserLogData addHikeToUser={this.addHikeToUser} />
 
 					</div>
 				</div>
