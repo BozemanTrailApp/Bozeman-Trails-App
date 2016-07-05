@@ -3,7 +3,7 @@
 		//AllTrails 
 			//TrailsList
 	//ViewTrailData
-		//TrailCard
+		//TrailCard 
 
 
 var React = require('react');

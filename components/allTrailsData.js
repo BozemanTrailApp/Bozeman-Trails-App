@@ -2,7 +2,7 @@
 	//AllTrailsData
 		//AllTrails 
 			//TrailsList
-	//ViewTrailData
+	//ViewTrailData 
 		//TrailCard
 var React = require('react');
 var AllTrails = require('./allTrails.js');	

@@ -1,6 +1,6 @@
 //TrailsApp
 	//AllTrailsData
-		//AllTrails 
+		//AllTrails  
 			//TrailsList
 	//ViewTrailData
 		//TrailCard
@@ -16,11 +16,11 @@ function AllTrails(props){
 							key = {item._id}
 							id = {item._id}
 							getId = {props.getId}/>
-
-	});
+});
 	return(
 		<div>
 			{trails}
+
 		</div>
 		)
 };
