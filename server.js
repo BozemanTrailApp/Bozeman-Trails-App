@@ -22,6 +22,7 @@ app.use(express.static(__dirname + '/views'));
 var trailsControl = require('./controllers/trailsControl.js');
 var userControl = require('./controllers/userControl.js');
 
+
 app.post('/trails', trailsControl.create);
 app.get('/trails', trailsControl.read);
 app.put('/trails/:id', trailsControl.update);
@@ -38,8 +39,6 @@ app.get('/users', userControl.getAllUsers);
 app.get('/user', userControl.getOneUser);
 app.put('/user/:id', userControl.update);
 app.delete('/user/:id', userControl.delete);
-
-
 
 
 if (process.env.NODE_ENV === 'production') {
