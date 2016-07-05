@@ -7,6 +7,10 @@
     border: 1px solid orange;
 }
 
+.hikeform{
+    background-color: blue;
+}
+
 .theTitle {
     font-family: 'Damion', cursive;
     float: right;

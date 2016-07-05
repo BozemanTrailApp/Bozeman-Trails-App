@@ -17,7 +17,7 @@ var UserSchema = new mongoose.Schema({
 	loggedin: {type: Boolean},
 	age: {type: String, required: false},
 	gender: {type: String, required: false},
-	userProfile: profileSchema,
+	profile: [profileSchema],
 	trailLog: [trailLogSchema]
 	
 }); 
