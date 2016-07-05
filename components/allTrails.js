@@ -1,7 +1,8 @@
 //TrailsApp
 	//AllTrailsData
-		//AllTrails 
+		//AllTrails
 			//TrailsList
+		//AllComments  
 	//ViewTrailData
 		//TrailCard
 var React = require('react');
@@ -16,8 +17,7 @@ function AllTrails(props){
 							key = {item._id}
 							id = {item._id}
 							getId = {props.getId}/>
-
-	});
+});
 	return(
 		<div>
 			{trails}

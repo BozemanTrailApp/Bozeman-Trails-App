@@ -1,10 +1,10 @@
 //TrailsApp
 	//AllTrailsData
-		//AllTrails 
-			//TrailsList
+		//AllTrails
+			//TrailsList  
 	//ViewTrailData
 		//TrailCard
-
+			//TrailComments
 
 var React = require('react');
 var TrailCard = require('./trailCard.js')
