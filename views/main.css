@@ -7,18 +7,16 @@
     border: 1px solid orange;
 }
 
-.hikeform{
-    background-color: blue;
-}
+
 
 .theTitle {
     font-family: 'Damion', cursive;
     float: right;
     font-size: 100px;
-    margin-right: 125px;
+    margin-right: 100px;
     margin-top: 80px;
     color: #FFFFFF;
-    display: block;
+    display: inline-block;
     }
 .loggy {
     float: right;  
@@ -51,6 +49,7 @@
     margin-top: 30px;
     width: 500px;
     display: inline-block;
+
 }
 
 .backtotrails { 
@@ -88,7 +87,7 @@
 }
 
 .profilecontainer {
-    background-image: url("https://images.unsplash.com/reserve/jGzMpqqZQO6PN5Z0HiTe_YWCO-42.jpg?dpr=1&auto=format&crop=entropy&fit=crop&w=1440&h=960&q=80");
+    background-color: black;
     width: 100vw;
     height: 100vh;
 }
@@ -132,19 +131,17 @@
 
   .profilewords {
     text-align: center;
-    margin-top: 8%;
- }
+    margin-top: -5%;
+    display: inline-block;
 
-.logform { 
-    margin-top:8%;
- }
 
- #submitlog {
+}
+  #submitlog {
     align-content: left;
  }
 
 .signoutbutton { 
-    right:40px;
+    right:5px;
     position: absolute;
 
  }
@@ -153,3 +150,17 @@
     background-color: black;
  }
 
+.wholeform {
+ margin-bottom:15%;
+}
+
+.submitlogbutton {
+    position: relative;
+    display: inline-block;
+}
+
+.recordtraillog {
+    position:relative;
+    right: -700px;
+    top: -600px;
+}
