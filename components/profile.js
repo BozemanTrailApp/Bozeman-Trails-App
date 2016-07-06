@@ -4,15 +4,38 @@ var Link = require('react-router').Link;
 
 var UserLog = require('./login/userLog.js');
 var UserLogData = require('./login/userLogData.js');
-
+// var displayTrailData = require('./displayTrailData.js');
 
 
 var Profile = React.createClass({
 	getInitialState: function(){
 		return {
-			user: ""
+			user: "",
+			miles: "",
+			totalMiles:""
 		}
 	},
+
+// 	displayTrailData: function(){
+// 		var self = this; 
+// 		$.ajax({ 
+// 			method: 'GET', 
+// 			url:'/user'
+// 		}).then(function(data).map(user.miles){
+// 			console.log(data);
+// 			self.setState({ user: miles });
+// 		})
+// },
+
+
+	addMiles: function(){
+		var total = 0;
+		for (var i = 0; i < this.state.user.trailLog.length; i++) {
+			total += this.state.user.trailLog[i].miles;
+		}
+		this.setState({ totalMiles : total });
+	},
+
 	getOneUserFromServer: function(){
 		var self = this;
 			$.ajax({
@@ -21,21 +44,24 @@ var Profile = React.createClass({
 			}).done(function(data){
 				console.log(data);
 				self.setState({ user: data });
-				console.log(self.state.user._id)
+				self.addMiles();
 			})
 	},
+
 	addHikeToUser: function(log){
 
 		var self = this;
 
+		//var miles = user.trailLog.miles;
+
 		var hike = self.state.user.trailLog.push(log);
 
-		// hike.miles += trailLog.miles;
+		//var miles = hike.miles += trailLog.miles;
 		
 
 		self.setState({user : hike});
 
-console.log(self.state.user);
+            console.log(self.state.user);
 			$.ajax({
 			method: 'PUT',
 			url: '/user/' + self.state.user._id,
@@ -43,6 +69,9 @@ console.log(self.state.user);
 			success: function(data){
 				console.log("Adding Miles", data);
 				self.setState({ user : data });
+				self.getOneUserFromServer();
+				
+				
 				//alert("Success on Logging your Miles Hiked!");
 			},
 			error: function(xhr, status, err){
@@ -75,10 +104,16 @@ console.log(self.state.user);
 
 					<UserLogData addHikeToUser={this.addHikeToUser} />
 
+						
+					<div className = "recordtraillog">
+
 					
-				</div>
+
+					<h3>Total Miles Logged: {this.state.totalMiles}  </h3>
+					</div>
 			</div>
 		</div>
+	</div>
 			
 			)
 
