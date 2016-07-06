@@ -18,7 +18,9 @@ class UserLog extends React.Component{
 				</div>
 		      	<div className="row">
 		        	<div className="input-field col s4">
+
 		         		<input  type="date" onChange={ this.props.onDateChange } value={ this.props.date} className="validate"/>
+
 		        	</div>
 				</div>
 		      	<div className="row">
