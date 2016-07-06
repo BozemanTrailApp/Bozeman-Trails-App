@@ -8,7 +8,7 @@
 var React = require ('react');
 var AllTrailsData = require ('./allTrailsData.js');
 var ViewTrailData = require('./viewTrailData.js');
-// var TrailComments = require('./trailComments.js');
+
 
 var TrailApp = React.createClass({
 	getInitialState: function(){
