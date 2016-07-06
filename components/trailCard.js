@@ -1,45 +1,37 @@
 //TrailsApp
 	//AllTrailsData
 		//AllTrails
-			//TrailsList  
+			//TrailsList
 	//ViewTrailData
 		//TrailCard
-			//TrailComments
-
+			//TrailComments 
+				//AllComments 
  
 var React = require('react');
 var Link = require('react-router').Link;
-var TrailComments = require('./trailComments.js');
+var AllComments = require('./allComments.js');
+
 
 
 var TrailCard = React.createClass({
-		render: function(){
-			console.log(this.props.oneTrail.comments);
-	// 	  	var trailComments = this.props.oneTrail.comments.map(function(item){
-	// 	return <TrailComments date = {item.date}
-	// 						user = {item.user}
-	// 						body = {item.body}
-	// 						key = {item._id}
-	// 						id = {item._id}
-	// 						getId = {this.props.getId}/>
-	
-	// });
-			var listOfComments = this.props.oneTrail.comments.map(function(item){
-				console.log(item.body)
-				return (
-					<div>
-						{item.body}
-					</div>
-				)
-			})
-
-
+		
 			
+		
+		render: function(){
+			var comments = this.props.oneTrail.comments.map(function(item){
+				return <AllComments body = {item.body}
+								user = {item.user}
+								date = {item.date}
+								key = {item._id}
+								id = {item._id}
+								imageUrl = {item.imageUrl}/>
+				});	
+			console.log(this.props, "I am from line 36")
 			return(
 				<div>
 					<div>
 						<div className =  'row'>
-							<div className = 'col s12 m7'>
+							<div className = 'col s12 m5'>
 								<div className = 'card grey darken-4 z-depth-2'>
 									<div className = 'card-content white-text'>
 										<span className = 'card-title'>{this.props.oneTrail.trailName}</span>
@@ -48,18 +40,20 @@ var TrailCard = React.createClass({
 											<li className = 'white-text'>Length: {this.props.oneTrail.length} </li>
 											<li className = 'white-text'>Location: {this.props.oneTrail.location} </li>
 											<li className = 'white-text'>{this.props.oneTrail.directions}</li>
-											<li className = 'white-text'>Comments: {listOfComments}</li>
 										</ul>
 											<p className = 'white-text'> {this.props.oneTrail.description} </p>
-											<div className = 'card-action'>
-												<a onClick = {this.props.toggleActiveComp.bind(null, 'allTrails')}>Back to Trails</a>
 											
+											<div className = 'card-action'>
+												<a onClick = {this.props.toggleActiveComp.bind(null, 'allTrails')}>Back to Trails</a> 
 											</div>
+											
+											
 									</div>
 								</div>
+								
 							</div>
 						</div>
-				    				
+				    	<div className = 'col s12 m7'>{ comments }</div>			
 
 									<div>
 										<iframe height = '600px' width ='600px' src = {this.props.oneTrail.mapUrl}/>
@@ -67,7 +61,7 @@ var TrailCard = React.createClass({
 
 									
 					</div>
-											
+										
 				</div>
 				)
 

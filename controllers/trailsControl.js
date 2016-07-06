@@ -17,7 +17,6 @@ module.exports = {
 	read: function(req, res, next){
 		TrailsModel
 		.find()
-		.populate('comments.trails') 
 		.exec(function(err, result){
 			if(err){
 				res.send(err);

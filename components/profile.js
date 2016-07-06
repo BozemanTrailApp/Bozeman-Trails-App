@@ -45,7 +45,7 @@ var Profile = React.createClass({
 				console.log(data);
 				self.setState({ user: data });
 				self.addMiles();
-			})
+			}) 
 	},
 
 	addHikeToUser: function(log){

@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var profileSchema = require('./profileSchema.js');
+
 var trailLogSchema = require('./trailLogSchema.js');
 
 var bcrypt = require('bcrypt-nodejs'); //encrypts the password
@@ -17,7 +17,6 @@ var UserSchema = new mongoose.Schema({
 	loggedin: {type: Boolean},
 	age: {type: String, required: false},
 	gender: {type: String, required: false},
-	profile: [profileSchema],
 	trailLog: [trailLogSchema]
 	
 }); 
