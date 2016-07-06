@@ -10,7 +10,7 @@
 var React = require('react');
 
 
-var AllComments = React.createClass({
+var AllComments = React.createClass({ 
 	render: function(){
 		console.log(this.props);
 		return(

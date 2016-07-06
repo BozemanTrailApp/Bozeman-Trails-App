@@ -4,7 +4,7 @@
 			//TrailsList
 	//ViewTrailData
 		//TrailCard
-			//TrailComments
+			//TrailComments 
 				//AllComments 
  
 var React = require('react');
@@ -16,22 +16,22 @@ var AllComments = require('./allComments.js');
 var TrailCard = React.createClass({
 		getInitialState: function(){
 			return {
-				comments: ""
+				comments: "",
+				user:""
 			}
 		},
 		commentMap: function (){
 			var comments = this.props.oneTrail.comments.map(function(item){
-			console.log("mapping")
-			return <AllComments body = {item.body}
+				return <AllComments body = {item.body}
 								user = {item.user}
 								date = {item.date}
-								key = {item._id}/>
-			});
-			console.log('done mapping')
-			return(
-				<div>
-					{comments}
-				</div>
+								key = {item._id}
+								id = {item._id}/>
+				});			
+				return(
+					<div>
+						{comments}
+					</div>
 			)
 		},
 		render: function(){

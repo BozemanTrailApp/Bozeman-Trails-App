@@ -20,7 +20,7 @@ function AllTrails(props){
 							id = {item._id}
 							getId = {props.getId}/>
 });
-	return(
+	return( 
 		<div>
 			{trails}
 		</div>

@@ -4,7 +4,7 @@
 			//TrailsList
 	//ViewTrailData
 		//TrailCard
-			//TrailComments
+			//TrailComments 
 				//AllComments 
 var React = require('react');
 
