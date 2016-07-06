@@ -164,3 +164,9 @@
     right: -700px;
     top: -600px;
 }
+
+.logcontainer {
+    background-color: #12816D;
+    width: 100%;
+    height: 1000px;
+}
