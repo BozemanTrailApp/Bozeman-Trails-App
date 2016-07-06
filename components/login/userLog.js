@@ -8,7 +8,8 @@ class UserLog extends React.Component{
 			
 
 			<div>
-		    	<form className="col s12 hikeform" onSubmit={ this.props.handleHikeLogSubmit }>
+			<div className = "wholeform">
+		    	<form className="col s6 hikeform" onSubmit={ this.props.handleHikeLogSubmit }>
 		      	<div className="row">
 		        	<div className="input-field col s4">
 		         		<input  type="text" onChange={ this.props.onHikeNameChange } value={ this.props.hikeName } className="validate"/>
@@ -17,7 +18,9 @@ class UserLog extends React.Component{
 				</div>
 		      	<div className="row">
 		        	<div className="input-field col s4">
-		         		<input type="date" onChange={ this.props.onDateChange } value={ this.props.date} className="validate"/>
+
+		         		<input  type="date" onChange={ this.props.onDateChange } value={ this.props.date} className="validate"/>
+
 		        	</div>
 				</div>
 		      	<div className="row">
@@ -26,10 +29,11 @@ class UserLog extends React.Component{
 		          		<label>Enter miles completed</label>
 		        	</div>
 		        </div>
-				<button className="btn waves-effect waves-light" type="submit" name="action">Submit
+				<button className="submitlogbutton btn waves-effect waves-light" type="submit" name="action">Submit
 	  			</button>
 	  		</form>
 	 	</div>
+	 </div>
 	
 
 
