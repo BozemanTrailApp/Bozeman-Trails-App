@@ -27,11 +27,12 @@ var TrailApp = React.createClass({
 	},
 	showComponent: function(){
 		if(this.state.activeComponent === 'allTrails'){
-			return <AllTrailsData getId = {this.getId}/>
+			return <AllTrailsData getId = {this.getId} />
 		}else if(this.state.activeComponent === 'viewTrail'){
 			return <ViewTrailData id = {this.state.activeTrailId} toggleActiveComp = {this.toggleActiveComponent}/>		
 		}else{
 			throw new Error('No Active Component', this.state.activeComponent)
+			
 		}
 	},
 

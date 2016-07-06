@@ -14,28 +14,19 @@ var AllComments = require('./allComments.js');
 
 
 var TrailCard = React.createClass({
-		getInitialState: function(){
-			return {
-				comments: "",
-				user:""
-			}
-		},
-		commentMap: function (){
+		
+			
+		
+		render: function(){
 			var comments = this.props.oneTrail.comments.map(function(item){
 				return <AllComments body = {item.body}
 								user = {item.user}
 								date = {item.date}
 								key = {item._id}
-								id = {item._id}/>
-				});			
-				return(
-					<div>
-						{comments}
-					</div>
-			)
-		},
-		render: function(){
-			console.log(this.props)
+								id = {item._id}
+								imageUrl = {item.imageUrl}/>
+				});	
+			console.log(this.props, "I am from line 36")
 			return(
 				<div>
 					<div>
@@ -51,17 +42,18 @@ var TrailCard = React.createClass({
 											<li className = 'white-text'>{this.props.oneTrail.directions}</li>
 										</ul>
 											<p className = 'white-text'> {this.props.oneTrail.description} </p>
+											
 											<div className = 'card-action'>
-												<a onClick = {this.props.toggleActiveComp.bind(null, 'allTrails')}>Back to Trails</a> <a onClick = {this.props.toggleActiveComp.bind(null, 'trailComments')}>View Trail Comments</a>
+												<a onClick = {this.props.toggleActiveComp.bind(null, 'allTrails')}>Back to Trails</a> 
 											</div>
 											
 											
 									</div>
 								</div>
-								{this.commentMap()}
+								
 							</div>
 						</div>
-				    				
+				    	<div className = 'col s12 m7'>{ comments }</div>			
 
 									<div>
 										<iframe height = '600px' width ='600px' src = {this.props.oneTrail.mapUrl}/>

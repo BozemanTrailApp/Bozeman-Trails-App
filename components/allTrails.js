@@ -18,7 +18,8 @@ function AllTrails(props){
 							comments = {item.comments}
 							key = {item._id}
 							id = {item._id}
-							getId = {props.getId}/>
+							getId = {props.getId}
+							/>
 });
 	return( 
 		<div>
