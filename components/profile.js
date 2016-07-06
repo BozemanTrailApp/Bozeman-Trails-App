@@ -109,7 +109,9 @@ var Profile = React.createClass({
 
 					
 
-					<h3>Total Miles Logged: {this.state.totalMiles}  </h3>
+					<h3>Total Miles Logged: {this.state.totalMiles} </h3>
+
+
 					</div>
 			</div>
 		</div>
