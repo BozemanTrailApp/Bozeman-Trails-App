@@ -52,6 +52,8 @@ var UserLogData = React.createClass({
 		return (
 			<div>
 
+
+
         		<UserLog
         		handleHikeLogSubmit={ this.handleHikeLogSubmit }
         		onHikeNameChange={ this.onHikeNameChange}
@@ -62,6 +64,8 @@ var UserLogData = React.createClass({
         		date={ this.state.date }
         		miles={ this.state.miles }
         		/>
+
+
 				
      		 </div>
 			)
