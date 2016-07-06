@@ -1,7 +1,7 @@
 var React = require('react');
 var Link = require('react-router').Link;
 
-
+var UsersTrailLog = require('./usersTrailLog');
 var UserLog = require('./login/userLog.js');
 var UserLogData = require('./login/userLogData.js');
 // var displayTrailData = require('./displayTrailData.js');
@@ -110,6 +110,11 @@ var Profile = React.createClass({
 					
 
 					<h3>Total Miles Logged: {this.state.totalMiles} </h3>
+
+
+					<Link to='/usersTrailLog'> 
+						<button className=" btn traillogbutton">My Trail Log</button>
+				    </Link>
 
 
 					</div>
