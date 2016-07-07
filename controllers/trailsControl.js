@@ -17,6 +17,7 @@ module.exports = {
 	read: function(req, res, next){
 		TrailsModel
 		.find()
+		.populate("comments.user")
 		.exec(function(err, result){
 			if(err){
 				res.send(err);
@@ -45,7 +46,9 @@ module.exports = {
 	},
 	readById: function(req, res,next){
 		TrailsModel
-		.findById(req.params.id, function(err, result){
+		.findOne({_id: req.params.id})
+		.populate("comments.user")
+		.exec(function(err, result){
 			if(err){
 				res.send(err);
 			}else{

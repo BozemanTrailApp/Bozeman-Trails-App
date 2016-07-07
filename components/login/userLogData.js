@@ -5,16 +5,17 @@ var UserLogData = React.createClass({
 
 	getInitialState: function(){
 		return {
-
-			hikeName: '',
-			date: '',
-			miles: ''
-		
-		}
+			hikeName: null ,
+			date: null,
+			miles: null
+		};
    
     },
 	onHikeNameChange: function(e){
-		this.setState({ hikeName: e.target.value })
+
+		this.setState({ hikeName: e.target.value });
+		//console.log(this.state.hikeName)
+		//this.forceUpdate();
 		//console.log(this.state.hikeName);
 	},
 	onDateChange: function(e){
@@ -49,10 +50,11 @@ var UserLogData = React.createClass({
 		this.setState({ hikeName: '', date: '', miles: ''});
 	},
 	render: function(){
+
+
+
 		return (
 			<div>
-
-
 
         		<UserLog
         		handleHikeLogSubmit={ this.handleHikeLogSubmit }
@@ -63,8 +65,9 @@ var UserLogData = React.createClass({
         		hikeName={ this.state.hikeName }
         		date={ this.state.date }
         		miles={ this.state.miles }
-        		/>
 
+        		
+        		/>
 
 				
      		 </div>
@@ -73,3 +76,17 @@ var UserLogData = React.createClass({
 });
 
 module.exports = UserLogData;
+
+
+
+// trailName: [
+// 				{value: null, name: 'Select' },
+// 				{value:'Sourdough' , name: 'Sourdough Trail'},
+// 				{value:'Leverich Canyon Mountain Trail', name: 'Leverich Canyon Mountain Trail'},
+// 				{value:'Main Street to Peets Hill', name: 'Main Street to Peets Hill' },
+// 				{value:'Gallagator Linear Trail', name: 'Gallagator Linear Trail' },
+// 				{value:'Sypes Canyon' , name: 'Sypes Canyon' }
+// 			]
+
+//trailName={this.state.trailName}
+
