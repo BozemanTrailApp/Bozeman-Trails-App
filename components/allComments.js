@@ -1,4 +1,4 @@
-//CommentsApp
+//trailsApp
 	//AllTrailsData
 		//AllTrails
 			//TrailsList
@@ -15,8 +15,7 @@ var AllComments = React.createClass({
 		let dateString = date.toString();
 		let trimDate = dateString.substring(0,10);
 			return trimDate
-			
-	},
+		},
 	userLogic: function(){
 		if(this.props.user){
 			return(<div><li className = 'white-text'>{this.props.user.userName} Says: </li></div>)
@@ -27,19 +26,15 @@ var AllComments = React.createClass({
 	render: function(){
 		console.log(this.userLogic());
 		return(
-				<div>
-					<div>
-						<div>
-							<div className = ' col s12 m5'>
-								<div className = 'card grey darken-4 z-depth-2'>
-									<div className = 'card-content white-text'>
-										<ul>
-											{this.userLogic()}
-											<li className = 'white-text'> {this.props.body} </li>
-											<li className = 'white-text'>{this.dateLogic()}</li>
-										</ul>
-									</div>
-								</div>
+				<div>			
+					<div className = ' col s12 m5'>
+						<div className = 'card grey darken-4 z-depth-2'>
+							<div className = 'card-content white-text'>
+								<ul>
+									{this.userLogic()}
+									<li className = 'white-text'> {this.props.body} </li>
+									<li className = 'white-text'>{this.dateLogic()}</li>
+								</ul>
 							</div>
 						</div>
 					</div>

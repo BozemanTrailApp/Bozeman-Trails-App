@@ -3,9 +3,8 @@
 		//AllTrails
 			//TrailsList
 	//ViewTrailData
-		//TrailCard
-			//TrailComments 
-				//AllComments 
+		//TrailCard 
+			//AllComments 
  
 var React = require('react');
 var Link = require('react-router').Link;
@@ -56,7 +55,7 @@ var TrailCard = React.createClass({
 						<div>
 							<iframe height = '600px' width ='600px' src = {this.props.oneTrail.mapUrl}/>
 						</div>
-						<div className = 'col s12 m7'>{ comments }</div>	
+						<div>{ comments }</div>	
 					</div>
 										
 				</div>
