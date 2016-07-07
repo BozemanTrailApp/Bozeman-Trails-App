@@ -25,7 +25,7 @@ var Profile = React.createClass({
 		this.setState({ totalMiles : total });
 	},
 
-	getOneUserFromServer: function(){
+	getOneUserFromServer: function(){ 
 		var self = this;
 			$.ajax({
 				method:'GET',
@@ -69,13 +69,16 @@ var Profile = React.createClass({
 			}
 		})
 	},
+	
+	
+
 	componentDidMount: function(){
 		this.getOneUserFromServer();
 	},
 	render: function(){
-			
 		return (	
 		<div>
+
 			<div className = "profilecontainer">
 			   	<div className = "profile">
 					<div className = "profilewords">
@@ -84,7 +87,7 @@ var Profile = React.createClass({
 						
 					<h2> Welcome, {this.state.user.userName}!</h2>
 
-					<h3> {this.state.user.firstName} {this.state.user.lastName} </h3>
+					<h3> {this.state.user.firstName + ' ' + this.state.user.lastName} </h3>
 
 					<h3> Age: {this.state.user.age } </h3>
 

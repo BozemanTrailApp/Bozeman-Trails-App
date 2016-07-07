@@ -12,6 +12,10 @@ var UserLog = React.createClass({
 	},
 	render: function (){
 
+
+class UserLog extends React.Component{ 
+	render(){
+
 		return(
 			
 				<div>
