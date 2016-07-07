@@ -14,7 +14,7 @@ var Profile = require('./../profile');
 var TrailsApp = require('./../trailsApp');
 var Home = require('./../home');
 var Login = require('./../login');
-
+var UserLog = require('./../usersTrailLog');
 
 
 ReactDom.render(
@@ -26,6 +26,7 @@ ReactDom.render(
 				<Route path = '/home' component = {Home}/>
 				<Route path = '/trails' component = {TrailsApp}/>
 				<Route path = '/login' component = {Login}/>
+				<Route path = '/usersTrailLog' component = {UserLog}/>
 
 			
 		</Route>
