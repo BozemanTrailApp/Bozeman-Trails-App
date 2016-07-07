@@ -16,17 +16,6 @@ var Profile = React.createClass({
 		}
 	},
 
-// 	displayTrailData: function(){
-// 		var self = this; 
-// 		$.ajax({ 
-// 			method: 'GET', 
-// 			url:'/user'
-// 		}).then(function(data).map(user.miles){
-// 			console.log(data);
-// 			self.setState({ user: miles });
-// 		})
-// },
-
 
 	addMiles: function(){
 		var total = 0;
@@ -102,7 +91,10 @@ var Profile = React.createClass({
 					<h3> Gender: {this.state.user.gender} </h3>
 					</div>
 
-					<UserLogData addHikeToUser={this.addHikeToUser} />
+					<UserLogData addHikeToUser={this.addHikeToUser} 
+								getOneUserFromServer={this.getOneUserFromServer}
+
+								/>
 
 						
 					<div className = "recordtraillog">
