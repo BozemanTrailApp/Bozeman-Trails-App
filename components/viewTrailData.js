@@ -1,10 +1,11 @@
 //TrailsApp
 	//AllTrailsData
-		//AllTrails 
+		//AllTrails
 			//TrailsList
 	//ViewTrailData
 		//TrailCard
-
+			//TrailComments
+				//AllComments 
 
 var React = require('react');
 var TrailCard = require('./trailCard.js')
@@ -21,7 +22,7 @@ var ViewTrailData = React.createClass({
 		method: 'GET',
 		url: '/trails/' + this.props.id
 		}).done(function(data){
-			console.log(data);
+			console.log(data); 
 			self.setState({oneTrail: data})
 
 		})
@@ -31,7 +32,7 @@ var ViewTrailData = React.createClass({
 		this.getOneTrailFromServer();
 	},
 	render(){
-		return this.state.oneTrail ? <TrailCard oneTrail = {this.state.oneTrail} toggleActiveComp = {this.props.toggleActiveComp}/> : null;
+		return this.state.oneTrail ? <TrailCard oneTrail = {this.state.oneTrail} toggleActiveComp = {this.props.toggleActiveComp}/> : this.state.oneTrail;
 	}
 });
 module.exports = ViewTrailData;

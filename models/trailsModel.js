@@ -6,7 +6,7 @@ var TrailSchema = new mongoose.Schema({
 	difficulty: {type: String, required: false},
 	length: {type: String, required: false},
 	location: {type: String, required: false},
-	description: {type: String, required: false},
+	description: {type: String, required: false}, 
 	comments: [commentSchema], 
 	mapUrl: {type: String, required: false},
 	trailHeadUrl: {type: String, required: false},

@@ -14,7 +14,7 @@ var Main = React.createClass({
 				method:'GET',
 				url:'/user'
 			}).done(function(data){
-				console.log(data);
+				//console.log(data);
 				self.setState({ user: data });
 			})
 	},
@@ -54,18 +54,22 @@ var Main = React.createClass({
 						<div>
 							<h1 className="theTitle"> Bozeman.by.trail </h1>
 						</div>
-						<div className= "fixedbuttons">
+						<div className="navbar">
 							<Link to = '/home'>
-								<button className = ' btn '>H O M E</button>
+								<button className = ' btn fixedbuttons'>H O M E</button>
 							</Link>
 							<Link to = '/profile'>
-								<button className = ' btn '>P R O F I L E</button>
+								<button className = ' btn fixedbuttons'>P R O F I L E</button>
 							</Link>
+
 							<Link to = '/signout'>
-								<button className = ' btn ' onClick={ this.logoutUser } 
+								<button className = ' btn signoutbutton ' onClick={ this.logoutUser } 
 								type="submit" name="action">Sign out</button>
 							</Link>
-							</div>
+						</div>
+							
+
+						
 						{this.props.children}
 				</div>
 				<footer className = 'page-footer grey' >

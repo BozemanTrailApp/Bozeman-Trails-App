@@ -1,18 +1,41 @@
 var React = require('react');
 var Link = require('react-router').Link;
 
-
+var UsersTrailLog = require('./usersTrailLog');
 var UserLog = require('./login/userLog.js');
 var UserLogData = require('./login/userLogData.js');
-
+// var displayTrailData = require('./displayTrailData.js');
 
 
 var Profile = React.createClass({
 	getInitialState: function(){
 		return {
-			user: ""
+			user: "",
+			miles: "",
+			totalMiles:""
 		}
 	},
+
+// 	displayTrailData: function(){
+// 		var self = this; 
+// 		$.ajax({ 
+// 			method: 'GET', 
+// 			url:'/user'
+// 		}).then(function(data).map(user.miles){
+// 			console.log(data);
+// 			self.setState({ user: miles });
+// 		})
+// },
+
+
+	addMiles: function(){
+		var total = 0;
+		for (var i = 0; i < this.state.user.trailLog.length; i++) {
+			total += this.state.user.trailLog[i].miles;
+		}
+		this.setState({ totalMiles : total });
+	},
+
 	getOneUserFromServer: function(){
 		var self = this;
 			$.ajax({
@@ -21,21 +44,39 @@ var Profile = React.createClass({
 			}).done(function(data){
 				console.log(data);
 				self.setState({ user: data });
-			})
+				self.addMiles();
+			}) 
 	},
-	addHikeToUser: function(){
-		$.ajax({
+
+	addHikeToUser: function(log){
+
+		var self = this;
+
+		//var miles = user.trailLog.miles;
+
+		var hike = self.state.user.trailLog.push(log);
+
+		//var miles = hike.miles += trailLog.miles;
+		
+
+		self.setState({user : hike});
+
+            console.log(self.state.user);
+			$.ajax({
 			method: 'PUT',
-			url: '/user/:id',
-			data: user,
+			url: '/user/' + self.state.user._id,
+			data: self.state.user,
 			success: function(data){
 				console.log("Adding Miles", data);
 				self.setState({ user : data });
-				alert("Success on Logging your Miles Hiked!");
+				self.getOneUserFromServer();
+				
+				
+				//alert("Success on Logging your Miles Hiked!");
 			},
 			error: function(xhr, status, err){
 				console.error('Failed to Add Miles', status, err.toString())
-				alert('Failed on Logging your Miles!');
+				//alert('Failed on Logging your Miles!');
 			}
 		})
 	},
@@ -59,14 +100,27 @@ var Profile = React.createClass({
 					<h3> Age: {this.state.user.age } </h3>
 
 					<h3> Gender: {this.state.user.gender} </h3>
+					</div>
+
+					<UserLogData addHikeToUser={this.addHikeToUser} />
+
+						
+					<div className = "recordtraillog">
+
+					
+
+					<h3>Total Miles Logged: {this.state.totalMiles} </h3>
 
 
-					<UserLogData />
+					<Link to='/usersTrailLog'> 
+						<button className=" btn traillogbutton">My Trail Log</button>
+				    </Link>
+
 
 					</div>
-				</div>
 			</div>
 		</div>
+	</div>
 			
 			)
 

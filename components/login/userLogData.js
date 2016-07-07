@@ -5,14 +5,18 @@ var UserLogData = React.createClass({
 
 	getInitialState: function(){
 		return {
-			hikeName: '',
-			date: '',
-			miles: ''
-		}
+			hikeName: null ,
+			date: null,
+			miles: null
+		};
    
     },
 	onHikeNameChange: function(e){
-		this.setState({ hikeName: e.target.value })
+
+		this.setState({ hikeName: e.target.value });
+		//console.log(this.state.hikeName)
+		//this.forceUpdate();
+		//console.log(this.state.hikeName);
 	},
 	onDateChange: function(e){
 		this.setState({ date: e.target.value })
@@ -20,21 +24,51 @@ var UserLogData = React.createClass({
 	onMilesChange: function(e){
 		this.setState({ miles: e.target.value })
 	},
-	handleUserLogSubmit: function(e){
+	handleHikeLogSubmit: function(e){
 		e.preventDefault();
+		
+		var log = 
+				{
+				hikeName: "",
+				date: "",
+				miles: ""
 
-		var user = {};
+		};
 
-		user.profileSchema.hikeName = this.state.profileSchema.hikeName;
-		user.date = this.state.date;
-		user.miles = this.state.miles;
-		this.props.getOneUserFromServer(user);
+		var hike = this.state.hikeName;
+		var time = this.state.date;
+		var distance = this.state.miles;
+
+
+		log.hikeName = hike;
+		log.date = time;
+		log.miles = distance;
+
+		console.log(log);
+
+		this.props.addHikeToUser(log);
 		this.setState({ hikeName: '', date: '', miles: ''});
 	},
 	render: function(){
+
+
+
 		return (
-			<div>	
-        		<UserLog />
+			<div>
+
+        		<UserLog
+        		handleHikeLogSubmit={ this.handleHikeLogSubmit }
+        		onHikeNameChange={ this.onHikeNameChange}
+        		onDateChange={this.onDateChange}
+        		onMilesChange={this.onMilesChange}
+
+        		hikeName={ this.state.hikeName }
+        		date={ this.state.date }
+        		miles={ this.state.miles }
+
+        		
+        		/>
+
 				
      		 </div>
 			)
@@ -42,3 +76,17 @@ var UserLogData = React.createClass({
 });
 
 module.exports = UserLogData;
+
+
+
+// trailName: [
+// 				{value: null, name: 'Select' },
+// 				{value:'Sourdough' , name: 'Sourdough Trail'},
+// 				{value:'Leverich Canyon Mountain Trail', name: 'Leverich Canyon Mountain Trail'},
+// 				{value:'Main Street to Peets Hill', name: 'Main Street to Peets Hill' },
+// 				{value:'Gallagator Linear Trail', name: 'Gallagator Linear Trail' },
+// 				{value:'Sypes Canyon' , name: 'Sypes Canyon' }
+// 			]
+
+//trailName={this.state.trailName}
+

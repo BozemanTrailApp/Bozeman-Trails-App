@@ -7,14 +7,16 @@
     border: 1px solid orange;
 }
 
+
+
 .theTitle {
     font-family: 'Damion', cursive;
     float: right;
     font-size: 100px;
-    margin-right: 80px;
-    margin-top: 30px;
+    margin-right: 100px;
+    margin-top: 80px;
     color: #FFFFFF;
-    display: block;
+    display: inline-block;
     }
 .loggy {
     float: right;  
@@ -45,8 +47,9 @@
     margin-left: 575px;
     margin-bottom: 1%;
     margin-top: 30px;
-    width: 650px;
+    width: 500px;
     display: inline-block;
+
 }
 
 .backtotrails { 
@@ -84,7 +87,7 @@
 }
 
 .profilecontainer {
-    background-image: url("https://images.unsplash.com/reserve/jGzMpqqZQO6PN5Z0HiTe_YWCO-42.jpg?dpr=1&auto=format&crop=entropy&fit=crop&w=1440&h=960&q=80");
+    background-color: black;
     width: 100vw;
     height: 100vh;
 }
@@ -112,8 +115,7 @@
 
  .fixedbuttons {
     position: absolute;
-    top: 0;
-    left: 20px;
+    left: 150px;
     font-family: 'Oswald', sans-serif;
     size: 30px;
     
@@ -127,18 +129,44 @@
 
    }
 
-  
-
- .profilewords {
+  .profilewords {
     text-align: center;
-    margin-top: 8%;
- }
+    margin-top: -5%;
+    display: inline-block;
 
-.logform { 
-margin-top:8%;
- }
 
- #submitlog {
+}
+  #submitlog {
     align-content: left;
  }
 
+.signoutbutton { 
+    right:5px;
+    position: absolute;
+
+ }
+
+ .navbar {
+    background-color: black;
+ }
+
+.wholeform {
+ margin-bottom:15%;
+}
+
+.submitlogbutton {
+    position: relative;
+    display: inline-block;
+}
+
+.recordtraillog {
+    position:relative;
+    right: -700px;
+    top: -600px;
+}
+
+.logcontainer {
+    background-color: #12816D;
+    width: 100%;
+    height: 1000px;
+}
