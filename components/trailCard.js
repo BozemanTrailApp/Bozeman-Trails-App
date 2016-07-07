@@ -53,13 +53,10 @@ var TrailCard = React.createClass({
 								
 							</div>
 						</div>
-				    	<div className = 'col s12 m7'>{ comments }</div>			
-
-									<div>
-										<iframe height = '600px' width ='600px' src = {this.props.oneTrail.mapUrl}/>
-									</div>
-
-									
+						<div>
+							<iframe height = '600px' width ='600px' src = {this.props.oneTrail.mapUrl}/>
+						</div>
+						<div className = 'col s12 m7'>{ comments }</div>	
 					</div>
 										
 				</div>
