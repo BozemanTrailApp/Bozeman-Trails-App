@@ -1,7 +1,9 @@
+
 var express = require('express')
 
 
 var cors = require('cors'); // Comment this line out for Heroku
+
 
 
 var bodyParser = require('body-parser');
@@ -12,13 +14,15 @@ var session = require('express-session');
 var app = express();
 var configSession = require('./passport/setsercets.js');
 var config = require('./config.js');
-require('./passport/passport.js')(passport);//self invokes passport
+require('./passport/passport.js')(passport);
 
 app.use(session(configSession));
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 app.use(cors()); // before you push up to Heroku for mlab
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -62,7 +66,10 @@ if (process.env.NODE_ENV === 'production') {
     noInfo: true,
     publicPath: webpackConfig.output.publicPath
   }));
+
+
   app.use(require('webpack-hot-middleware')(compiler));
+
 
   // Do "hot-reloading" of express stuff on the server
   // Throw away cached modules and re-require next time
@@ -79,30 +86,25 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-
-
-
+// mongoose.connect(
+//    // "mongodb://localhost:27017/bbtdb",
+//     config.mongo_uri 
+// );
 
 
 
 // mongoose.connect(config.mongo_uri);   //remove comment for Heroku
-
 mongoose.connect('mongodb://localhost:27017/bbtdb');
     
-
-
 
 mongoose.connection.once('open', function(){
 	console.log("Connected to the bbtdb database.");
 });
 
 
-
 app.get('/', function(req, res){
 	res.render('index');
 });
-
-
 
 app.listen(8000, function(){
 
@@ -110,9 +112,9 @@ app.listen(8000, function(){
 });
 
 
-// app.listen(congfig.port, function(){             //Remove comments for Heroku
-// console.log("Connecting  on " + config.port)     //
-// });                                              //
+// app.listen(config.port, function(){                                  //Remove comments for Heroku
+// console.log("The Magic is Happening on Port" + config.port)     //
+// });                                              
 
 
 
