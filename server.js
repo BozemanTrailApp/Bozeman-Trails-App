@@ -16,7 +16,7 @@ require('./passport/passport.js')(passport);//self invokes passport
 app.use(session(configSession));
 app.use(passport.initialize());
 app.use(passport.session());
-//app.use(cors()); // before you push up to Heroku for mlab
+app.use(cors());                  // Comment this line out for Heroku
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/views'));
@@ -51,17 +51,17 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   // When not in production, enable hot reloading
 
-  var chokidar = require('chokidar');
-  var webpack = require('webpack');
-  var webpackConfig = require('./webpack.config.dev');
-  var compiler = webpack(webpackConfig);
-  app.use(require('webpack-dev-middleware')(compiler, {
-    noInfo: true,
-    publicPath: webpackConfig.output.publicPath
-  }));
-  app.use(require('webpack-hot-middleware')(compiler));
-
-  // Do "hot-reloading" of express stuff on the server
+  var chokidar = require('chokidar');                              
+  var webpack = require('webpack');                                
+  var webpackConfig = require('./webpack.config.dev');             
+  var compiler = webpack(webpackConfig);                           
+  app.use(require('webpack-dev-middleware')(compiler, {            
+    noInfo: true,                                                  
+    publicPath: webpackConfig.output.publicPath                    
+  }));                                                             
+  app.use(require('webpack-hot-middleware')(compiler));            
+                                                                   
+  // Do "hot-reloading" of express stuff on the server             
   // Throw away cached modules and re-require next time
   // Ensure there's no important state in there!
 
