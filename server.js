@@ -1,5 +1,5 @@
-var express = require('express')
-//var cors = require('cors'); // Comment this line out for Heroku
+var express = require('express');
+// var cors = require('cors'); // before you push up to Heroku for mlab
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -8,7 +8,7 @@ var session = require('express-session');
 var app = express();
 var configSession = require('./passport/setsercets.js');
 var config = require('./config.js');
-require('./passport/passport.js')(passport);//self invokes passport
+require('./passport/passport.js')(passport);
 
 app.use(session(configSession));
 app.use(passport.initialize());
