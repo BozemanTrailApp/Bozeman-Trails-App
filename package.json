@@ -9,8 +9,7 @@
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "go": "npm run build && npm run start",
-    "lint": "eslint client server || true",
-    "postinstall": "postinstall-build lib 'npm run build-lib'"
+    "lint": "eslint client server || true"
   },
   "author": "",
   "license": "ISC",
@@ -30,7 +29,6 @@
     "node": "0.0.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "postinstall-build": "^0.2.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.4.1",
