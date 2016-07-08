@@ -10,11 +10,7 @@ var UserLog = React.createClass({
  			 });
   			//$(this.refs.yourSelectTag).material_select(this._onHikeNameChange.bind(this));
 	},
-	render: function (){
-
-
-class UserLog extends React.Component{ 
-	render(){
+	render: function(){
 
 		return(
 			

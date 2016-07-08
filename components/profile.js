@@ -4,8 +4,6 @@ var Link = require('react-router').Link;
 var UsersTrailLog = require('./usersTrailLog');
 var UserLog = require('./login/userLog.js');
 var UserLogData = require('./login/userLogData.js');
-// var displayTrailData = require('./displayTrailData.js');
-
 
 var Profile = React.createClass({
 	getInitialState: function(){
