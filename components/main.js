@@ -51,15 +51,18 @@ var Main = React.createClass({
 			return(
 				<div>
 				<div> 
+						<div className = "containertitle">
 						<div>
 							<h1 className="theTitle"> Bozeman.by.trail </h1>
 						</div>
+						</div> 
+
 						<div className="navbar">
 							<Link to = '/home'>
 								<button className = ' btn fixedbuttons'>H O M E</button>
 							</Link>
 							<Link to = '/profile'>
-								<button className = ' btn fixedbuttons'>P R O F I L E</button>
+								<button className = ' btn fixedbuttons profilebutton'>P R O F I L E</button>
 							</Link>
 
 							<Link to = '/signout'>
@@ -72,13 +75,15 @@ var Main = React.createClass({
 						
 						{this.props.children}
 				</div>
+				<div className= "footerall">
 				<footer className = 'page-footer grey' >
 					<div className = 'footer-copyright'>
 						<div className = 'container '>
 							<p className = 'white-text'>Brought to you by the minds of Jonathan, Jeslyn, and Lance</p>
 						</div>
 					</div>
-				</footer>	
+				</footer>
+			</div>	
 				</div>	
 						
 					)
@@ -95,7 +100,7 @@ var Main = React.createClass({
 							<button className = 'btn'>home</button>
 						</Link>
 						<Link to ='/login'>
-							<button className = ' btn'>login</button>
+							<button className = ' btn loginbutton'>login</button>
 						</Link>
 					</div>
 						{this.props.children}

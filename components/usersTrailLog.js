@@ -30,9 +30,10 @@ var UsersTrailLog= React.createClass({
 			})
 
 	},
-	mapper: function(){
 
-		var trailList = this.state.user.trailLog.map(function(item){
+	mapDate: function(){
+
+		var trailDate = this.state.user.trailLog.map(function(item){
 			var date = item.date;
 			var dateString = date.toString();
 			var trimDate = dateString.substring(0,10);
@@ -41,13 +42,52 @@ var UsersTrailLog= React.createClass({
 				<div>
 					<div className = "userslog">
 					<div>
-						Date: {trimDate}
+						{trimDate}
 					</div>
-					<div>
-						Trail: {item.hikeName}
 					</div>
+					
+				</div>
+			)
+		})
+
+		return (
+			<div>
+				{trailDate}
+			</div>
+		)
+	},
+
+	mapTrail: function(){
+
+		var trailName = this.state.user.trailLog.map(function(item){
+
+			return ( 
+			
 					<div>
-						Miles Logged: {item.miles}
+						{item.hikeName}
+					</div>
+				
+			)
+		})
+		return (
+			<div>
+				{trailName}
+			</div>
+		)
+	},
+
+
+	mapMiles: function(){
+
+		var trailMiles = this.state.user.trailLog.map(function(item){
+			
+
+			return ( 
+				<div>
+					<div className = "userslog">
+					
+					<div>
+						{item.miles}
 					</div>
 					</div>
 				</div>
@@ -55,10 +95,11 @@ var UsersTrailLog= React.createClass({
 		})
 		return (
 			<div>
-				{trailList}
+				{trailMiles}
 			</div>
 		)
 	},
+
 	componentDidMount: function(){
 		this.getOneUserFromServer();
 	},
@@ -68,15 +109,31 @@ var UsersTrailLog= React.createClass({
 		<div>
 			<div className = "logcontainer">
 			   	<div className = "traillogdiv">
+<center>
+      <table className = "centered " >
+        <thead>
+          <tr className = "tabletitles">
+              <th data-field="id">Date</th>
+              <th data-field="name">Trail</th>
+              <th data-field="price">Miles</th>
+          </tr>
+        </thead>
+
+        <tbody className = "traillogwords">
+          <tr>
+            <td>{this.mapDate()}</td>
+            <td>{this.mapTrail()}</td>
+            <td>{this.mapMiles()}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+      </center>
+            
 					
-			   		<h3><u>My Trail Log</u></h3>
-					</div>
-						<div className= "allLogs">
-						{this.mapper()}
-						</div>
 		    </div>
 		</div>
-	
+	</div>
 			
 			)
 
