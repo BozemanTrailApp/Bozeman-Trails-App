@@ -11,7 +11,9 @@ var UsersTrailLog= React.createClass({
 
 		getInitialState: function(){
 		return { 
-			user:""
+			user:{
+				trailLog: []
+			}
 		}
 	},
 
@@ -24,22 +26,29 @@ var UsersTrailLog= React.createClass({
 			}).done(function(data){
 				console.log(data);
 				self.setState({ user: data });
-				console.log(self.state.user)
+				
 			})
 
 	},
 	mapper: function(){
+
 		var trailList = this.state.user.trailLog.map(function(item){
-			return (
+			var date = item.date;
+			var dateString = date.toString();
+			var trimDate = dateString.substring(0,10);
+
+			return ( 
 				<div>
+					<div className = "userslog">
 					<div>
-						{item.date}
+						Date: {trimDate}
 					</div>
 					<div>
-						{item.hikeName}
+						Trail: {item.hikeName}
 					</div>
 					<div>
-						{item.miles}
+						Miles Logged: {item.miles}
+					</div>
 					</div>
 				</div>
 			)
@@ -61,23 +70,11 @@ var UsersTrailLog= React.createClass({
 			   	<div className = "traillogdiv">
 					
 			   		<h3><u>My Trail Log</u></h3>
-					
-						</div>
+					</div>
+						<div className= "allLogs">
 						{this.mapper()}
-				
-
-						
-			
-
-					
-
-
-
-					<h3>stuff</h3>
-
-
-					
-			</div>
+						</div>
+		    </div>
 		</div>
 	
 			

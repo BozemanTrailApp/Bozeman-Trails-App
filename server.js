@@ -1,5 +1,5 @@
 var express = require('express')
-// var cors = require('cors'); // before you push up to Heroku for mlab
+var cors = require('cors'); // before you push up to Heroku for mlab
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -13,7 +13,7 @@ require('./passport/passport.js')(passport);//self invokes passport
 app.use(session(configSession));
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(cors()); // before you push up to Heroku for mlab
+app.use(cors()); // before you push up to Heroku for mlab
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/views'));
@@ -78,8 +78,9 @@ if (process.env.NODE_ENV === 'production') {
 
 
 mongoose.connect(
-    "mongodb://localhost:27017/Blog",
-    config.mongo_uri 
+    "mongodb://localhost:27017/bbtdb"
+    // ,
+    // config.mongo_uri 
 
 );
 mongoose.connection.once('open', function(){
@@ -94,9 +95,9 @@ app.get('/', function(req, res){
 
 
 
-app.listen(config.port, function(){
-	console.log("The Magic is Happening on Port" + config.port);
+app.listen(8000, function(){
+	console.log("The Magic is Happening on Port" + 8000);
 });
 
-
-
+// config.port
+// config.port
