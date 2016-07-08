@@ -11,7 +11,9 @@ var UsersTrailLog= React.createClass({
 
 		getInitialState: function(){
 		return { 
-			user:""
+			user:{
+				trailLog: []
+			}
 		}
 	},
 
@@ -24,32 +26,80 @@ var UsersTrailLog= React.createClass({
 			}).done(function(data){
 				console.log(data);
 				self.setState({ user: data });
-				console.log(self.state.user)
+				
 			})
 
 	},
-	mapper: function(){
-		var trailList = this.state.user.trailLog.map(function(item){
-			return (
+
+	mapDate: function(){
+
+		var trailDate = this.state.user.trailLog.map(function(item){
+			var date = item.date;
+			var dateString = date.toString();
+			var trimDate = dateString.substring(0,10);
+
+			return ( 
 				<div>
+					<div className = "userslog">
 					<div>
-						{item.date}
+						{trimDate}
 					</div>
+					</div>
+					
+				</div>
+			)
+		})
+
+		return (
+			<div>
+				{trailDate}
+			</div>
+		)
+	},
+
+	mapTrail: function(){
+
+		var trailName = this.state.user.trailLog.map(function(item){
+
+			return ( 
+			
 					<div>
 						{item.hikeName}
 					</div>
+				
+			)
+		})
+		return (
+			<div>
+				{trailName}
+			</div>
+		)
+	},
+
+
+	mapMiles: function(){
+
+		var trailMiles = this.state.user.trailLog.map(function(item){
+			
+
+			return ( 
+				<div>
+					<div className = "userslog">
+					
 					<div>
 						{item.miles}
+					</div>
 					</div>
 				</div>
 			)
 		})
 		return (
 			<div>
-				{trailList}
+				{trailMiles}
 			</div>
 		)
 	},
+
 	componentDidMount: function(){
 		this.getOneUserFromServer();
 	},
@@ -59,27 +109,31 @@ var UsersTrailLog= React.createClass({
 		<div>
 			<div className = "logcontainer">
 			   	<div className = "traillogdiv">
+<center>
+      <table className = "centered " >
+        <thead>
+          <tr className = "tabletitles">
+              <th data-field="id">Date</th>
+              <th data-field="name">Trail</th>
+              <th data-field="price">Miles</th>
+          </tr>
+        </thead>
+
+        <tbody className = "traillogwords">
+          <tr>
+            <td>{this.mapDate()}</td>
+            <td>{this.mapTrail()}</td>
+            <td>{this.mapMiles()}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+      </center>
+            
 					
-			   		<h3><u>My Trail Log</u></h3>
-					
-						</div>
-						{this.mapper()}
-				
-
-						
-			
-
-					
-
-
-
-					<h3>stuff</h3>
-
-
-					
-			</div>
+		    </div>
 		</div>
-	
+	</div>
 			
 			)
 
