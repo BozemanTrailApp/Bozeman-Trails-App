@@ -1,5 +1,8 @@
 var express = require('express')
-//var cors = require('cors'); // before you push up to Heroku for mlab
+
+var cors = require('cors'); // Comment this line out for Heroku
+
+
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -77,10 +80,13 @@ if (process.env.NODE_ENV === 'production') {
 
 
 
-mongoose.connect(
-    "mongodb://localhost:27017/bbtdb"
-    ,config.mongo_uri 
-);
+
+// mongoose.connect(config.mongo_uri);   //remove comment for Heroku
+
+mongoose.connect('mongodb://localhost:27017/bbtdb');
+    
+
+
 
 mongoose.connection.once('open', function(){
 	console.log("Connected to the bbtdb database.");
@@ -94,9 +100,16 @@ app.get('/', function(req, res){
 
 
 
-app.listen(config.port, function(){
-	console.log("The Magic is Happening on Port" + config.port);
+app.listen(8000, function(){
+	console.log("The Magic is Happening on Port 8000" );
 });
+
+
+// app.listen(congfig.port, function(){             //Remove comments for Heroku
+// console.log("Connecting  on " + config.port)     //
+// });                                              //
+
+
 
 
 
