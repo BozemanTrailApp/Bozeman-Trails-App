@@ -78,7 +78,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 mongoose.connect(
-   "mongodb://localhost:27017/bbtdb",
+   //"mongodb://localhost:27017/bbtdb",
     config.mongo_uri 
 );
 
