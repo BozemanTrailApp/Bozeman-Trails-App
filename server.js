@@ -77,10 +77,10 @@ if (process.env.NODE_ENV === 'production') {
 
 
 
-mongoose.connect(
-   //"mongodb://localhost:27017/bbtdb",
-    config.mongo_uri 
-);
+mongoose.connect(config.mongo_uri);
+
+//mongoose.connect("mongodb://localhost:27017/bbtdb");
+
 
 mongoose.connection.once('open', function(){
 	console.log("Connected to the bbtdb database.");
