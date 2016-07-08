@@ -25,14 +25,48 @@ var CommentForm = React.createClass({
 		this.handleNewComment(comment);
 		this.setState({user: '', date: '', body: ''});
 	},
-	handleNewComment: function(comment){
+	getOneTrailFromServer: function(){
 		var self = this;
 		$.ajax({
 			url: '/trails',
+			method: 'GET'
+		}).done(function(data){
+			console.log(data);
+			self.setState({trail: data});
+		})
+	},
+	addCommentToTrail: function(comment){
+		var self = this;
+		var newComment = self.state.trails.comments.push(comment);
+		self.setState({trails: newComment});
+		console.log(self.state.trail);
+		$.ajax({
+			url: '/trails' + self.state.trail._id,
 			method: 'PUT',
 			dataType: 'json',
 			data: comment,
-			
+			success: function(data){
+				console.log('Adding a Comment', data);
+				self.setState({trail: data});
+				self.getOneTrailFromServer();
+			},
+			error: function (xhr, status, err){
+				console,error('Failed to add a Comment', status, err.toString())
+			}
+
 		})
+	},
+	componentDidMount: function(){
+		this.getOneTrailFromServer();
+	},
+	render: function(){
+		return(
+				<div>
+					<AddCommentForm addCommentToTrail = {this.addCommentToTrail}
+									getOneTrailFromServer = {this.getOneTrailFromServer}
+									handleCommentSubmit = {this.handleCommentSubmit}
+									handleBodyChange = {this.handleBodyChange}/>
+				</div>
+			)
 	}
 });
