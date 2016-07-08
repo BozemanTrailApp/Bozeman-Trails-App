@@ -56,7 +56,10 @@ if (process.env.NODE_ENV === 'production') {
     noInfo: true,
     publicPath: webpackConfig.output.publicPath
   }));
+
+
   app.use(require('webpack-hot-middleware')(compiler));
+
 
   // Do "hot-reloading" of express stuff on the server
   // Throw away cached modules and re-require next time
@@ -77,10 +80,10 @@ if (process.env.NODE_ENV === 'production') {
 
 
 
-mongoose.connect(config.mongo_uri);
-
-//mongoose.connect("mongodb://localhost:27017/bbtdb");
-
+mongoose.connect(
+   // "mongodb://localhost:27017/bbtdb",
+    config.mongo_uri 
+);
 
 mongoose.connection.once('open', function(){
 	console.log("Connected to the bbtdb database.");
