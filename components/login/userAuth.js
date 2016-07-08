@@ -32,7 +32,7 @@ var UserAuth = React.createClass({
 			success: function(data){
 				console.log("Login successful.", data);
 				self.setState({ user : data });
-				window.location = "http://morning-sea-89915.herokuapp.com/profile";
+				window.location = "http://morning-sea-89915.herokuapp.com/#/profile";
 
 			},
 			error: function(xhr, status, err){
@@ -52,7 +52,7 @@ var UserAuth = React.createClass({
 			success: function(data){
 				console.log("Signup successful.", data);
 				self.setState({ user : data });
-				window.location = "http://morning-sea-89915.herokuapp.com/profile";
+				window.location = "http://morning-sea-89915.herokuapp.com/#/profile";
 			},
 			error: function(xhr, status, err){
 				alert('No Such Email or Incorrect Password')
@@ -60,6 +60,9 @@ var UserAuth = React.createClass({
 			}
 		})
 	},
+
+	
+
 	render: function(){
 			
 		return (
