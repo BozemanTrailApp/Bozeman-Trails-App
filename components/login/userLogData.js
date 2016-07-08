@@ -1,7 +1,7 @@
 var React = require('react');
 var UserLog = require('./userLog.js');
 
-var UserLogData = React.createClass({
+var UserLogData = React.createClass({ 
 
 	getInitialState: function(){
 		return {
