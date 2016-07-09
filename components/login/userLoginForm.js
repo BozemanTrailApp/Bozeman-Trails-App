@@ -24,7 +24,7 @@ var UserLoginForm = React.createClass({
 			          <label>User Name</label>
 			        </div>
 			        <div className="input-field col s6">
-			          <input type="text" onChange={ this.props.onPasswordChange } className="validate"/>
+			          <input type="password" onChange={ this.props.onPasswordChange } className="validate"/>
 			          <label>Password</label>
 			        </div>
 			      </div>

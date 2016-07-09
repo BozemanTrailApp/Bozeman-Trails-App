@@ -18,12 +18,13 @@ var UserLog = React.createClass({
 		return(
 			
 				<div>
-				<div className = "wholeform">
+				<div className = "wholeform ">
 		    	<form className="col s6 hikeform" onSubmit={ this.props.handleHikeLogSubmit }>
 		      	<div className="row">
         			<div className="input-field col s4">
 	 		         	<input  type="text" onChange={ this.props.onHikeNameChange } value={ this.props.hikeName } className="validate"/>
- 		          		<label>Hike</label>
+
+ 		          		<label className = "blue-text text-lighten-5"> Hike</label>
  		        	</div>
 				</div>
 		      	<div className="row">
@@ -34,7 +35,7 @@ var UserLog = React.createClass({
 		      	<div className="row">
 		        	<div className="input-field col s4">
 		         		<input type="text" onChange={ this.props.onMilesChange } value={ this.props.miles } className="validate"/>
-		          		<label>Enter miles completed</label>
+		          		<label className = "blue-text text-lighten-5">Enter miles completed</label>
 		        	</div>
 		        </div>
 				<button className="submitlogbutton btn waves-effect waves-light" type="submit" name="action">Submit

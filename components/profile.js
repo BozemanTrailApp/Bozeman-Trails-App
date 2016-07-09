@@ -63,7 +63,7 @@ var Profile = React.createClass({
 			},
 			error: function(xhr, status, err){
 				console.error('Failed to Add Miles', status, err.toString())
-				//alert('Failed on Logging your Miles!');
+				alert('Please Fill in all Categories!');
 			}
 		})
 	},
@@ -102,7 +102,7 @@ var Profile = React.createClass({
 
 					
 
-					<h3>Total Miles Logged: {this.state.totalMiles} </h3>
+					<h3 className="totalmiles">Total Miles Logged: {this.state.totalMiles} </h3>
 
 
 					<Link to='/usersTrailLog'> 

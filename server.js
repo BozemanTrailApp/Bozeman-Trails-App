@@ -1,8 +1,5 @@
 var express = require('express')
-
-var cors = require('cors'); // Comment this line out for Heroku
-
-
+//var cors = require('cors'); // Comment this line out for Heroku
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -11,12 +8,14 @@ var session = require('express-session');
 var app = express();
 var configSession = require('./passport/setsercets.js');
 var config = require('./config.js');
-require('./passport/passport.js')(passport);//self invokes passport
+require('./passport/passport.js')(passport);
 
 app.use(session(configSession));
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(cors());                  // Comment this line out for Heroku
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/views'));
@@ -51,17 +50,22 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   // When not in production, enable hot reloading
 
-  var chokidar = require('chokidar');                              
-  var webpack = require('webpack');                                
-  var webpackConfig = require('./webpack.config.dev');             
-  var compiler = webpack(webpackConfig);                           
-  app.use(require('webpack-dev-middleware')(compiler, {            
-    noInfo: true,                                                  
-    publicPath: webpackConfig.output.publicPath                    
-  }));                                                             
-  app.use(require('webpack-hot-middleware')(compiler));            
-                                                                   
-  // Do "hot-reloading" of express stuff on the server             
+
+  var chokidar = require('chokidar');
+  var webpack = require('webpack');
+  var webpackConfig = require('./webpack.config.dev');
+  var compiler = webpack(webpackConfig);
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath
+  }));
+
+
+  app.use(require('webpack-hot-middleware')(compiler));
+
+
+  // Do "hot-reloading" of express stuff on the server
+
   // Throw away cached modules and re-require next time
   // Ensure there's no important state in there!
 
@@ -76,22 +80,20 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-
-
+mongoose.connect(
+   //"mongodb://localhost:27017/bbtdb",
+    config.mongo_uri 
+);
 
 
 
 // mongoose.connect(config.mongo_uri);   //remove comment for Heroku
-
-mongoose.connect('mongodb://localhost:27017/bbtdb');
+// mongoose.connect('mongodb://localhost:27017/bbtdb');
     
-
-
 
 mongoose.connection.once('open', function(){
 	console.log("Connected to the bbtdb database.");
 });
-
 
 
 app.get('/', function(req, res){
@@ -100,14 +102,17 @@ app.get('/', function(req, res){
 
 
 
-app.listen(8000, function(){
-	console.log("The Magic is Happening on Port 8000" );
-});
+// app.listen(8000, function(){
+// 	console.log("The Magic is Happening on Port 8000" );
+// });
 
 
-// app.listen(congfig.port, function(){             //Remove comments for Heroku
-// console.log("Connecting  on " + config.port)     //
-// });                                              //
+
+
+app.listen(config.port, function(){                                  //Remove comments for Heroku
+console.log("The Magic is Happening on Port" + config.port)     //
+});                                              
+
 
 
 
