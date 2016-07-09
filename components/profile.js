@@ -63,7 +63,7 @@ var Profile = React.createClass({
 			},
 			error: function(xhr, status, err){
 				console.error('Failed to Add Miles', status, err.toString())
-				//alert('Failed on Logging your Miles!');
+				alert('Please Fill in all Categories!');
 			}
 		})
 	},
