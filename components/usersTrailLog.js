@@ -1,9 +1,13 @@
+//Profile
+	//UserTrailLog
+		//UserLogData
+		//UserLog
+
 var React = require('react'); 
 var Link = require('react-router').Link;
 var UserLogData = require('./login/userLogData.js');
-
 var UserLog = require('./login/userLog.js');
-var UserLogData = require('./login/userLogData.js');
+ 
 	
 
 	
