@@ -102,7 +102,7 @@ var Profile = React.createClass({
 
 					
 
-					<h3>Total Miles Logged: {this.state.totalMiles} </h3>
+					<h3 className="totalmiles">Total Miles Logged: {this.state.totalMiles} </h3>
 
 
 					<Link to='/usersTrailLog'> 
