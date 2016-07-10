@@ -26,17 +26,17 @@ var CommentForm = React.createClass({
 		comment.body = this.state.body;
 		this.addCommentToTrail(comment);
 		this.setState({ body: ''});
+		//this.setState({user: ''});
 	},
-	getUserFromServer: function(){
+	getOneUserFromServer: function(){ 
 		var self = this;
-
-		$.ajax({
-			method: 'GET',
-			url: '/user'
-		}).done(function(data){
-			console.log(data);
-			self.setstate({user: data});
-		})
+			$.ajax({
+				method:'GET',
+				url:'/user'
+			}).done(function(data){
+				console.log(data);
+				self.setState({ user: data });
+			}) 
 	}, 
 
 	getOneTrailFromServer: function(){
@@ -45,7 +45,7 @@ var CommentForm = React.createClass({
 			url: '/trails/' + this.props.oneTrailId,
 			method: 'GET'
 		}).done(function(data){
-			console.log(data);
+			//console.log(data);
 			self.setState({trailById: data});
 		})
 	},
@@ -64,7 +64,9 @@ var CommentForm = React.createClass({
 			success: function(data){
 				console.log('Adding a Comment', data);
 				self.setState({trailById: data});
+				self.setState({userById: data});
 				self.getOneTrailFromServer();
+				self.getOneUserFromServer();
 			},
 			error: function (xhr, status, err){
 				console.error('Failed to add a Comment', status, err.toString()) 
@@ -75,6 +77,7 @@ var CommentForm = React.createClass({
 
 	componentDidMount: function(){
 		this.getOneTrailFromServer();
+		//this.getOneUserFromServer();
 	},
 	render: function(){
 		return(
@@ -82,7 +85,7 @@ var CommentForm = React.createClass({
 					<AddCommentForm handleCommentSubmit = {this.handleCommentSubmit}
 									handleBodyChange = {this.handleBodyChange}
 									body = {this.state.body}
-									getUserFromServer ={ this.getUserFromServer}
+									user = {this.state.user}
 									/>
 				</div>
 			)
