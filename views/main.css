@@ -2,8 +2,7 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-   
-   /* background-color: #252a23;*/
+    /*background-color: #141613;*/
     opacity: 0.8;
   }
 
@@ -40,40 +39,29 @@
     opacity: 1.0;
 /*    color: #FFFFFF;*/
     display: inline-block;
-    }
-
-
-
-
-
+    line-height: 175px;
+}
+     @media only screen and (max-width: 400px) {
+                    .theTitle{ font-size:90%;}
+     }
+      @media only screen and (max-width: 800px) {
+                    .theTitle{ font-size:100%;}
+     }
+      @media only screen and (max-width: 1100px) {
+                    .theTitle{ font-size:120%;}
+     }
 
 .loggy {
     float: right;  
     margin-right: 80px;
     margin-top: 30px; 
 }
-/*@media only screen and (max-width: 300px)  { 
-.theTitle {
-    display: block;
-    width: 80vw;
-    font-family: 'Damion', cursive;
-    display: flex;
-    align-items: center;
-    }
-}
-*/
-/*@media only screen and (max-width: 100px) { 
-.theTitle {
-    font-family: 'Damion', cursive;
-    display: flex;
-    align-items: center;
-    }
-}*/
 
 .mainbuttonhome {
     font-family: 'Oswald', sans-serif;
-    text-shadow: 1px 1px 0px white, 1px 1px 1px rgba(0,0,0,0.90);
-    color: #252a23;
+    text-shadow: 2px 2px 2px #252a23, 2px 2px 1px rgba(0,0,0,0.90);
+    opacity: 0.8;
+    color: #ffffff;
     font-style: bold;
     font-size: 30px;
     margin-left: -135px;
@@ -140,6 +128,9 @@
 
 .homecontainer {
      background-image: url("https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?dpr=1&auto=format&crop=entropy&fit=crop&w=1080&h=720&q=80");
+     height: 100%;
+     width: 100%;
+     margin: auto;
 }
 .maindivhome {
     
@@ -152,7 +143,7 @@
     opacity:1.0;
     vertical-align: middle;
     background-size: 100%;
-    background-position: 50% 50%;
+    background-position: 40% 60%;
     background-repeat: no-repeat;}
 
 
@@ -193,6 +184,7 @@
 .signoutbutton { 
     right:5px;
     position: absolute;
+    font-family: 'Oswald', sans-serif;
 
  }
 
@@ -227,7 +219,7 @@ label {
 
 .traillogwords {
     font-family: 'Oswald', sans-serif;
-    font-size: 25px;
+    font-size: 35px;
     color: black;
     opacity: 0.7;
 }
@@ -242,7 +234,7 @@ label {
 
 .userslog {
      color: black;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .tabletitles {
@@ -255,6 +247,13 @@ label {
 
 
 .loginpage {
+background-image: url("https://images.unsplash.com/photo-1443556858920-132511e53739?dpr=1&auto=format&crop=entropy&fit=crop&w=1338&h=892&q=80");
 font-family: 'Oswald', sans-serif;
+background-repeat: no-repeat;
+background-size:cover;
+}
+
+.loginbuttons {
 
 }
+
