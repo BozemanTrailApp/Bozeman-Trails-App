@@ -6,17 +6,16 @@ var passport = require('passport');
 var session = require('express-session');
 
 var app = express();
-
 var configSession = require('./passport/setsecrets.js');
 var config = require('./config.js');
-
 require('./passport/passport.js')(passport);
 
 app.use(session(configSession));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(cors()); // Comment this line out for Heroku
+
+//app.use(cors());                  // Comment this line out for Heroku
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
