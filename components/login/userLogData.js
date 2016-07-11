@@ -65,6 +65,7 @@ var UserLogData = React.createClass({
 			console.log(log);
 			this.props.addHikeToUser(log);
 			this.setState({ hikeName: null, date: null, miles: null});
+			
 		};
 
 		

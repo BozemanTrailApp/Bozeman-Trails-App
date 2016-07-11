@@ -11,7 +11,8 @@ module.exports = {
 			if(!user) { return res.status(404).json(info.message) }
 			req.login(user, function(err){
 				if(err) { return next(err); }
-				return res.json({ message: 'You logged in like a champ!', user: user });
+				return 
+				res.json({ message: 'You logged in like a champ!', user: user });
 			});	
 		})(req, res, next);
 
@@ -24,7 +25,8 @@ module.exports = {
 			if(!user) { return res.status(404).json(info.message); }
 			req.login(user, function(err){
 				if(err) { return next(err); }
-				return res.json({ message: 'You signed up like a champ!', user: user });
+				return 
+				res.json({ message: 'You signed up like a champ!', user: user });
 			})
 		})(req, res, next);
 	},
