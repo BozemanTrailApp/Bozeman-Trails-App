@@ -19,10 +19,13 @@ var CommentForm = React.createClass({
 	},
 
 	handleCommentSubmit: function(event){
+		//var self = this;						// tried adding this to help fix issue didnt fix it
 		event.preventDefault();
 		var comment = {};
-		//comment.user = this.state.user;
-		//comment.date = this.state.date;
+		console.log(this.state.user._id)
+		 if(!this.state.user._id === undefined){
+		comment.user = this.state.user;
+		}                                       // this works kinda 
 		comment.body = this.state.body;
 		this.addCommentToTrail(comment);
 		this.setState({ body: ''});
@@ -34,9 +37,9 @@ var CommentForm = React.createClass({
 				method:'GET',
 				url:'/user'
 			}).done(function(data){
-				console.log(data);
+				//console.log(data);
 				self.setState({ user: data });
-			}) 
+				}) 
 	}, 
 
 	getOneTrailFromServer: function(){
@@ -47,6 +50,7 @@ var CommentForm = React.createClass({
 		}).done(function(data){
 			//console.log(data);
 			self.setState({trailById: data});
+			self.getOneUserFromServer();
 		})
 	},
 
@@ -66,7 +70,7 @@ var CommentForm = React.createClass({
 				self.setState({trailById: data});
 				self.setState({userById: data});
 				self.getOneTrailFromServer();
-				self.getOneUserFromServer();
+				
 			},
 			error: function (xhr, status, err){
 				console.error('Failed to add a Comment', status, err.toString()) 
