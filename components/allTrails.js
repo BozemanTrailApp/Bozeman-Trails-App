@@ -1,7 +1,7 @@
 //TrailsApp
 	//AllTrailsData
 		//AllTrails
-			//TrailsList
+			//TrailsList 
 	//ViewTrailData
 		//TrailCard
 			//TrailComments

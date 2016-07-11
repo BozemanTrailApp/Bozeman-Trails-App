@@ -1,3 +1,7 @@
+//UserTrailLog
+	//UserLogData
+		//UserLog
+
 var React = require('react');
 var UserLog = require('./userLog.js');
 
