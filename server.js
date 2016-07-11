@@ -6,17 +6,20 @@ var passport = require('passport');
 var session = require('express-session');
 
 var app = express();
-
 var configSession = require('./passport/setsecrets.js');
 var config = require('./config.js');
-
 require('./passport/passport.js')(passport);
 
 app.use(session(configSession));
 app.use(passport.initialize());
 app.use(passport.session());
 
+<<<<<<< HEAD
 // app.use(cors()); // Comment this line out for Heroku
+=======
+
+//app.use(cors());                  // Comment this line out for Heroku
+>>>>>>> 1da886a6d50a37f19872b171f73d292b38d6c559
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -83,12 +86,17 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // mongoose.connect(
-//    "mongodb://localhost:27017/bbtdb",
+//    "mongodb://localhost:27017/bbtdb",                   // comment in for local
 //     config.mongo_uri 
 // );
 
+<<<<<<< HEAD
 mongoose.connect(config.mongo_uri);   //remove comment for Heroku
 mongoose.connect('mongodb://localhost:27017/bbtdb');
+=======
+mongoose.connect(config.mongo_uri);                              //remove comment for Heroku
+//mongoose.connect('mongodb://localhost:27017/bbtdb');
+>>>>>>> 1da886a6d50a37f19872b171f73d292b38d6c559
     
 
 mongoose.connection.once('open', function(){
@@ -102,7 +110,7 @@ app.get('/', function(req, res){
 
 
 // app.listen(8000, function(){
-// 	console.log("The Magic is Happening on Port 8000" );
+// 	console.log("The Magic is Happening on Port 8000" );               //comment in for Local
 // });
 
 app.listen(config.port, function(){                                  //Remove comments for Heroku
