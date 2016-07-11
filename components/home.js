@@ -17,12 +17,15 @@ var Home = React.createClass({
 
 				<div className>
 				<Link to='/trails'> 
-						<button className=" btn waves-effect waves-light btn-med mainbuttonhome">T R A I L S</button>
+						<button className=" btn waves-effect waves-light btn-med mainbuttonhome">T r a i l s</button>
 				</Link>
 
 				</div>
 				{this.props.children}
 
+			</div>
+
+			<div className= "box">
 			</div>
 			</div>
 			)
