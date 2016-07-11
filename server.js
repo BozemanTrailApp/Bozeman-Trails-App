@@ -12,8 +12,8 @@ var passport = require('passport');
 var session = require('express-session');
 
 var app = express();
-var configSession = require('./passport/setsercets.js');
-var config = require('./config.js');
+//var configSession = require('./passport/setsercets.js');
+//var config = require('./config.js');
 require('./passport/passport.js')(passport);
 
 app.use(session(configSession));
