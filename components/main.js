@@ -93,7 +93,7 @@ var Main = React.createClass({
 				<div>
 				<div> 
 						<div>
-							<h1 className="theTitle"> Bozeman.by.trail </h1>
+							<h1 className="theTitle"> bozeman.by.trail </h1>
 						</div>
 					<div className= "fixedbuttons">
 						<Link to = '/home'>
