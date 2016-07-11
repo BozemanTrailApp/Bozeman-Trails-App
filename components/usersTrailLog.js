@@ -24,7 +24,7 @@ var UsersTrailLog= React.createClass({
 				method:'GET',
 				url:'/user' 
 			}).done(function(data){
-				console.log(data);
+				//console.log(data);
 				self.setState({ user: data });
 				
 			})
