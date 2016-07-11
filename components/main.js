@@ -53,7 +53,7 @@ var Main = React.createClass({
 				<div> 
 						<div className = "containertitle">
 						<div>
-							<h1 className="theTitle"> bozeman.by.trail </h1>
+							<h1 className="theTitle"> Bozeman.by.trail </h1>
 						</div>
 						</div> 
 

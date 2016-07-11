@@ -14,7 +14,7 @@ var LogoutUser = React.createClass({
 		return (
 			<div>
 				<button className="btn waves-effect waves-light" onClick={ this.props.logoutUser } 
-				type="submit" name="action"> Sign-Out
+				type="submit" name="action"> S I G N O U T 
   				</button>
 			</div>
 			)
