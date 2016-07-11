@@ -17,7 +17,7 @@ var AddCommentForm = React.createClass({
 							</div>
 						</div>
 					</form>
-				</div>
+				</div> 
 			</div>
 			)
 	}

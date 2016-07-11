@@ -23,10 +23,11 @@ var CommentForm = React.createClass({
 		event.preventDefault();								//################# must have HELP on this#########################	
 		var comment = {};
 		comment.body = self.state.body;
-		console.log(self.state.user._id)					//##########################
-		 //if(self.state.user._id === !undefined){
-		comment.user = self.state.user;
-		//}                                       // this works kinda #######################
+		// console.log(self.state.user._id,"user id")				//##########################
+		 if(self.state.user._id){
+		comment.user = self.state.user._id;
+		// console.log(comment);
+		}                                       // this works kinda once #######################
 		
 		self.addCommentToTrail(comment);
 		self.setState({ body: ''});
@@ -57,15 +58,15 @@ var CommentForm = React.createClass({
 
 	addCommentToTrail: function(comment){
 		var self = this;
-		var trailUpdate = self.state.trailById;
+		var trailUpdate = this.state.trailById;
 		trailUpdate.comments.push(comment);
-		self.setState({trailsById: trailUpdate});
-		// console.log(self.state.trailsById);
+		this.setState({trailsById: trailUpdate});
+		console.log(trailUpdate);
 		$.ajax({
 			url: '/trails/' + this.props.oneTrailId,
 			method: 'PUT',
 			dataType: 'json',
-			data: self.state.trailById,
+			data: trailUpdate,
 			success: function(data){
 				console.log('Adding a Comment', data);
 				self.setState({trailById: data});
