@@ -43,14 +43,14 @@
     display: inline-block;
     line-height: 175px;
 }
-     @media only screen and (max-width: 400px) {
-                    .theTitle{ font-size:90%;}
+     @media  (max-width: 400px) {
+                    .theTitle{ font-size:60%;}
      }
-      @media only screen and (max-width: 800px) {
+      @media (max-width: 800px) {
+                    .theTitle{ font-size:70%;}
+     }
+      @media (max-width: 1100px) {
                     .theTitle{ font-size:100%;}
-     }
-      @media only screen and (max-width: 1100px) {
-                    .theTitle{ font-size:120%;}
      }
 
 .loggy {
