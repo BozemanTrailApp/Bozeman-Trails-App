@@ -17,8 +17,10 @@ var LogoutUser = require('./login/logoutUser.js');
 var Login = React.createClass({
 	render: function(){
 			return(
-			<div>	
+			<div>
+				<div className = "loginpage">	
 				<UserAuth />	
+				</div>
 			</div>
 					)
 	}
