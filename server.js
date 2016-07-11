@@ -1,5 +1,5 @@
 var express = require('express')
-var cors = require('cors'); // Comment this line out for Heroku
+//var cors = require('cors'); // Comment this line out for Heroku
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -14,7 +14,7 @@ app.use(session(configSession));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(cors());                  // Comment this line out for Heroku
+//app.use(cors());                  // Comment this line out for Heroku
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -90,7 +90,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 // mongoose.connect(config.mongo_uri);   //remove comment for Heroku
-mongoose.connect('mongodb://localhost:27017/bbtdb');
+//mongoose.connect('mongodb://localhost:27017/bbtdb');
     
 
 mongoose.connection.once('open', function(){
@@ -104,16 +104,16 @@ app.get('/', function(req, res){
 
 
 
-app.listen(8000, function(){
-	console.log("The Magic is Happening on Port 8000" );
-});
+// app.listen(8000, function(){
+// 	console.log("The Magic is Happening on Port 8000" );
+// });
 
 
 
 
-// app.listen(config.port, function(){                                  //Remove comments for Heroku
-// console.log("The Magic is Happening on Port" + config.port)     //
-// });                                              
+app.listen(config.port, function(){                                  //Remove comments for Heroku
+console.log("The Magic is Happening on Port" + config.port)     //
+});                                              
 
 
 

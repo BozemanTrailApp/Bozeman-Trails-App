@@ -2,16 +2,13 @@ var mongoose = require('mongoose');
 
 var trailLogSchema = new mongoose.Schema({
 	hikeName: {
-		type: String, 
-		required: true },
+		type: String },
 	date: {
-		type: Date,
-		required: true },
+		type: Date },
 	miles: {
-		type: Number, 
-		required: true },
+		type: Number },
 	comments: {
-		ßtype: String}
+		type: String } 
 });
 
 module.exports = trailLogSchema;
