@@ -60,6 +60,9 @@ var UserAuth = React.createClass({
 			}
 		})
 	},
+
+	
+
 	render: function(){
 			
 		return (
