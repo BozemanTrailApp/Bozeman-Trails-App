@@ -15,7 +15,8 @@ var CommentForm = React.createClass({
 	},
 
 	handleBodyChange: function(event){
-		this.setState({body: event.target.value})
+		this.setState({body: event.target.value});
+		
 	},
 
 	handleCommentSubmit: function(event){
@@ -24,14 +25,15 @@ var CommentForm = React.createClass({
 		var comment = {};
 		comment.body = self.state.body;
 		// console.log(self.state.user._id,"user id")				//##########################
-		 if(self.state.user._id){
+		 
 		comment.user = self.state.user._id;
-		// console.log(comment);
-		}                                       // this works kinda once #######################
+		 
+		 console.log(comment);
+		                                       // this works kinda once #######################
 		
 		self.addCommentToTrail(comment);
 		self.setState({ body: ''});
-		self.setState({user: ''});
+		//self.setState({user: ''});
 	},
 	getOneUserFromServer: function(){ 
 		var self = this;

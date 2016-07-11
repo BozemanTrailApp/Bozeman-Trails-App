@@ -80,10 +80,10 @@ var Profile = React.createClass({
 			<div className = "profilecontainer">
 			   	<div className = "profile">
 					<div className = "profilewords">
-			   		<h3><u>My Profile</u></h3>
+			   		<h2><u>My Profile</u></h2>
 					
 						
-					<h2> Welcome, {this.state.user.userName}!</h2>
+					<h2> Welcome, <i>{this.state.user.userName}!</i></h2>
 
 					<h3> {this.state.user.firstName + ' ' + this.state.user.lastName} </h3>
 

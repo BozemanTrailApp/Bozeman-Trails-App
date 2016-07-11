@@ -2,9 +2,10 @@ var React = require('react');
 
 
 var AddCommentForm = React.createClass({
+	
 	render: function(){
 		console.log(this.props.user, "I am the user");
-		//console.log(this.props.handleCommentSubmit, " i am a func ");
+		
 		return(
 			<div>
 				<div className = 'row'>
@@ -20,6 +21,8 @@ var AddCommentForm = React.createClass({
 				</div> 
 			</div>
 			)
+		
+			
 	}
 });
 module.exports = AddCommentForm;
