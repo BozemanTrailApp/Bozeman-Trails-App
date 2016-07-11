@@ -1,6 +1,5 @@
 node_modules
 .DS_Store
-setsercets.js
 static
 npm-debug.log
 static/bundle.js
