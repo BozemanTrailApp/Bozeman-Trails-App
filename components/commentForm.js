@@ -26,8 +26,8 @@ var CommentForm = React.createClass({
 		// console.log(self.state.user._id,"user id")				//##########################
 		 if(self.state.user._id){
 		comment.user = self.state.user._id;
-		// console.log(comment);
-		}                                       // this works kinda once #######################
+		 console.log(comment);
+		}else{comment.user = anonymous}                                       // this works kinda once #######################
 		
 		self.addCommentToTrail(comment);
 		self.setState({ body: ''});
