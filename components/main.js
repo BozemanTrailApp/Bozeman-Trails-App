@@ -35,7 +35,7 @@ var Main = React.createClass({
 			}).done(function(data){
 				console.log(data);
 				self.setState({ user: data });
-				window.location = "http://morning-sea-89915.herokuapp.com/"
+				//window.location = "http://morning-sea-89915.herokuapp.com/"
 				})
 				//self.setState( data );
 				//console.log("Logout successful.", data);

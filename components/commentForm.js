@@ -19,17 +19,19 @@ var CommentForm = React.createClass({
 	},
 
 	handleCommentSubmit: function(event){
-		//var self = this;						// tried adding this to help fix issue didnt fix it
-		event.preventDefault();
+		var self = this;						// ###############tried adding this to help fix issue didnt fix it#################
+		event.preventDefault();								//################# must have HELP on this#########################	
 		var comment = {};
-		console.log(this.state.user._id)
-		 if(!this.state.user._id === undefined){
-		comment.user = this.state.user;
-		}                                       // this works kinda 
-		comment.body = this.state.body;
-		this.addCommentToTrail(comment);
-		this.setState({ body: ''});
-		//this.setState({user: ''});
+		comment.body = self.state.body;
+		// console.log(self.state.user._id,"user id")				//##########################
+		 if(self.state.user._id){
+		comment.user = self.state.user._id;
+		// console.log(comment);
+		}                                       // this works kinda once #######################
+		
+		self.addCommentToTrail(comment);
+		self.setState({ body: ''});
+		self.setState({user: ''});
 	},
 	getOneUserFromServer: function(){ 
 		var self = this;
@@ -56,15 +58,15 @@ var CommentForm = React.createClass({
 
 	addCommentToTrail: function(comment){
 		var self = this;
-		var trailUpdate = self.state.trailById;
+		var trailUpdate = this.state.trailById;
 		trailUpdate.comments.push(comment);
-		self.setState({trailsById: trailUpdate});
-		// console.log(self.state.trailsById);
+		this.setState({trailsById: trailUpdate});
+		console.log(trailUpdate);
 		$.ajax({
 			url: '/trails/' + this.props.oneTrailId,
 			method: 'PUT',
 			dataType: 'json',
-			data: self.state.trailById,
+			data: trailUpdate,
 			success: function(data){
 				console.log('Adding a Comment', data);
 				self.setState({trailById: data});

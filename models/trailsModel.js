@@ -14,7 +14,8 @@ var TrailSchema = new mongoose.Schema({
 		imageUrl: {type: String},
 			user: {
 			 type: mongoose.Schema.Types.ObjectId,
-			 ref: 'User'
+			 ref: 'User',
+			 required: false
 		}
 	}],
 	directions: {type: String}
