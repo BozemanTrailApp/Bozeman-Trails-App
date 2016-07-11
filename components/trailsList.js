@@ -14,8 +14,8 @@ var TrailsList = React.createClass({
 		console.log(this.props);
 		return(
 				<div>
-					<div className = 'row container'>
-						<div className ='col s12 m6'>
+					<div className = 'row valign-wrapper'>
+						<div className ='col s12 m6 '>
 							<div className = 'card  z-depth-2'>
 								<span className = 'card-title black-text'> {this.props.trailName} </span>
 								<div className = 'card-image'>
