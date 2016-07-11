@@ -10,7 +10,6 @@ var React = require('react');
 var AddCommentForm = require('./addCommentForm.js');
 
 
-
 var AllComments = React.createClass({ 
 	dateLogic: function(){
 		let date = this.props.date;
@@ -18,10 +17,10 @@ var AllComments = React.createClass({
 		let trimDate = dateString.substring(0,10);
 			return trimDate
 		},
-	
+		
 		
 	userLogic: function(){
-		
+		//console.log(this.props.user);
 		if(this.props.user){
 			return(<div><li className = 'white-text'>{this.props.user.userName} Says: </li></div>)
 		}else{

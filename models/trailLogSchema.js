@@ -9,6 +9,7 @@ var trailLogSchema = new mongoose.Schema({
 		type: Number },
 	comments: {
 		type: String } 
+
 });
 
 module.exports = trailLogSchema;

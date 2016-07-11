@@ -35,7 +35,7 @@ var Main = React.createClass({
 			}).done(function(data){
 				console.log(data);
 				self.setState({ user: data });
-				window.location = "http://morning-sea-89915.herokuapp.com/"
+				//window.location = "http://morning-sea-89915.herokuapp.com/"
 				})
 				//self.setState( data );
 				//console.log("Logout successful.", data);
@@ -53,7 +53,7 @@ var Main = React.createClass({
 				<div> 
 						<div className = "containertitle">
 						<div>
-							<h1 className="theTitle"> Bozeman.by.trail </h1>
+							<h1 className="theTitle"> bozeman.by.trail </h1>
 						</div>
 						</div> 
 

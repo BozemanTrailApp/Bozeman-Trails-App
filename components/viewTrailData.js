@@ -22,7 +22,7 @@ var ViewTrailData = React.createClass({
 		method: 'GET',
 		url: '/trails/' + this.props.id
 		}).done(function(data){
-			console.log(data); 
+			//console.log(data); 
 			self.setState({oneTrail: data})
 
 		})

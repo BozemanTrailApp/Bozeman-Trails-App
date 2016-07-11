@@ -19,24 +19,29 @@ var CommentForm = React.createClass({
 	},
 
 	handleCommentSubmit: function(event){
-		event.preventDefault();
+		var self = this;						// ###############tried adding this to help fix issue didnt fix it#################
+		event.preventDefault();								//################# must have HELP on this#########################	
 		var comment = {};
-		//comment.user = this.state.user;
-		//comment.date = this.state.date;
-		comment.body = this.state.body;
-		this.addCommentToTrail(comment);
-		this.setState({ body: ''});
+		comment.body = self.state.body;
+		// console.log(self.state.user._id,"user id")				//##########################
+		 if(self.state.user._id){
+		comment.user = self.state.user._id;
+		// console.log(comment);
+		}                                       // this works kinda once #######################
+		
+		self.addCommentToTrail(comment);
+		self.setState({ body: ''});
+		self.setState({user: ''});
 	},
-	getUserFromServer: function(){
+	getOneUserFromServer: function(){ 
 		var self = this;
-
-		$.ajax({
-			method: 'GET',
-			url: '/user'
-		}).done(function(data){
-			console.log(data);
-			self.setstate({user: data});
-		})
+			$.ajax({
+				method:'GET',
+				url:'/user'
+			}).done(function(data){
+				//console.log(data);
+				self.setState({ user: data });
+				}) 
 	}, 
 
 	getOneTrailFromServer: function(){
@@ -45,26 +50,29 @@ var CommentForm = React.createClass({
 			url: '/trails/' + this.props.oneTrailId,
 			method: 'GET'
 		}).done(function(data){
-			console.log(data);
+			//console.log(data);
 			self.setState({trailById: data});
+			self.getOneUserFromServer();
 		})
 	},
 
 	addCommentToTrail: function(comment){
 		var self = this;
-		var trailUpdate = self.state.trailById;
+		var trailUpdate = this.state.trailById;
 		trailUpdate.comments.push(comment);
-		self.setState({trailsById: trailUpdate});
-		// console.log(self.state.trailsById);
+		this.setState({trailsById: trailUpdate});
+		console.log(trailUpdate);
 		$.ajax({
 			url: '/trails/' + this.props.oneTrailId,
 			method: 'PUT',
 			dataType: 'json',
-			data: self.state.trailById,
+			data: trailUpdate,
 			success: function(data){
 				console.log('Adding a Comment', data);
 				self.setState({trailById: data});
+				self.setState({userById: data});
 				self.getOneTrailFromServer();
+				
 			},
 			error: function (xhr, status, err){
 				console.error('Failed to add a Comment', status, err.toString()) 
@@ -75,6 +83,7 @@ var CommentForm = React.createClass({
 
 	componentDidMount: function(){
 		this.getOneTrailFromServer();
+		//this.getOneUserFromServer();
 	},
 	render: function(){
 		return(
@@ -82,7 +91,7 @@ var CommentForm = React.createClass({
 					<AddCommentForm handleCommentSubmit = {this.handleCommentSubmit}
 									handleBodyChange = {this.handleBodyChange}
 									body = {this.state.body}
-									getUserFromServer ={ this.getUserFromServer}
+									user = {this.state.user}
 									/>
 				</div>
 			)
