@@ -9,8 +9,11 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var AllComments = require('./allComments.js');
+var CommentForm = require('./commentForm');
 
+function TrailCard(props){
 
+}
 
 var TrailCard = React.createClass({
 		
@@ -23,14 +26,15 @@ var TrailCard = React.createClass({
 								date = {item.date}
 								key = {item._id}
 								id = {item._id}
-								imageUrl = {item.imageUrl}/>
+								imageUrl = {item.imageUrl}
+								/>
 				});	
-			console.log(this.props, "I am from line 36")
 			return(
 				<div>
+
 					<div>
-						<div className =  'row'>
-							<div className = 'col s12 m5'>
+						<div className =  'container row'>
+							<div className = 'col s12 m7'>
 								<div className = 'card grey darken-4 z-depth-2'>
 									<div className = 'card-content white-text'>
 										<span className = 'card-title'>{this.props.oneTrail.trailName}</span>
@@ -52,12 +56,14 @@ var TrailCard = React.createClass({
 								
 							</div>
 						</div>
+
 						<div>
-							<iframe height = '600px' width ='600px' src = {this.props.oneTrail.mapUrl}/>
+							<iframe height = '600px' width ='600px' src = {this.props.oneTrail.mapUrl} className = 'push-l5'/>
 						</div>
+						<div className = 'container'><CommentForm oneTrail={this.props.oneTrail} oneTrailId={ this.props.oneTrailId }/></div>
 						<div>{ comments }</div>	
 					</div>
-										
+									
 				</div>
 				)
 

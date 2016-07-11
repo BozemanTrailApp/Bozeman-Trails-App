@@ -32,7 +32,7 @@ var ViewTrailData = React.createClass({
 		this.getOneTrailFromServer();
 	},
 	render(){
-		return this.state.oneTrail ? <TrailCard oneTrail = {this.state.oneTrail} toggleActiveComp = {this.props.toggleActiveComp}/> : this.state.oneTrail;
+		return this.state.oneTrail ? <TrailCard oneTrailId={ this.props.id }  oneTrail = {this.state.oneTrail} toggleActiveComp = {this.props.toggleActiveComp}/> : this.state.oneTrail;
 	}
 });
 module.exports = ViewTrailData;

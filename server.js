@@ -1,5 +1,5 @@
 var express = require('express')
-// var cors = require('cors'); // Comment this line out for Heroku
+var cors = require('cors'); // Comment this line out for Heroku
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -14,7 +14,7 @@ app.use(session(configSession));
 app.use(passport.initialize());
 app.use(passport.session());
 
-//app.use(cors()); // before you push up to Heroku for mlab
+app.use(cors());                  // Comment this line out for Heroku
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -50,6 +50,7 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   // When not in production, enable hot reloading
 
+
   var chokidar = require('chokidar');
   var webpack = require('webpack');
   var webpackConfig = require('./webpack.config.dev');
@@ -64,6 +65,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
   // Do "hot-reloading" of express stuff on the server
+
   // Throw away cached modules and re-require next time
   // Ensure there's no important state in there!
 
@@ -79,9 +81,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // mongoose.connect(
-//    "mongodb://localhost:27017/bbtdb",
-//     config.mongo_uri 
+//    "mongodb://localhost:27017/bbtdb"
+//     //config.mongo_uri 
 // );
+
 
 
 
