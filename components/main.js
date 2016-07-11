@@ -67,7 +67,7 @@ var Main = React.createClass({
 
 							<Link to = '/signout'>
 								<button className = ' btn signoutbutton ' onClick={ this.logoutUser } 
-								type="submit" name="action">Sign out</button>
+								type="submit" name="action">S I G N  O U T</button>
 							</Link>
 						</div>
 							
