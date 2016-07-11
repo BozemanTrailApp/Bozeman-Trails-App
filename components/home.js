@@ -9,7 +9,8 @@ var Profile = require('./profile.js');
 var Home = React.createClass({
 	render: function(){
 		return(
-
+			<div>
+			<div className = "homecontainer"> 
 			<div className = "maindivhome">
 			<div className = "container homepage">
 				
@@ -25,9 +26,10 @@ var Home = React.createClass({
 
 			</div>
 
-			<div className= "box">
 			</div>
 			</div>
+			</div>
+			
 			)
 	}
 });

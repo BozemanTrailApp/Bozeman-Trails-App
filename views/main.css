@@ -2,11 +2,14 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #252a23;
+   
+   /* background-color: #252a23;*/
+    opacity: 0.8;
   }
 
   main {
     flex: 1 0 auto;
+
   }
 
 .totalmiles {
@@ -27,13 +30,14 @@
 
 .theTitle {
     font: 400 100px/1.3 'Lobster Two', Helvetica, sans-serif;
-   color: #405732;
-   text-shadow: 1px 1px 0px white, 4px 4px 0px rgba(0,0,0,0.90);
+    color: black; 
+    text-shadow: 2px 2px 2px white, 4px 4px 0px rgba(0,0,0,0.90);
     float: right;
     font-size: 100px;
     margin-right: 100px;
     margin-top: 80px;
     font-style: italic;
+    opacity: 1.0;
 /*    color: #FFFFFF;*/
     display: inline-block;
     }
@@ -67,9 +71,10 @@
 }*/
 
 .mainbuttonhome {
-     font: 400 60px/1.3 'Berkshire Swash', Helvetica, sans-serif;
-     color: #252a23;
-
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 1px 1px 0px white, 1px 1px 1px rgba(0,0,0,0.90);
+    color: #252a23;
+    font-style: bold;
     font-size: 30px;
     margin-left: -135px;
     margin-bottom: 1%;
@@ -111,12 +116,13 @@
    padding: 5%;
    margin: auto;
    color: #ffffff;
+
 }
 
 .profilecontainer {
     /*background-color: black;*/
     background-image: url("https://images.unsplash.com/photo-1444076095244-6edf09c44c27?dpr=1&auto=format&crop=entropy&fit=crop&w=1440&h=1067&q=80");
-
+    opacity:1.0;
     
 }
 
@@ -131,13 +137,19 @@
     height: 100%;
     width: 100%;
 }
+
+.homecontainer {
+     background-image: url("https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?dpr=1&auto=format&crop=entropy&fit=crop&w=1080&h=720&q=80");
+}
 .maindivhome {
     
     background-image: url("https://images.unsplash.com/photo-1464565134312-083f9c103854?dpr=1&auto=format&crop=entropy&fit=crop&w=1440&h=810&q=80");
     display: inline-block;
     width: 100%;
+    height: 100%;
     font-size: 0;
     line-height: 0;
+    opacity:1.0;
     vertical-align: middle;
     background-size: 100%;
     background-position: 50% 50%;
@@ -186,6 +198,7 @@
 
  .navbar {
     background-color: black;
+    margin: auto;
 }
 
 label {
@@ -214,32 +227,32 @@ label {
 
 .traillogwords {
     font-family: 'Oswald', sans-serif;
-    color:#ffffff;
     font-size: 25px;
+    color: black;
+    opacity: 0.7;
 }
 .logcontainer {
-    background-image: url("http://pre02.deviantart.net/1b0e/th/pre/i/2010/215/d/0/old_blank_journal_by_gorilla_ink.jpg");
+    background-image: url("http://img05.deviantart.net/0da6/i/2011/291/7/e/parchment_landscape_i_by_allocer2009-d4d80w4.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 100%;
     height: 1000px;
+    margin: auto;
 }
 
 .userslog {
-    color: #ffffff;
+     color: black;
+    opacity: 0.7;
 }
 
 .tabletitles {
     color: black;
-    font: 100 120px/0.8 'Great Vibes', Helvetica, sans-serif;
+    opacity: 0.7;
+    font: 100 70px/0.8 'Great Vibes', Helvetica, sans-serif;
     text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
     font: italic;
 }
 
-.traillogwords { 
-    font-size: 10%
-    color: #ffffff;
-     }
 
 .loginpage {
 font-family: 'Oswald', sans-serif;
