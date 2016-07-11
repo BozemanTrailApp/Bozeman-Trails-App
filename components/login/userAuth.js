@@ -55,7 +55,7 @@ var UserAuth = React.createClass({
 				window.location = "http://morning-sea-89915.herokuapp.com/#/profile";
 			},
 			error: function(xhr, status, err){
-				//alert('No Such Email or Incorrect Password')
+				alert('Please fill in all Categories!')
 				console.error('/signup', status, err.toString())
 			}
 		})
