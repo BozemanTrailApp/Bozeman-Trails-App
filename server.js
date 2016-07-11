@@ -1,5 +1,5 @@
 var express = require('express')
-var cors = require('cors'); // Comment this line out for Heroku
+// var cors = require('cors'); // Comment this line out for Heroku
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
