@@ -81,17 +81,15 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // mongoose.connect(
-
 //    "mongodb://localhost:27017/bbtdb"
 //     //config.mongo_uri 
-
 // );
 
 
 
 
-// mongoose.connect(config.mongo_uri);                        //remove comment for Heroku
 
+// mongoose.connect(config.mongo_uri);   //remove comment for Heroku
 mongoose.connect('mongodb://localhost:27017/bbtdb');
     
 
