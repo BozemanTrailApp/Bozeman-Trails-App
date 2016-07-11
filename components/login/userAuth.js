@@ -68,7 +68,9 @@ var UserAuth = React.createClass({
 		return (
 			<div>
 				<div className="container">
+				<div className= "sigintitle">
 					<h3> Sign-In </h3>
+				</div>
 					<div className="loginbuttons">
 						<UserLoginData loginUserFromServer={ this.loginUserFromServer } />
 						<UserSignupData signupUserFromServer={ this.signupUserFromServer }/>
