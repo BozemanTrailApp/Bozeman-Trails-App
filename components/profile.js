@@ -63,7 +63,7 @@ var Profile = React.createClass({
 			},
 			error: function(xhr, status, err){
 				console.error('Failed to Add Miles', status, err.toString())
-				alert('Please Fill in all Categories!');
+				//alert('Please Fill in all Categories!');
 			}
 		})
 	},
@@ -80,10 +80,10 @@ var Profile = React.createClass({
 			<div className = "profilecontainer">
 			   	<div className = "profile">
 					<div className = "profilewords">
-			   		<h3><u>My Profile</u></h3>
+			   		<h2><u>My Profile</u></h2>
 					
 						
-					<h2> Welcome, {this.state.user.userName}!</h2>
+					<h2> Welcome, <i>{this.state.user.userName}!</i></h2>
 
 					<h3> {this.state.user.firstName + ' ' + this.state.user.lastName} </h3>
 

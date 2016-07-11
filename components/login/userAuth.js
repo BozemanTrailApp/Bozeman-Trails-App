@@ -32,7 +32,7 @@ var UserAuth = React.createClass({
 			success: function(data){
 				console.log("Login successful.", data);
 				self.setState({ user : data });
-				//window.location = "http://morning-sea-89915.herokuapp.com/#/profile";
+				window.location = "http://morning-sea-89915.herokuapp.com/#/profile";
 
 			},
 			error: function(xhr, status, err){
@@ -52,10 +52,10 @@ var UserAuth = React.createClass({
 			success: function(data){
 				console.log("Signup successful.", data);
 				self.setState({ user : data });
-				//window.location = "http://morning-sea-89915.herokuapp.com/#/profile";
+				window.location = "http://morning-sea-89915.herokuapp.com/#/profile";
 			},
 			error: function(xhr, status, err){
-				//alert('No Such Email or Incorrect Password')
+				alert('Please fill in all Categories!')
 				console.error('/signup', status, err.toString())
 			}
 		})
@@ -68,7 +68,9 @@ var UserAuth = React.createClass({
 		return (
 			<div>
 				<div className="container">
+				<div className= "sigintitle">
 					<h3> Sign-In </h3>
+				</div>
 					<div className="loginbuttons">
 						<UserLoginData loginUserFromServer={ this.loginUserFromServer } />
 						<UserSignupData signupUserFromServer={ this.signupUserFromServer }/>

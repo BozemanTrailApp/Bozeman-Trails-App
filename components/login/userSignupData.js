@@ -12,13 +12,13 @@ var UserSignupData = React.createClass({
 	getInitialState: function(){
 		return {
 			
-			userName: '',
-			firstName: '',
-			lastName: '',
-			email: '',
-			password: '',
-			age: '', 
-			gender: ''
+			userName: null,
+			firstName: null,
+			lastName: null,
+			email: null,
+			password: null,
+			age: null, 
+			gender: null
 
 		},
 		{ childVisible: false }
@@ -67,8 +67,47 @@ var UserSignupData = React.createClass({
 		user.age = this.state.age;
 		user.gender = this.state.gender
 
+		
+		if ( user.userName == null ){
+
+			alert("Please Fill in User Name");
+
+		} else if ( user.firstName == null ){
+
+			alert("Please Fill in your First Name");
+
+		} else if ( user.lastName == null ){
+
+			alert("Please Fill in your Last Name");
+
+		} else if ( user.email == null){
+
+			alert("Please Fill in your Email");
+
+	    } else if ( user.age == null){
+
+	    	alert("Please Fill your Age");
+
+		} else if ( user.gender == null){
+
+			alert("Please Fill in your gender");
+
+		} else {
+	    
 		this.props.signupUserFromServer(user);
-		this.setState({ userName: '', firstName: '', lastName: '', email: '', username: '', password: '', age: '', gender: '' });
+		this.setState({ 
+			userName: null, 
+			firstName: null, 
+			lastName: null, 
+			email: null, 
+			username: null, 
+			password: null, 
+			age: null, 
+			gender: null 
+			});
+
+	    };
+
 	},
 
 	render: function(){
