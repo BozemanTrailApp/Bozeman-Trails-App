@@ -1,17 +1,21 @@
 var mongoose = require('mongoose');
 
+
+// function validator (v) {
+//   return v.length > 1;
+// };
+
 var trailLogSchema = new mongoose.Schema({
 	hikeName: {
-		type: String, 
-		required: true },
+		type: String,  validate: /[a-z]/, require: true },
 	date: {
-		type: Date,
-		required: true },
+		type: Date, require: true  },
 	miles: {
-		type: Number, 
-		required: true },
+		type: Number, min: 1 , require: true },
 	comments: {
-		type: String}
+		type: String } 
+
+
 });
 
 module.exports = trailLogSchema;

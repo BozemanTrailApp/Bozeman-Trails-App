@@ -57,8 +57,8 @@ var Profile = React.createClass({
 				console.log("Adding Miles", data);
 				self.setState({ user : data });
 				self.getOneUserFromServer();
-				
-				
+				//window.location = "http://localhost:3000/#/profile";
+				// window.location.reload(true);
 				//alert("Success on Logging your Miles Hiked!");
 			},
 			error: function(xhr, status, err){

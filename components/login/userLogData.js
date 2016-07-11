@@ -30,12 +30,12 @@ var UserLogData = React.createClass({
 	},
 	handleHikeLogSubmit: function(e){
 		e.preventDefault();
-		
-		var log = 
-				{
-				hikeName: "",
-				date: "",
-				miles: ""
+
+		var log = {
+
+				hikeName: null,
+				date: null,
+				miles: null
 
 		};
 
@@ -43,15 +43,31 @@ var UserLogData = React.createClass({
 		var time = this.state.date;
 		var distance = this.state.miles;
 
-
 		log.hikeName = hike;
 		log.date = time;
 		log.miles = distance;
+			
 
-		console.log(log);
+		if (hike == null ){
 
-		this.props.addHikeToUser(log);
-		this.setState({ hikeName: '', date: '', miles: ''});
+			alert("Please fill in your Hike!");
+
+		} else if (time == null ){
+
+			alert("Please Select your Date");
+
+		} else if (distance == null ){
+
+			alert("Please Put Down your Miles");
+
+		} else {
+
+			console.log(log);
+			this.props.addHikeToUser(log);
+			this.setState({ hikeName: null, date: null, miles: null});
+		};
+
+		
 	},
 	render: function(){
 
@@ -61,6 +77,7 @@ var UserLogData = React.createClass({
 			<div>
 
         		<UserLog
+
         		handleHikeLogSubmit={ this.handleHikeLogSubmit }
         		onHikeNameChange={ this.onHikeNameChange}
         		onDateChange={this.onDateChange}
