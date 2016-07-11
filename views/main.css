@@ -184,6 +184,7 @@
 .signoutbutton { 
     right:5px;
     position: absolute;
+    font-family: 'Oswald', sans-serif;
 
  }
 
@@ -233,7 +234,7 @@ label {
 
 .userslog {
      color: black;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .tabletitles {
