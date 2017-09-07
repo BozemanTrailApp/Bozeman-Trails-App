@@ -88,7 +88,7 @@ if (process.env.NODE_ENV === 'production') {
 // );
 
 
-mongoose.connect(config.mongo_uri);   //remove comment for Heroku
+mongoose.createConnection(config.mongo_uri);   //remove comment for Heroku
 //mongoose.connect('mongodb://localhost:27017/bbtdb');
 
 
